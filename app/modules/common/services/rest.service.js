@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc service
- * @name pbrApp.rest
+ * @name maureillasApp.RestService
  * @description
  * # rest
  * Factory in the pbrApp.
  */
 angular.module('maureillasApp.common')
-  .factory('RestService', function ($q, $http) { 
+  .factory('RestService', function ($q, $http, TechnicalExceptionService) { 
       
       var promiseStart = $q.when('start');
 
@@ -17,26 +17,27 @@ angular.module('maureillasApp.common')
               }
 
       var httpError = function(data, status, headers, config) {
-        // ici, il est possible de rediriger les erreurs vers
-        // un service de gestion des messages par exemple
-        // et dans tous les cas, on renvoie quand meme l'erreur a l'appelant       
-        // if (status != 400) {
-        //    var message = {
-        //     type: MessageService.getTypesMessages().DANGER,
-        //     textes: ["Problème de communication avec le serveur"]            
-        //   }         
-        //   if (URLS.debug) {
-        //     message.textes.push(config);
-        //     message.json = true;
-        //     message.timestamp = 40000;
-        //   }          
-        //   MessageService.setMessage(message);
-        // }
+        console.log('http error : ' + status);
         return $q.reject();        
       }
 
+      // verifie l'objet config avec url et method
+      var verifyConfig = function(config) {
+        var message = ', attendu : config { url, method } voir https://docs.angularjs.org/api/ng/service/$http';
+        if (angular.isUndefined(config)) {
+          TechnicalExceptionService.new('objet config pour un appel Rest : [undefined]' + message);
+        }
+        if (angular.isUndefined(config.url)) {
+           TechnicalExceptionService.new('url dans config pour un appel Rest : [undefined]' + message);
+        }
+        if (angular.isUndefined(config.method)) {
+          TechnicalExceptionService.new('method dans config pour un appel Rest : [undefined]' + message);
+        }
+      }
+
       return {
-        call: function(config) {         
+        call: function(config) {   
+          verifyConfig(config);      
           var promiseAppel = promiseStart.then(function () {
             return $http(config).
               success(httpSuccess).

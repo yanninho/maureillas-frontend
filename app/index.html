@@ -32,6 +32,16 @@
     <!--[if gt IE 8]>
     <loading-widget>Chargement en cours...</loading-widget>
     <![endif]-->
+    <header class="header">
+        <ul>
+            <li>
+                Evenements : <a ng-href="#/feeds?feed=agenda">Afficher</a>
+            </li>
+            <li>
+                Annonces : <a ng-href="#/feeds?feed=annonces">Afficher</a>
+            </li>
+        </ul>
+    </header>
     <div class="view view-animate" ng-view=""></div>
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -45,6 +55,7 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-translate/angular-translate.js"></script>
     <script src="bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -55,10 +66,19 @@
                 <script src="modules/common/common.module.js"></script>
                 <!-- services -->            
                 <script src="modules/common/services/rest.service.js"></script>           
+                <script src="modules/common/services/technicalException.service.js"></script>           
                 <script src="modules/common/services/config.service.js"></script>           
                 <!-- directives -->           
                 <!-- models -->       
             <!-- fin module common -->
+           
+            <!-- module feeds -->
+                <script src="modules/feeds/feeds.module.js"></script>
+                <!-- services -->            
+                <script src="modules/feeds/services/feeds.service.js"></script>                     
+                <!-- controllers -->           
+                <script src="modules/feeds/controllers/feeds.controller.js"></script>                     
+            <!-- fin module feeds -->
         <!-- endbuild -->
 </body>
 </html>

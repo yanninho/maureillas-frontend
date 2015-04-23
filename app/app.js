@@ -17,12 +17,12 @@ angular
     'ngAnimate',
     'ngTouch',
     'pascalprecht.translate',
+    'ngSanitize',
     //Application modules
-    'maureillasApp.common'
+    'maureillasApp.common',
+    'maureillasApp.feeds'
   ])
-  .config(function ($routeProvider, $locationProvider,$httpProvider, $translateProvider, $translatePartialLoaderProvider, VIEWS) {
-    // Interceptor pour les requêtes ajax
-    $httpProvider.interceptors.push('httpInterceptor')
+  .config(function ($routeProvider, $locationProvider, $translateProvider, $translatePartialLoaderProvider, VIEWS) {
 
     // les routes (views.json)
     angular.forEach(VIEWS, function(module, keyModule) {

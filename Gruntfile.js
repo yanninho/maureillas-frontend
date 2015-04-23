@@ -21,7 +21,9 @@ module.exports = function (grunt) {
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
     dist: 'dist',
-    VIEWS: require('./views.json').VIEWS
+    VIEWS: require('./config.json').VIEWS,
+    FEEDS: require('./config.json').FEEDS,
+    REMOTE: require('./config.json').REMOTE
   };
 
   // Define the configuration for all the tasks
@@ -414,6 +416,8 @@ module.exports = function (grunt) {
         },
         constants: {
           VIEWS: '<%= yeoman.VIEWS %>',
+          FEEDS: '<%= yeoman.FEEDS %>',
+          REMOTE: '<%= yeoman.REMOTE %>'
         }
       },
       test: {
@@ -423,6 +427,8 @@ module.exports = function (grunt) {
         },
         constants: {
           VIEWS: '<%= yeoman.VIEWS %>',
+          FEEDS: '<%= yeoman.FEEDS %>',
+          REMOTE: '<%= yeoman.REMOTE %>'
         }
       },
       production: {
@@ -432,6 +438,8 @@ module.exports = function (grunt) {
         },
         constants: {
           VIEWS: '<%= yeoman.VIEWS %>',
+          FEEDS: '<%= yeoman.FEEDS %>',
+          REMOTE: '<%= yeoman.REMOTE %>'
         }
       }
     },

@@ -1,0 +1,8 @@
+<h1>{{'FEEDS' | translate}}</h1>
+{{feedList.feeds.title}} - {{feedList.feeds.description}}
+
+<div ng-repeat="feed in feedList.feeds.entries">
+	
+	<div ng-bind-html='feed.content'></div>
+	
+</div>

@@ -20,7 +20,9 @@ angular
     'ngSanitize',
     //Application modules
     'maureillasApp.common',
-    'maureillasApp.feeds'
+    'maureillasApp.feeds',
+    'maureillasApp.push',
+    'maureillasApp.server',
   ])
   .config(function ($routeProvider, $locationProvider, $translateProvider, $translatePartialLoaderProvider, VIEWS) {
 

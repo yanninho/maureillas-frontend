@@ -37,10 +37,10 @@ angular.module('maureillasApp.server')
     } 
 
  	return {
-    create : function(registerId) {
+    register : function(registerId) {
       return registerUser(registerId);
     },
-    delete : function(registerId) {
+    unregister : function(registerId) {
       return unRegisterUser(registerId);
     },
     get : function(registerId) {

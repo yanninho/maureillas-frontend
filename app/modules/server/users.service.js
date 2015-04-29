@@ -8,7 +8,7 @@
  * Factory in the maureillasApp.
  */
 angular.module('maureillasApp.server')
-  .factory('UsersService', function (RestService, URLS, REMOTE, PlatformService) {
+  .factory('UserService', function (RestService, URLS, REMOTE, PlatformService) {
 
     var registerUser = function(registerId) {
       var config = REMOTE.maureillasService.users.createUser;

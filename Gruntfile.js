@@ -24,7 +24,7 @@ module.exports = function (grunt) {
     VIEWS: require('./config.json').VIEWS,
     FEEDS: require('./config.json').FEEDS,
     REMOTE: require('./config.json').REMOTE,
-    URLS: require('./urls.json').URLS,
+    URLS: require('./config.json').URLS,
   };
 
   // Define the configuration for all the tasks

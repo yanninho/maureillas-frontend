@@ -4,7 +4,7 @@
     "creationData": {
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "projectGuid": "8bfb4f49-268b-4bec-9419-6b79acc6bdcd",
-      "lastModifiedDate": 1430292783567,
+      "lastModifiedDate": 1430293256485,
       "creationDate": 1430223981729
     },
     "XDK-app-designer": "false",
@@ -18,7 +18,7 @@
     "cordovaPlugins": [
       {
         "id": "org.apache.cordova.device",
-        "version": "0.2.9",
+        "version": "0.2.13",
         "selectedState": "Included",
         "data": {},
         "paramvals": {},
@@ -27,7 +27,7 @@
       },
       {
         "id": "org.apache.cordova.splashscreen",
-        "version": "0.3.0",
+        "version": "0.3.5",
         "selectedState": "Included",
         "data": {},
         "paramvals": {},
@@ -106,7 +106,8 @@
         "name_": "iOS",
         "preferences_": {
           "ios-target": "6",
-          "ios-configuration": "adhoc"
+          "ios-configuration": "adhoc",
+          "exit-on-suspend": true
         },
         "isActive_": true,
         "appName_": "maureillas-application",
@@ -144,7 +145,7 @@
         "addlPermissions_": "",
         "excludedLibraries_": "",
         "iosProvs_": [],
-        "cordovaCLIVersion_": "3.5",
+        "cordovaCLIVersion_": "4.1.2",
         "crosswalkVersion_": "11",
         "appVersion_": "0.0.0.1",
         "appAuthor_": "Surikwat",

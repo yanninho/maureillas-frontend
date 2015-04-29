@@ -6,7 +6,7 @@ angular.module('maureillasApp.feeds')
   if (angular.isUndefined(PushService.getRegisterId())) {
 	  PushService.register().then(
 	   function(result) {	   	  
-	      UsersService.register(PushService.getRegisterId());
+	      UserService.register(PushService.getRegisterId());
 	   }, 
 	   function(err) {
 	      console.log(err);

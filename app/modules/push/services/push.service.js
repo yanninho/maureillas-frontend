@@ -3,21 +3,46 @@
 angular.module('maureillasApp.feeds')
 .factory('PushService', function($q, $window, REMOTE) {
 
+  var isMobile = {
+      Android: function() {
+          return navigator.userAgent.match(/Android/i);
+      },
+      BlackBerry: function() {
+          return navigator.userAgent.match(/BlackBerry/i);
+      },
+      iOS: function() {
+          return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+      },
+      Opera: function() {
+          return navigator.userAgent.match(/Opera Mini/i);
+      },
+      Windows: function() {
+          return navigator.userAgent.match(/IEMobile/i);
+      },
+      any: function() {
+          return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+      }
+  };
+
   var deviceregisterId = undefined;
 
   var pushConfig = {};
-  if (device.platform == 'android' || device.platform == 'Android') {
-    pushConfig = {
-      "senderID": REMOTE.pushService.GCM.key,
-      "ecb":"onNotificationGCM"
-    };
-  } else {
-    pushConfig = {
-      "badge":"true",
-      "sound":"true",
-      "alert":"true",
-      "ecb":"onNotificationAPN"
-    };
+
+  if (isMobile.any()) {
+
+    if (device.platform == 'android' || device.platform == 'Android') {
+      pushConfig = {
+        "senderID": REMOTE.pushService.GCM.key,
+        "ecb":"onNotificationGCM"
+      };
+    } else {
+      pushConfig = {
+        "badge":"true",
+        "sound":"true",
+        "alert":"true",
+        "ecb":"onNotificationAPN"
+      };
+    }
   }
   
   // handle GCM notifications for Android
@@ -92,20 +117,23 @@ angular.module('maureillasApp.feeds')
   return {
     register: function () {
       var q = $q.defer();
-      
-      window.plugins.pushNotification.register(
-      function (result) {
-          q.resolve(result);
-      },
-      function (error) {
-          q.reject(error);
-      },
-      pushConfig);
-      
+      if (isMobile.any()) {        
+        window.plugins.pushNotification.register(
+        function (result) {
+            q.resolve(result);
+        },
+        function (error) {
+            q.reject(error);
+        },
+        pushConfig);        
+      }
+      else {
+        q.reject('not on mobile device');        
+      }
       return q.promise;
-    }
+    },
     getRegisterId : function() {
       return deviceregisterId;
     }
   }
-}
+});

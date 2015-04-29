@@ -4,11 +4,11 @@
     "creationData": {
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "projectGuid": "8bfb4f49-268b-4bec-9419-6b79acc6bdcd",
-      "lastModifiedDate": 1430223981847,
+      "lastModifiedDate": 1430292783567,
       "creationDate": 1430223981729
     },
     "XDK-app-designer": "false",
-    "sourceDirectory": "www",
+    "sourceDirectory": "dist",
     "startFile": "index.html",
     "projectFiles": {},
     "projectDirectories": {},
@@ -18,7 +18,7 @@
     "cordovaPlugins": [
       {
         "id": "org.apache.cordova.device",
-        "version": "0.2.13",
+        "version": "0.2.9",
         "selectedState": "Included",
         "data": {},
         "paramvals": {},
@@ -27,12 +27,26 @@
       },
       {
         "id": "org.apache.cordova.splashscreen",
-        "version": "0.3.5",
+        "version": "0.3.0",
         "selectedState": "Included",
         "data": {},
         "paramvals": {},
         "dependsOn": [],
         "dependedBy": []
+      },
+      {
+        "id": "com.phonegap.plugins.PushPlugun",
+        "version": "",
+        "selectedState": "Included",
+        "data": {},
+        "paramvals": {},
+        "dependsOn": [],
+        "dependedBy": [],
+        "custom": "true",
+        "name": "PushPlugin",
+        "origin": "https://github.com/phonegap-build/PushPlugin.git",
+        "originType": "repo",
+        "sourceLocation": ""
       }
     ],
     "buildConfigurations": {
@@ -47,18 +61,18 @@
         },
         "isActive_": true,
         "appName_": "maureillas-application",
-        "appID_": "xdk.intel.blank.template",
+        "appID_": "com.maureillas",
         "appAccess_": [],
         "icons_": [],
         "splashes_": [],
-        "addlPermissions_": "",
+        "addlPermissions_": "com.google.android.c2dm.permission.RECEIVE;android.permission.INTERNET;android.permission.GET_ACCOUNTS;android.permission.WAKE_LOCK;com.yannsm.permission.C2D_MESSAGE",
         "excludedLibraries_": "",
         "iosProvs_": [],
         "cordovaCLIVersion_": "4.1.2",
         "crosswalkVersion_": "11",
         "appVersion_": "0.0.1",
-        "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection.",
-        "appAuthor_": "Intel XDK",
+        "appDescription_": "Application mobile de la mairie de Maurillas",
+        "appAuthor_": "Surikwat",
         "appVersionCode_": "1"
       },
       "Android-Crosswalk": {
@@ -70,7 +84,7 @@
           "android-targetSdkVersion": "19",
           "android-installLocation": "auto"
         },
-        "isActive_": true,
+        "isActive_": false,
         "appName_": "maureillas-application",
         "appID_": "xdk.intel.blank.template.crosswalk",
         "appAccess_": [],
@@ -96,7 +110,7 @@
         },
         "isActive_": true,
         "appName_": "maureillas-application",
-        "appID_": "xdk.intel.blank.template",
+        "appID_": "com.maureillas",
         "appAccess_": [],
         "icons_": [],
         "splashes_": [],
@@ -106,8 +120,8 @@
         "cordovaCLIVersion_": "4.1.2",
         "crosswalkVersion_": "11",
         "appVersion_": "0.0.1",
-        "appAuthor_": "Intel XDK",
-        "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection."
+        "appAuthor_": "Surikwat",
+        "appDescription_": "Application mobile de la mairie de Maurillas"
       },
       "Windows8": {
         "platform_": "windows8",
@@ -119,18 +133,22 @@
         },
         "isActive_": true,
         "appName_": "maureillas-application",
-        "appID_": "xdk.intel.blank.template",
-        "appAccess_": [],
+        "appID_": "com.maureillas",
+        "appAccess_": [
+          {
+            "origin": "*"
+          }
+        ],
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
         "iosProvs_": [],
-        "cordovaCLIVersion_": "4.1.2",
+        "cordovaCLIVersion_": "3.5",
         "crosswalkVersion_": "11",
         "appVersion_": "0.0.0.1",
-        "appAuthor_": "Intel XDK",
-        "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection."
+        "appAuthor_": "Surikwat",
+        "appDescription_": "Application mobile de la mairie de Maurillas"
       },
       "WebApp": {
         "platform_": "webapp",

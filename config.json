@@ -46,19 +46,19 @@
 		"maureillasService" : {
 			"users" : {
 				"createUser" : {
-					"url" : "/users/{ID}/{PLATFORM}",
+					"url" : "/v1/users/{ID}/{PLATFORM}",
 					"method" : "PUT"
 				},
 				"deleteUser" : {
-					"url" : "/users/{ID}",
+					"url" : "/v1/users/{ID}",
 					"method" : "DELETE"
 				},
 				"getUser" : {
-					"url" : "/users/{ID}",
+					"url" : "/v1/users/{ID}",
 					"method" : "GET"
 				},
 				"updateUser" : {
-					"url" : "/users/{ID}",
+					"url" : "/v1/users/{ID}",
 					"method" : "POST"
 				}
 			}
@@ -72,7 +72,7 @@
         "urlBackend" : "http://localhost:49162"
       },
       "PRODUCTION": {
-        "urlBackend" : "http://?"
+        "urlBackend" : "http://key:dvZ3UA6BqgUsLrP82Kj5bDCu6jcsDZ35@maureillas.herokuapp.com"
       }
     }		
 }

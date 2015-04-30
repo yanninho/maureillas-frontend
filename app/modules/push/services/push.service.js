@@ -24,7 +24,9 @@ angular.module('maureillasApp.feeds')
       }
   };
 
-  var deviceregisterId = undefined;
+  var data = {
+      deviceregisterId : undefined
+   };
 
   var pushConfig = {};
 
@@ -53,9 +55,10 @@ angular.module('maureillasApp.feeds')
           // Your GCM push server needs to know the regID before it can push to this device
           // here is where you might want to send it the regID for later use.
           console.log("regID = " + event.regid);
+          alert("regID = " + event.regid);
 
           //send device reg id to server
-          deviceregisterId = event.regid;
+          data.deviceregisterId = event.regid;
 
         }
         break;
@@ -132,8 +135,8 @@ angular.module('maureillasApp.feeds')
       }
       return q.promise;
     },
-    getRegisterId : function() {
-      return deviceregisterId;
+    getData : function() {
+      return data;
     }
   }
 });

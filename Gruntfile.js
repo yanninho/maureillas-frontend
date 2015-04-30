@@ -376,6 +376,7 @@ module.exports = function (grunt) {
             '**/i18n/*.json',
             'images/{,*/}*.{webp}',
             'styles/fonts/{,*/}*.*',
+            'init-*.js'
           ]
         }, {
           expand: true,

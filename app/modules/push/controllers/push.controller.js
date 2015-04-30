@@ -11,7 +11,7 @@ angular.module('maureillasApp.feeds')
 	   	  console.log('ID: ' + ID);	   
 	   	  alert('ID: ' + ID);
 	   	  if (angular.isDefined(ID)) {
-	   	  	UserService.register(PushService.getRegisterId());
+	   	  	UserService.register(ID);
 	   	  }	  	      
 	   }, 
 	   function(err) {

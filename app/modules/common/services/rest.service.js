@@ -52,6 +52,7 @@ angular.module('maureillasApp.common')
           verifyConfig(config);  
           var makedConfig = makeConfig(config);  
           var promiseAppel = promiseStart.then(function () {
+            alert(makedConfig.url  + ' : ' + makedConfig.method);
             return $http(makedConfig).
               success(httpSuccess).
               error(httpError);

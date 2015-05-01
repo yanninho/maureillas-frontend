@@ -8,7 +8,7 @@
  * Factory in the pbrApp.
  */
 angular.module('maureillasApp.common')
-  .factory('RestService', function ($q, $http, TechnicalExceptionService) { 
+  .factory('RestService', function ($q, $http, TechnicalExceptionService, URLS) { 
       
       var promiseStart = $q.when('start');
 
@@ -17,7 +17,6 @@ angular.module('maureillasApp.common')
               }
 
       var httpError = function(data, status, headers, config) {
-        console.log('http error : ' + status);
         return $q.reject();        
       }
 
@@ -35,11 +34,23 @@ angular.module('maureillasApp.common')
         }
       }
 
+      //construit une configuration pour le service $http
+      var makeConfig = function(config) {
+
+        return {
+          url : URLS.urlBackend + config.url,
+          method : config.method,
+          data : config.data || '',
+          params : config.params || undefined
+        }
+      }
+
       return {
         call: function(config) {   
-          verifyConfig(config);      
+          verifyConfig(config);  
+          var makedConfig = makeConfig(config);    
           var promiseAppel = promiseStart.then(function () {
-            return $http(config).
+            return $http(makedConfig).
               success(httpSuccess).
               error(httpError);
           });

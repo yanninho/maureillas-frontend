@@ -1,9 +1,8 @@
 'use strict';
 
 angular.module('maureillasApp.feeds')
-.controller('PushCtrl', function($scope, PushService, UserService) {
-  
-  if (angular.isUndefined(PushService.getRegisterId())) {
+.controller('PushCtrl', function($scope, PushService, UserService) {  
+  if (angular.isUndefined(PushService.getData().deviceregisterId)) {
 	  PushService.register().then(
 	   function(result) {
 	   	 var ID = PushService.getData().deviceregisterId;

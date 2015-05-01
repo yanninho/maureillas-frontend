@@ -3,10 +3,10 @@
 angular.module('maureillasApp.feeds')
 .controller('PushCtrl', function($scope, PushService, UserService) { 
   $scope.data = PushService.getData(); 
-  if (angular.isUndefined(data.deviceregisterId)) {
+  if (angular.isUndefined($scope.data.deviceregisterId)) {
 	  PushService.register().then(
 	   function(result) {
-	   	 var ID = data.deviceregisterId;
+	   	 var ID = $scope.data.deviceregisterId;
 	   	  console.log(result);
 	   	  console.log('ID: ' + ID);	   
 	   	  alert('ID: ' + ID);

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('maureillasApp.feeds')
-.factory('PushService', function($q, $window, REMOTE) {
+.factory('PushService', function($q, $window, REMOTE, UserService) {
 
   var isMobile = {
       Android: function() {
@@ -54,11 +54,9 @@ angular.module('maureillasApp.feeds')
         if (event.regid.length > 0) {
           // Your GCM push server needs to know the regID before it can push to this device
           // here is where you might want to send it the regID for later use.
-          console.log("regID = " + event.regid);
-          alert("regID = " + event.regid);
-
           //send device reg id to server
           data.deviceregisterId = event.regid;
+          UserService.register(ID);
 
         }
         break;

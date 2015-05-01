@@ -17,7 +17,6 @@ angular.module('maureillasApp.common')
               }
 
       var httpError = function(data, status, headers, config) {
-        alert(status);
         return $q.reject();        
       }
 

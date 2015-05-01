@@ -24,6 +24,7 @@ angular.module('maureillasApp.feeds')
   		var config = REMOTE.googleFeedsService;
   		config.params['q'] = urlFeed;
   		config.params['num'] = number;
+      config.backend =true;
   		var promiseGetFeed = RestService.call(config);
   		promiseGetFeed.then(getFeedSuccess);
   	}

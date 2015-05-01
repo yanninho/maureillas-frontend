@@ -39,8 +39,13 @@ angular.module('maureillasApp.common')
       //construit une configuration pour le service $http
       var makeConfig = function(config) {
 
+        var finalUrl  = config.url;
+        if (config.backend) {
+          finalUrl = URLS.urlBackend + config.url;
+        }
+
         return {
-          url : URLS.urlBackend + config.url,
+          url : finalUrl,
           method : config.method,
           data : config.data || '',
           params : config.params || undefined

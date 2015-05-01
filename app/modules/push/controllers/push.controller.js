@@ -5,8 +5,7 @@ angular.module('maureillasApp.feeds')
   $scope.data = PushService.getData(); 
   if (angular.isUndefined($scope.data.deviceregisterId)) {
 	  PushService.register().then(
-	   function(result) {
-	   	alert(result);      
+	   function(result) {   
 	   }, 
 	   function(err) {
 	      console.log(err);

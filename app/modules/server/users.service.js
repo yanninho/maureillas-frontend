@@ -11,9 +11,11 @@ angular.module('maureillasApp.server')
   .factory('UserService', function (RestService, REMOTE, PlatformService) {
 
     var registerUser = function(registerId) {
+      alert('registerUser');
       var config = REMOTE.maureillasService.users.createUser;
       config.url = config.url.replace('{ID}', registerId);
       config.url = config.url.replace('{PLATFORM}', PlatformService.getPlatform());
+      alert('register : ' + config.url + ' , ' + config.method);
       var promiseRegisterUser = RestService.call(config);
     } 
 

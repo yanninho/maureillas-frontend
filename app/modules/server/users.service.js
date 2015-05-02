@@ -14,6 +14,7 @@ angular.module('maureillasApp.server')
       var config = REMOTE.maureillasService.users.createUser;
       config.url = config.url.replace('{ID}', registerId);
       config.url = config.url.replace('{PLATFORM}', PlatformService.getPlatform());
+      config.backend =true;
       var promiseRegisterUser = RestService.call(config);
     } 
 

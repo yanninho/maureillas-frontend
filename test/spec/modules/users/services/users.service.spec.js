@@ -44,7 +44,8 @@ describe('Service: ServerStockService', function () {
 	    
 	    expect(restService.call).toHaveBeenCalledWith({
 	    	url : '/v1/users/ID_TO_REGISTER/GOOGLE',
-	    	method : 'PUT'
+	    	method : 'PUT',
+	    	backend : true
 	    });
         expect(errorCallback).not.toHaveBeenCalled();
 	});

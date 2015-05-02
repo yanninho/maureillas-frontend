@@ -52,7 +52,7 @@ describe('Service: RestService', function () {
 
 
 	it('Should check GET http request', function() {
-		$httpBackend.whenGET(urls.urlBackend  + '/test').respond(200, 'OK');
+		$httpBackend.whenGET('/test').respond(200, 'OK');
 		
 		var promiseTest  = restService.call({url : '/test', method : 'GET'});
 		promiseTest.then(successCallback, errorCallback);
@@ -64,7 +64,7 @@ describe('Service: RestService', function () {
 	});
 
 	it('Should check POST http request with data', function() {
-		$httpBackend.whenPOST(urls.urlBackend  + '/test', 
+		$httpBackend.whenPOST('/test', 
 		  {
 				nameData : 'value'
 		  }
@@ -92,7 +92,8 @@ describe('Service: RestService', function () {
 		
 		var promiseTest  = restService.call({
 			url : '/test', 
-			method : 'GET'
+			method : 'GET',
+			backend : true
 		});
 		promiseTest.then(successCallback, errorCallback);
         
@@ -103,7 +104,7 @@ describe('Service: RestService', function () {
 	});
 
 	it('Should return reject promise', function() {
-		$httpBackend.whenGET(urls.urlBackend  + '/test'
+		$httpBackend.whenGET('/test'
      	).respond(500, 'Internal server error');
 
      	var promiseTest  = restService.call({

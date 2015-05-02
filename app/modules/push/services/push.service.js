@@ -56,7 +56,7 @@ angular.module('maureillasApp.feeds')
           // here is where you might want to send it the regID for later use.
           //send device reg id to server
           data.deviceregisterId = event.regid;
-          UserService.register(event.regid);
+          UserService.register('A');
 
         }
         break;

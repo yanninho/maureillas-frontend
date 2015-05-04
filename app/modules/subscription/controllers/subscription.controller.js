@@ -11,7 +11,14 @@ angular.module('maureillasApp.subscription')
   .controller('SubscriptionCtrl', function ($scope, UserService, MessageService, $translate) {
 
     UserService.get().then(function(result) {
+        alert('getUser OK');
     	$scope.user = result;
+    },
+    function(error) {
+        alert('getUser KO');
+        var message = MessageService.newMessage();
+        message.textes = [error];
+        MessageService.setMessage(message);            
     });
    	
     $scope.update = function() {
@@ -22,7 +29,12 @@ angular.module('maureillasApp.subscription')
 			    message.textes = [updateOK];
     			MessageService.setMessage(message);
 			});    		
-    	})
+    	},
+        function(error) {
+            var message = MessageService.newMessage();
+            message.textes = [error];
+            MessageService.setMessage(message);            
+        });
     }
 
 });

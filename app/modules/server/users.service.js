@@ -25,6 +25,7 @@ angular.module('maureillasApp.server')
       var promiseRegisterUser = RestService.call(config);
       promiseRegisterUser.then(function(result) {
         $cookies.registerID = registerId;
+        getUser();
       });
     } 
 

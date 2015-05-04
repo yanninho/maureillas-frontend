@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Service: ServerStockService', function () {
+describe('Service: UserService', function () {
 
 	var userService,
 		successCallback,
@@ -25,13 +25,6 @@ describe('Service: ServerStockService', function () {
 	    spyOn(platformService, "getPlatform").and.callFake(function() {
 	    	return 'GOOGLE';
 	    });         
-
-	    spyOn(restService, "call").and.callFake(function() {
-	    	var deferred = $q.defer();
-	    	deferred.resolve({ result : 'OK' });
-	    	return deferred.promise;
-	    });
-
 	}))
    
 	afterEach(function() {
@@ -39,6 +32,11 @@ describe('Service: ServerStockService', function () {
 	});
 
 	it('Should create a new user with ID from system messaging', function() {
+	    spyOn(restService, "call").and.callFake(function() {
+	    	var deferred = $q.defer();
+	    	deferred.resolve({ result : 'OK' });
+	    	return deferred.promise;
+	    });
 
 	    userService.register('ID_TO_REGISTER');
 	    
@@ -49,4 +47,33 @@ describe('Service: ServerStockService', function () {
 	    });
         expect(errorCallback).not.toHaveBeenCalled();
 	});
+
+	it('Should get a user by ID', function() {		
+	    spyOn(restService, "call").and.callFake(function() {
+	    	var deferred = $q.defer();
+	    	deferred.resolve({ 
+	    		'active' : true,  
+	    		'feeds' : [
+	    			{'agenda' : true}
+	    		]
+	    	});
+	    	return deferred.promise;
+	    });
+
+	    var promiseGetUser = userService.get('ID_TO_REGISTER');
+	    promiseGetUser.then(function(result){
+	    	expect.exist(result.info);
+	    	expect(result.info.active).toBeEqual(true);
+	    })
+	    
+	    expect(restService.call).toHaveBeenCalledWith({
+	    	url : '/v1/users/ID_TO_REGISTER',
+	    	method : 'GET',
+	    	backend : true
+	    });
+        expect(errorCallback).not.toHaveBeenCalled();
+
+
+	});
+
 });

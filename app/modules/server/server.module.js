@@ -5,4 +5,4 @@
  * @name 
  * @description 
  */
- angular.module('maureillasApp.server',['maureillasApp.common']);
+ angular.module('maureillasApp.server',['maureillasApp.common', 'ngCookies']);

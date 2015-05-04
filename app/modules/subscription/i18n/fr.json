@@ -1,0 +1,7 @@
+{
+	"subscription" : {
+		"CHOOSE_SUBSCRIPTION" : "Choisissez vos abonnements",
+		"RECEIVE_INFOS" : "Vous recevrez des alertes pour les flux pour lesquels vous êtes abonné.",
+		"UPDATE_OK" : "Vos abonnements ont été mis à jour."
+	}
+}

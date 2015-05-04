@@ -21,10 +21,12 @@
                 'pascalprecht.translate',
                 'ngSanitize',
                 //Application modules
+                'maureillasApp.main',
                 'maureillasApp.common',
                 'maureillasApp.feeds',
                 'maureillasApp.push',
-                'maureillasApp.server'
+                'maureillasApp.server',
+                'maureillasApp.subscription'
             ]);
 
 

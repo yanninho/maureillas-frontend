@@ -13,12 +13,10 @@ angular.module('maureillasApp.common')
       var promiseStart = $q.when('start');
 
       var httpSuccess = function(data, status, headers, config) {
-        alert('success : ' + status);
         return data;
       }
 
       var httpError = function(data, status, headers, config) {
-        alert('error : ' + status);
         return $q.reject();        
       }
 
@@ -55,9 +53,8 @@ angular.module('maureillasApp.common')
       return {
         call: function(config) {   
           verifyConfig(config);  
-          var makedConfig = makeConfig(config);  
+          var makedConfig = makeConfig(config);            
           var promiseAppel = promiseStart.then(function () {
-            alert(makedConfig.url  + ' : ' + makedConfig.method);
             return $http(makedConfig).
               success(httpSuccess).
               error(httpError);

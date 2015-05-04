@@ -9,8 +9,30 @@
  *
  * Main module of the application.
  */
+// @if NODE_ENV='DEVELOPMENT' 
+angular
+  .module('maureillasApp', [
+                'ngCookies',
+                'ngMessages',
+                'ngResource',
+                'ngRoute',
+                'ngAnimate',
+                'ngTouch',
+                'pascalprecht.translate',
+                'ngSanitize',
+                //Application modules
+                'maureillasApp.common',
+                'maureillasApp.main',
+                'maureillasApp.feeds',
+                'maureillasApp.push',
+                'maureillasApp.server',
+                'maureillasApp.subscription'
+            ])
+// @endif  
+// @if NODE_ENV='PRODUCTION' 
 angular
   .module('maureillasApp')
+// @endif  
   .config(function ($httpProvider, $routeProvider, $locationProvider, $translateProvider, $translatePartialLoaderProvider, VIEWS) {
     $httpProvider.defaults.withCredentials = true;
     // les routes (views.json)

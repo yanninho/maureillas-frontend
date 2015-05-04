@@ -19,6 +19,19 @@
 			          "controller": "FeedsCtrl"					
 				}
 			}
+		},
+		"subscription" : {
+			"definition" : {
+				"path" : "subscription"
+			},
+			"pages" : {
+				"subscription" : {
+					  "label" : "navigation.SUBSCRIPTION",	
+			          "path": "/subscription",
+			          "templateHtml": "subscription.html",
+			          "controller": "SubscriptionCtrl"					
+				}
+			}			
 		}
 	},
 	"FEEDS": {
@@ -61,18 +74,24 @@
 					"url" : "/v1/users/{ID}",
 					"method" : "POST"
 				}
+			},
+			"feeds" : {
+				"getAll" : {
+					"url" : "/v1/feeds",
+					"method" : "GET"					
+				}
 			}
 		}
 	},
 	"URLS": {
       "DEVELOPMENT": {
-        "urlBackend" : "http://localhost:49162"
+        "urlBackend" : "http://127.0.0.1:49156"
       },
       "TEST": {
-        "urlBackend" : "http://localhost:49162"
+        "urlBackend" : "http://localhost:49156"
       },
       "PRODUCTION": {
-        "urlBackend" : "http://key:dvZ3UA6BqgUsLrP82Kj5bDCu6jcsDZ35@maureillas.herokuapp.com"
+        "urlBackend" : "http://maureillas.herokuapp.com"
       }
     }		
 }

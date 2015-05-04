@@ -464,8 +464,32 @@ module.exports = function (grunt) {
           to: 'url(/' + context + '/images'
         }]
       }
+    },
+    preprocess : {
+      options: {
+        context : {
+          DEBUG: true
+        }
+      },
+      html : {
+        src : 'templates/index.template.html',
+        dest : 'app/index.html'
+      },
+      js : {
+        src : 'templates/app.template.js',
+        dest : 'app/app.js'
+      }
+    },    
+    env : {
+        options : {
+        },
+        dev: {
+            NODE_ENV : 'DEVELOPMENT'
+        },
+        prod : {
+            NODE_ENV : 'PRODUCTION'
+        }
     }
-
   });
 
 
@@ -476,6 +500,8 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
+      'env:dev',
+      'preprocess',
       'ngconstant:development',
       'wiredep',
       'concurrent:server',
@@ -514,6 +540,8 @@ module.exports = function (grunt) {
 
   grunt.registerTask('buildAll', [
       'clean:dist',
+      'env:prod',
+      'preprocess',
       'wiredep',
       'useminPrepare',
       'concurrent:dist',

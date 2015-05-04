@@ -1,9 +1,8 @@
 'use strict';
 
 angular.module('maureillasApp.common')
-.factory('$exceptionHandler', function() {
+.factory('$exceptionHandler', function(MessageService) {
   return function(exception, cause) {
-  	alert(exception.message);
-    console.log(exception.message);
+  		MessageService.setMessage(exception);
   };
 });

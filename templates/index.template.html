@@ -27,7 +27,14 @@
 
   </head>
 
+   <!-- @if NODE_ENV='PRODUCTION' -->
   <body ng-controller="PushCtrl"> 
+  <!-- @endif -->
+
+   <!-- @if NODE_ENV='DEVELOPMENT' -->
+  <body ng-app="maureillasApp" ng-controller="PushCtrl"> 
+  <!-- @endif -->
+
     <!--[if lt IE 9]>
       <p class="browsehappy">Vous utilisez un navigateur <strong>obsolète</strong>. Merci de <a href="http://browsehappy.com/">mettre à jour votre navigateur</a>.</p>
     <![endif]-->
@@ -73,6 +80,7 @@
     <!-- endbower -->
     <!-- endbuild -->
 
+    <!-- @if NODE_ENV='PRODUCTION' -->
         <script src="intelxdk.js"></script>
         <!-- phantom library, needed for Intel XDK "legacy" container api calls -->
         <script src="cordova.js"></script>
@@ -89,6 +97,8 @@
         
         <!-- Cordova push plugin -->
         <script type="text/javascript" charset="utf-8" src="PushNotification.js"></script>
+    <!-- @endif -->
+
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
             <script src="app.js"></script>
             

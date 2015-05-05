@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('maureillasApp.feeds')
-.factory('PushService', function($q, $window, REMOTE, UserService) {
+.factory('PushService', function($q, $window, REMOTE, $cookies) {
 
   var isMobile = {
       Android: function() {
@@ -23,10 +23,6 @@ angular.module('maureillasApp.feeds')
           return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
       }
   };
-
-  var data = {
-      deviceregisterId : undefined
-   };
 
   var pushConfig = {};
 
@@ -55,9 +51,7 @@ angular.module('maureillasApp.feeds')
           // Your GCM push server needs to know the regID before it can push to this device
           // here is where you might want to send it the regID for later use.
           //send device reg id to server
-          data.deviceregisterId = event.regid;
-          UserService.register(event.regid);
-
+          $cookies.registerID = event.regid;
         }
         break;
 
@@ -132,9 +126,6 @@ angular.module('maureillasApp.feeds')
         q.reject('not on mobile device');        
       }
       return q.promise;
-    },
-    getData : function() {
-      return data;
     }
   }
 });

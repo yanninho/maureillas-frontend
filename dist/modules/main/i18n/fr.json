@@ -1,5 +1,14 @@
 {
 	"navigation" : {
-		"SUBSCRIPTION" : "Abonnements aux notifications"
+		"SUBSCRIPTION" : "Abonnements aux notifications",
+		"EVENTS" : "Evenements",
+		"NEWS" : "Annonces",
+		"NETWORK_OK" : "Connexion réseau à nouveau disponible, vous pouvez reprendre la navigation"
+	},
+	"networkError" : {
+		"message" : "Aucune connexion réseau ! Cette application a besoin d'une connexion réseau pour fonctionner"
+	},
+	"home" : {
+		"message" : "Bienvenue sur l'application de la mairie de Maureillas"
 	}
 }

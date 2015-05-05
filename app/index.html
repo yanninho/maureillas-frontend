@@ -27,7 +27,7 @@
 
   </head>
 
-  <body ng-controller="PushCtrl"> 
+  <body> 
     <!--[if lt IE 9]>
       <p class="browsehappy">Vous utilisez un navigateur <strong>obsolète</strong>. Merci de <a href="http://browsehappy.com/">mettre à jour votre navigateur</a>.</p>
     <![endif]-->
@@ -36,7 +36,8 @@
     <!--[if gt IE 8]>
     <loading-widget>Chargement en cours...</loading-widget>
     <![endif]-->
-    <header class="header" >       
+    <div ng-controller="PushCtrl"></div>
+    <header class="header" ng-controller="NavigationCtrl">       
         <ul>
             <li>
                 <a href="#/subscription">{{'navigation.SUBSCRIPTION' | translate}}</a>
@@ -48,16 +49,14 @@
                 Annonces : <a href="#/feeds?feed=annonces">Afficher</a>
             </li>
         </ul>
-    </header>
-    <div class="view view-animate" ng-view=""></div>
-    <div ng-controller="MainCtrl">
         <div class="alert"  ng-class="data.message.type" ng-show="data.message.textes">
             <div ng-repeat="texte in data.message.textes">
                 <pre ng-show="data.message.json">{{texte | json}}</pre>
                 <p ng-show="!data.message.json">{{texte}}</p>
             </div>
         </div>
-    </div> 
+    </header>
+    <div class="view view-animate" ng-view=""></div>
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
@@ -97,13 +96,17 @@
                 <!-- services -->            
                                     
                 <!-- controllers -->           
-                <script src="modules/main/controllers/main.controller.js"></script>                     
+                <script src="modules/main/controllers/home.controller.js"></script>                     
+                <script src="modules/main/controllers/navigation.controller.js"></script>                     
+                <script src="modules/main/controllers/networkError.controller.js"></script>                     
             <!-- fin module feeds -->
                 
             <!-- module common -->
                 <script src="modules/common/common.module.js"></script>
                 <!-- services -->            
                 <script src="modules/common/services/rest.service.js"></script>           
+                <script src="modules/common/services/device.service.js"></script>           
+                <script src="modules/common/services/network.service.js"></script>           
                 <script src="modules/common/services/technicalException.service.js"></script>           
                 <script src="modules/common/services/exceptionHandlerOverride.service.js"></script>           
                 <script src="modules/common/services/config.service.js"></script>  

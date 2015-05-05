@@ -8,6 +8,6 @@
  * Controller of the maureillasApp
  */
 angular.module('maureillasApp.main')
-  .controller('MainCtrl', function ($scope, MessageService) {
-  	$scope.data = MessageService.getData();
+  .controller('NetworkErrorCtrl', function ($scope) {
+
 });

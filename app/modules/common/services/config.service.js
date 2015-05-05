@@ -1,6 +1,6 @@
 angular.module('maureillasApp.common')
 
-.constant('VIEWS', {feeds:{definition:{path:'feeds'},pages:{agenda:{label:'navigation.AGENDA',path:'/feeds',templateHtml:'feeds.html',controller:'FeedsCtrl'},annonces:{label:'navigation.ANNONCES',path:'/feeds',templateHtml:'feeds.html',controller:'FeedsCtrl'}}},subscription:{definition:{path:'subscription'},pages:{subscription:{label:'navigation.SUBSCRIPTION',path:'/subscription',templateHtml:'subscription.html',controller:'SubscriptionCtrl'}}}})
+.constant('VIEWS', {feeds:{definition:{path:'feeds'},pages:{agenda:{label:'navigation.AGENDA',path:'/feeds',templateHtml:'feeds.html',controller:'FeedsCtrl'},annonces:{label:'navigation.ANNONCES',path:'/feeds',templateHtml:'feeds.html',controller:'FeedsCtrl'}}},subscription:{definition:{path:'subscription'},pages:{subscription:{label:'navigation.SUBSCRIPTION',path:'/subscription',templateHtml:'subscription.html',controller:'SubscriptionCtrl'}}},main:{definition:{path:'main'},pages:{home:{label:'navigation.HOME',path:'/home',templateHtml:'home.html',controller:'HomeCtrl'},networkError:{label:'navigation.NETWORK_ERROR',path:'/networkError',templateHtml:'networkError.html',controller:'NetworkErrorCtrl'}}}})
 
 .constant('FEEDS', {agenda:{url:'http://maureillas.surikwat.com/evenements/feed/'},annonces:{url:'http://maureillas.surikwat.com/category/annonces/feed/'}})
 

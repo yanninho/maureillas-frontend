@@ -40,7 +40,19 @@ angular
       angular.forEach(module.pages, function(page, view) {
         $routeProvider.when(page.path, {
           templateUrl: 'modules/' + keyModule + '/views/'+ page.templateHtml,
-          controller: page.controller          
+          controller: page.controller,
+          resolve : {
+            'network' : function(NetworkService, DeviceService) { 
+              if (page.label != VIEWS.main.pages.networkError.label && DeviceService.isMobile())  {
+                // network error
+                if (!NetworkService.networkConnectionExist()) {   
+                  $location.path(VIEWS.main.pages.networkError.path);
+                  return false;
+                }                 
+              }              
+              return true;
+            }            
+          }          
         })
       })
     });

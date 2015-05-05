@@ -1,32 +1,11 @@
 'use strict';
 
-angular.module('maureillasApp.feeds')
-.factory('PushService', function($q, $window, REMOTE, $cookies) {
-
-  var isMobile = {
-      Android: function() {
-          return navigator.userAgent.match(/Android/i);
-      },
-      BlackBerry: function() {
-          return navigator.userAgent.match(/BlackBerry/i);
-      },
-      iOS: function() {
-          return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-      },
-      Opera: function() {
-          return navigator.userAgent.match(/Opera Mini/i);
-      },
-      Windows: function() {
-          return navigator.userAgent.match(/IEMobile/i);
-      },
-      any: function() {
-          return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-      }
-  };
+angular.module('maureillasApp.push')
+.factory('PushService', function($q, $window, REMOTE, $cookies, DeviceService) {
 
   var pushConfig = {};
 
-  if (isMobile.any()) {
+  if (DeviceService.isMobile()) {
 
     if (device.platform == 'android' || device.platform == 'Android') {
       pushConfig = {
@@ -112,7 +91,7 @@ angular.module('maureillasApp.feeds')
   return {
     register: function () {
       var q = $q.defer();
-      if (isMobile.any()) {        
+      if (DeviceService.isMobile()) {        
         window.plugins.pushNotification.register(
         function (result) {
             q.resolve(result);

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('maureillasApp.feeds')
+angular.module('maureillasApp.push')
 .controller('PushCtrl', function($scope, $cookies, PushService, UserService) { 
   // 1 - get id from cookie
   var ID = $cookies.registerID;
@@ -26,13 +26,6 @@ angular.module('maureillasApp.feeds')
 	   function(err) {
 	      console.log(err);
 	   });  	
-  }
-
-
-
-  $scope.data = PushService.getData(); 
-  if (angular.isUndefined($scope.data.deviceregisterId)) {
-  	
   }
 
  });

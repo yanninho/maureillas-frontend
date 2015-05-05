@@ -55,7 +55,7 @@ angular.module('maureillasApp.server')
     var updateUser = function() {
       var config = REMOTE.maureillasService.users.updateUser;
       var registerId = $cookies.registerID;
-      config.url = config.url.replace('{ID}', registerId);
+      config.url = config.url.replace('{ID}', user.info._id);
       config.data = {
         feeds : user.info.feeds
       };

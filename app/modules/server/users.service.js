@@ -14,9 +14,6 @@ angular.module('maureillasApp.server')
       info : undefined
     }
 
-    $cookies.registerID = 'APA91bFhAvNWQCNPdVHP6vOyv_IdQ4FBKeYe0VEUeXUeYjFqxwuDLKfWnNWPGVmHvNeW-0HWw68LW0vaO6CATGWkYVwuZgQ58BJGXxG3ikn1TpPNLXw6O2KDygsxbNOYyVelS5aXQB5gfisMa0yNOspSML4xFxupGA';
-
-
     var registerUser = function(registerId) {
       var config = REMOTE.maureillasService.users.createUser;
       config.url = config.url.replace('{ID}', registerId);

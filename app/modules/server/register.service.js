@@ -8,7 +8,7 @@
  * Factory in the maureillasApp.
  */
 angular.module('maureillasApp.server')
-  .factory('RegisterService', function ($q, $cookies, UserService, PushService, DeviceService) {
+  .factory('RegisterService', function ($q, UserService, PushService, DeviceService) {
 
 
     var successGetUser = function(result) {
@@ -16,7 +16,7 @@ angular.module('maureillasApp.server')
     }
 
     var getUser = function() {
-        var ID = $cookies.registerID; 
+        var ID = UserService.getRegisterID(); 
         var promiseGetUser = UserService.get();
         return promiseGetUser.then(successGetUser, function(error) {
             alert(error);
@@ -47,7 +47,7 @@ angular.module('maureillasApp.server')
             if (DeviceService.isMobile()) { 
                 alert('mobile');
               // 1 - get id from cookie
-              var ID = $cookies.registerID;     
+              var ID = UserService.getRegisterID();     
               // 2a - cookie exist = getUser()
               if (angular.isDefined(ID)) {
                 alert('defined ID : ' + ID);

@@ -15,14 +15,6 @@ angular.module('maureillasApp.server')
       info : undefined
     }
 
-    var getRegisterID = function() {
-      return user.registerID;
-    }
-
-    var setRegisterID = function(id) {
-      user.registerID = id;
-    }
-
     var registerUser = function(registerId) {
       var config = REMOTE.maureillasService.users.createUser;
       config.url = config.url.replace('{ID}', registerId);
@@ -30,7 +22,7 @@ angular.module('maureillasApp.server')
       config.backend =true;
       var promiseRegisterUser = RestService.call(config);
       return promiseRegisterUser.then(function(result) {
-        setRegisterID(registerId);
+        user.registerID = registerId;
         return getUser();
       });
     } 
@@ -42,7 +34,7 @@ angular.module('maureillasApp.server')
         return deferred.promise;        
       }
       else {
-        var registerId = getRegisterID();
+        var registerId = user.registerID;
         var config = REMOTE.maureillasService.users.getUser;
         config.url = config.url.replace('{ID}', registerId);
         config.backend =true;
@@ -56,7 +48,7 @@ angular.module('maureillasApp.server')
 
     var updateUser = function() {
       var config = REMOTE.maureillasService.users.updateUser;
-      var registerId = getRegisterID();
+      var registerId = user.registerID;
       config.url = config.url.replace('{ID}', user.info._id);
       config.data = {
         feeds : user.info.feeds
@@ -81,16 +73,16 @@ angular.module('maureillasApp.server')
           return result;
         }, function(error, status) {
            if (status == '404') {
-            var ID = getRegisterID(); 
+            var ID = user.registerID; 
             return registerUser(ID);
            }
         });
     },
     getRegisterID : function() {
-      return getRegisterID();
+      return user.registerID;
     },
     setRegisterID : function(id) {
-      setRegisterID(id);
+      user.registerID = id;
     }
  	}   
 });

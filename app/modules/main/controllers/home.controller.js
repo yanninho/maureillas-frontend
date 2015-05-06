@@ -8,7 +8,7 @@
  * Controller of the maureillasApp
  */
 angular.module('maureillasApp.main')
-  .controller('HomeCtrl', function ($scope, $cookies, PushService, UserService, DeviceService) {
+  .controller('HomeCtrl', function ($scope, RegisterService) {
 
     RegisterService.registerAndStore().then(function(result) {
         

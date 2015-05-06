@@ -11,13 +11,9 @@ angular.module('maureillasApp.main')
   .controller('NavigationCtrl', function ($scope, MessageService, $location) {
   	$scope.data = MessageService.getData();
 
-	document.addEventListener("offline", onOffline, false);
-
 	function onOffline() {
 	    $location.path(VIEWS.main.pages.networkError.path);
 	}
-
-	document.addEventListener("online", onOnline, false);
 
 	function onOnline() {
         var message = MessageService.newMessage();
@@ -28,5 +24,8 @@ angular.module('maureillasApp.main')
 		}); 		
 	    $location.path(VIEWS.main.pages.home.path);
 	}
+
+	document.addEventListener("offline", onOffline, false);
+	document.addEventListener("online", onOnline, false);
 
 });

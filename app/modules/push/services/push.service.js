@@ -31,6 +31,7 @@ angular.module('maureillasApp.push')
           // here is where you might want to send it the regID for later use.
           //send device reg id to server
           $cookies.registerID = event.regid;
+          alert(event.regid);
         }
         break;
 

@@ -13,6 +13,8 @@ angular.module('maureillasApp.main')
     RegisterService.registerAndStore().then(function(result) {
         
         $scope.user = result;
+    }, function(error) {
+      alert(error);
     });
 
 });

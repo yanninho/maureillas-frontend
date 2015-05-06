@@ -394,6 +394,17 @@ module.exports = function (grunt) {
             '**/*.jpg',
             '**/*.gif'
           ]         
+        }, {
+           expand: true,
+          dot: true,
+          cwd: 'splashScreens',
+          dest: '<%= yeoman.dist %>/splashScreens',
+          src: [
+            '**/*.png',
+            '**/*.jpeg',
+            '**/*.jpg',
+            '**/*.gif'
+          ]         
         }]
       },
       styles: {

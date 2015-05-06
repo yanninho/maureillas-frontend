@@ -8,7 +8,7 @@
  * Factory in the maureillasApp.
  */
 angular.module('maureillasApp.server')
-  .factory('RegisterService', function ($q, UserService, PushService, DeviceService) {
+  .factory('RegisterService', function ($q, $cookies, UserService, PushService, DeviceService) {
 
 
     var successGetUser = function(result) {

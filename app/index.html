@@ -27,7 +27,7 @@
 
   </head>
 
-  <body> 
+  <body ng-app="maureillasApp" class="ng-cloak"> 
     <!--[if lt IE 9]>
       <p class="browsehappy">Vous utilisez un navigateur <strong>obsolète</strong>. Merci de <a href="http://browsehappy.com/">mettre à jour votre navigateur</a>.</p>
     <![endif]-->
@@ -36,7 +36,6 @@
     <!--[if gt IE 8]>
     <loading-widget>Chargement en cours...</loading-widget>
     <![endif]-->
-    <div ng-controller="PushCtrl"></div>
     <header class="header" ng-controller="NavigationCtrl">       
         <ul>
             <li>
@@ -72,22 +71,6 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <script src="intelxdk.js"></script>
-        <!-- phantom library, needed for Intel XDK "legacy" container api calls -->
-        <script src="cordova.js"></script>
-        <!-- phantom library, needed for Cordova api calls -->
-        <script src="xhr.js"></script>
-        <!-- phantom library, needed for Intel XDK "legacy" container CORS -->
-
-       
-        <!-- for your event code, see README and file comments for details -->
-        <script src="init-app.js"></script>
-        <!-- for your init code, see README and file comments for details -->
-        <script src="init-dev.js"></script>
-        <!-- normalizes device and document ready events, see file for details -->
-        
-        <!-- Cordova push plugin -->
-        <script type="text/javascript" charset="utf-8" src="PushNotification.js"></script>
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
             <script src="app.js"></script>
             
@@ -136,13 +119,14 @@
                 <!-- services -->            
                 <script src="modules/push/services/push.service.js"></script>                     
                 <!-- controllers -->           
-                <script src="modules/push/controllers/push.controller.js"></script>                     
+                                   
             <!-- fin module push -->
            
             <!-- module server -->
                 <script src="modules/server/server.module.js"></script>
                 <!-- services -->            
                 <script src="modules/server/users.service.js"></script>                                         
+                <script src="modules/server/register.service.js"></script>                                         
                 <script src="modules/server/platforms.service.js"></script>                                         
             <!-- fin module server -->
 

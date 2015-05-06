@@ -21,18 +21,19 @@ angular.module('maureillasApp.feeds')
   	} 
 
   	var getFeeds = function(urlFeed, number) {
+      model.feeds = {};
   		var config = REMOTE.googleFeedsService;
   		config.params['q'] = urlFeed;
   		config.params['num'] = number;
   		var promiseGetFeed = RestService.call(config);
-  		promiseGetFeed.then(getFeedSuccess);
+  		return promiseGetFeed.then(getFeedSuccess);
   	}
 
 
  	return {
  		get : model,
-  		fetchFeeds : function(url, number) {
-  			getFeeds(url, number);
-  		}
+  	fetchFeeds : function(url, number) {
+  			return getFeeds(url, number);
+  	}
  	}   
 });

@@ -15,7 +15,12 @@ angular.module('maureillasApp.feeds')
 
     if (!angular.isUndefined(searchUrlObject["feed"])) {
       var feedValue = searchUrlObject["feed"];
-      FeedListService.fetchFeeds(FEEDS[feedValue].url, 10);
+      $scope.loading = true;
+      var promiseFeedList = FeedListService.fetchFeeds(FEEDS[feedValue].url, 10);
+      var resultGetFeeds = function(res) {
+      	$scope.loading = false;
+      }
+      promiseFeedList.then(resultGetFeeds, resultGetFeeds);
     }
 
 });

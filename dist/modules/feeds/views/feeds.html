@@ -1,4 +1,9 @@
 <h1>{{'FEEDS' | translate}}</h1>
+
+<div ng-show="loading">
+	{{'LOADING' | translate}}
+</div>
+
 {{feedList.feeds.title}} - {{feedList.feeds.description}}
 
 <div ng-repeat="feed in feedList.feeds.entries">

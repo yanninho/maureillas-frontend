@@ -12,7 +12,6 @@
 // @if NODE_ENV='DEVELOPMENT' 
 angular
   .module('maureillasApp', [
-                'ngCookies',
                 'ngMessages',
                 'ngResource',
                 'ngRoute',

@@ -12,7 +12,6 @@
         }, false);
 
         var maureillasApp = angular.module('maureillasApp', [
-                'ngCookies',
                 'ngMessages',
                 'ngResource',
                 'ngRoute',

@@ -8,10 +8,19 @@
  * Factory in the maureillasApp.
  */
 angular.module('maureillasApp.server')
-  .factory('UserService', function ($q, RestService, REMOTE, PlatformService, $cookies) {
+  .factory('UserService', function ($q, RestService, REMOTE, PlatformService) {
 
     var user = {
+      registerID : undefined,
       info : undefined
+    }
+
+    var getRegisterID = function() {
+      return user.registerID;
+    }
+
+    var setRegisterID = function(id) {
+      user.registerID = id;
     }
 
     var registerUser = function(registerId) {
@@ -21,7 +30,7 @@ angular.module('maureillasApp.server')
       config.backend =true;
       var promiseRegisterUser = RestService.call(config);
       return promiseRegisterUser.then(function(result) {
-        $cookies.registerID = registerId;
+        setRegisterID(registerId);
         return getUser();
       });
     } 
@@ -33,7 +42,7 @@ angular.module('maureillasApp.server')
         return deferred.promise;        
       }
       else {
-        var registerId = $cookies.registerID;
+        var registerId = getRegisterID();
         var config = REMOTE.maureillasService.users.getUser;
         config.url = config.url.replace('{ID}', registerId);
         config.backend =true;
@@ -47,7 +56,7 @@ angular.module('maureillasApp.server')
 
     var updateUser = function() {
       var config = REMOTE.maureillasService.users.updateUser;
-      var registerId = $cookies.registerID;
+      var registerId = getRegisterID();
       config.url = config.url.replace('{ID}', user.info._id);
       config.data = {
         feeds : user.info.feeds
@@ -72,10 +81,16 @@ angular.module('maureillasApp.server')
           return result;
         }, function(error, status) {
            if (status == '404') {
-            var ID = $cookies.registerID; 
+            var ID = getRegisterID(); 
             return registerUser(ID);
            }
         });
+    },
+    getRegisterID : function() {
+      return getRegisterID();
+    },
+    setRegisterID : function(id) {
+      setRegisterID(id);
     }
  	}   
 });

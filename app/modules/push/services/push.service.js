@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('maureillasApp.push')
-.factory('PushService', function($q, $window, REMOTE, $cookies, DeviceService) {
+.factory('PushService', function($q, $window, REMOTE, UserService, DeviceService) {
 
   var pushConfig = {};
 
@@ -30,8 +30,7 @@ angular.module('maureillasApp.push')
           // Your GCM push server needs to know the regID before it can push to this device
           // here is where you might want to send it the regID for later use.
           //send device reg id to server
-          $cookies.registerID = event.regid;
-          alert(event.regid);
+          UserService.setRegisterID(event.regid);
         }
         break;
 

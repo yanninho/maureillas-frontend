@@ -42,7 +42,7 @@ angular
           templateUrl: 'modules/' + keyModule + '/views/'+ page.templateHtml,
           controller: page.controller,
           resolve : {
-            'network' : function(NetworkService, DeviceService) { 
+            'network' : function($location, NetworkService, DeviceService) { 
               if (page.label != VIEWS.main.pages.networkError.label && DeviceService.isMobile())  {
                 // network error
                 if (!NetworkService.networkConnectionExist()) {   
@@ -58,7 +58,7 @@ angular
     });
     //routes inconnues >> accueil
     $routeProvider.otherwise({
-      // redirectTo: VIEWS.main.pages.accueil.path
+      redirectTo: VIEWS.main.pages.home.path
     });
 
     //translate

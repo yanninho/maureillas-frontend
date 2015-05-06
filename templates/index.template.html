@@ -28,11 +28,11 @@
   </head>
 
    <!-- @if NODE_ENV='PRODUCTION' -->
-  <body> 
+  <body class="ng-cloak"> 
   <!-- @endif -->
 
    <!-- @if NODE_ENV='DEVELOPMENT' -->
-  <body ng-app="maureillasApp"> 
+  <body ng-app="maureillasApp" class="ng-cloak"> 
   <!-- @endif -->
 
     <!--[if lt IE 9]>
@@ -43,7 +43,6 @@
     <!--[if gt IE 8]>
     <loading-widget>Chargement en cours...</loading-widget>
     <![endif]-->
-    <div ng-controller="PushCtrl"></div>
     <header class="header" ng-controller="NavigationCtrl">       
         <ul>
             <li>
@@ -146,13 +145,14 @@
                 <!-- services -->            
                 <script src="modules/push/services/push.service.js"></script>                     
                 <!-- controllers -->           
-                <script src="modules/push/controllers/push.controller.js"></script>                     
+                                   
             <!-- fin module push -->
            
             <!-- module server -->
                 <script src="modules/server/server.module.js"></script>
                 <!-- services -->            
                 <script src="modules/server/users.service.js"></script>                                         
+                <script src="modules/server/register.service.js"></script>                                         
                 <script src="modules/server/platforms.service.js"></script>                                         
             <!-- fin module server -->
 

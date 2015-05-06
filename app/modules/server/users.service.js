@@ -20,9 +20,9 @@ angular.module('maureillasApp.server')
       config.url = config.url.replace('{PLATFORM}', PlatformService.getPlatform());
       config.backend =true;
       var promiseRegisterUser = RestService.call(config);
-      promiseRegisterUser.then(function(result) {
+      return promiseRegisterUser.then(function(result) {
         $cookies.registerID = registerId;
-        getUser();
+        return getUser();
       });
     } 
 
@@ -34,10 +34,6 @@ angular.module('maureillasApp.server')
       }
       else {
         var registerId = $cookies.registerID;
-        if (angular.isUndefined(registerId)) {
-          deferred.reject('No register ID');
-          return deferred.promise;            
-        }
         var config = REMOTE.maureillasService.users.getUser;
         config.url = config.url.replace('{ID}', registerId);
         config.backend =true;
@@ -69,6 +65,17 @@ angular.module('maureillasApp.server')
     },
     update : function() {
       return updateUser();
+    },
+    findOrCreate : function() { 
+        var promiseGetUser =  getUser();
+        return promiseGetUser.then(function(result){
+          return result;
+        }, function(error, status) {
+           if (status == '404') {
+            var ID = $cookies.registerID; 
+            return registerUser(ID);
+           }
+        });
     }
  	}   
 });

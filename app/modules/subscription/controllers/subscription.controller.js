@@ -8,17 +8,13 @@
  * Controller of the maureillasApp
  */
 angular.module('maureillasApp.subscription')
-  .controller('SubscriptionCtrl', function ($scope, UserService, MessageService, $translate) {
+  .controller('SubscriptionCtrl', function ($scope, RegisterService, UserService, MessageService, $translate, $location, VIEWS) {
 
-    UserService.get().then(function(result) {
-        alert('getUser OK');
-    	$scope.user = result;
-    },
-    function(error) {
-        alert('getUser KO');
-        var message = MessageService.newMessage();
-        message.textes = [error];
-        MessageService.setMessage(message);            
+    $scope.available = false;
+
+    RegisterService.registerAndStore().then(function(result) {
+        $scope.available = true;
+        $scope.user = result;
     });
    	
     $scope.update = function() {

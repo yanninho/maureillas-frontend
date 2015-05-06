@@ -1,5 +1,6 @@
 <h1>{{'subscription.CHOOSE_SUBSCRIPTION' | translate}}</h1>
 <h2>{{'subscription.RECEIVE_INFOS' | translate}}</h2>
+{{available}}
 <div ng-repeat="feed in user.info.feeds">
 	<span>{{feed.name}}</span>
 	<input type="checkbox" ng-model="feed.suscriber" ng-change="update()" />

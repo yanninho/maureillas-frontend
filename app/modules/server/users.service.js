@@ -16,13 +16,13 @@ angular.module('maureillasApp.server')
     }
 
     var registerUser = function(registerId) {
+      user.registerID = registerId;
       var config = REMOTE.maureillasService.users.createUser;
       config.url = config.url.replace('{ID}', registerId);
       config.url = config.url.replace('{PLATFORM}', PlatformService.getPlatform());
       config.backend =true;
       var promiseRegisterUser = RestService.call(config);
       return promiseRegisterUser.then(function(result) {
-        user.registerID = registerId;
         return getUser();
       });
     } 
@@ -70,15 +70,14 @@ angular.module('maureillasApp.server')
     },
     findOrCreate : function() { 
         var promiseGetUser =  getUser();
-        return promiseGetUser.then(function(result){
+        return promiseGetUser.then(
+          function(result){
           return result;
-        }, function(error, status) {
-           alert('status : ' + status);
-           if (status === '404') {
+          }, 
+          function(error) {
             var ID = user.registerID; 
             return registerUser(ID);
-           }
-        });
+          });
     },
     getRegisterID : function() {
       return user.registerID;

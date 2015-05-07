@@ -15,34 +15,22 @@ angular.module('maureillasApp.server')
       info : undefined
     }
 
-    var registerUser = function(registerId) {
-      user.registerID = registerId;
-      var config = REMOTE.maureillasService.users.createUser;
-      config.url = config.url.replace('{ID}', registerId);
-      config.url = config.url.replace('{PLATFORM}', PlatformService.getPlatform());
-      config.backend =true;
-      var promiseRegisterUser = RestService.call(config);
-      return promiseRegisterUser.then(function(result) {
-        return getUser();
-      });
-    } 
-
-    var getUser = function() {
-      var deferred = $q.defer();
-      if (angular.isDefined(user.info)) {        
-        deferred.resolve(user);
-        return deferred.promise;        
+    var registerUser = function() {
+      var registerId = user.registerID;
+      if (angular.isDefined(registerId)) {
+        var config = REMOTE.maureillasService.users.createUser;
+        config.url = config.url.replace('{ID}', registerId);
+        config.url = config.url.replace('{PLATFORM}', PlatformService.getPlatform());
+        config.backend =true;
+        var promiseRegisterUser = RestService.call(config);
+        return promiseRegisterUser.then(function(result) {
+          return result;
+        });        
       }
       else {
-        var registerId = user.registerID;
-        var config = REMOTE.maureillasService.users.getUser;
-        config.url = config.url.replace('{ID}', registerId);
-        config.backend =true;
-        var promiseGetUser = RestService.call(config);   
-        return promiseGetUser.then(function(result){
-          user.info = result.data;
-          return user;
-        });
+        var deferred = $q.defer();
+        deferred.reject('No Register ID');
+        return deferred.promise;
       }
     } 
 
@@ -58,31 +46,20 @@ angular.module('maureillasApp.server')
     } 
 
  	return {
-    register : function(registerId) {
-      return registerUser(registerId);
-    },
-    get : function() {
-      return getUser();
+    register : function() {
+      return registerUser();
     },
     update : function() {
       return updateUser();
-    },
-    findOrCreate : function() { 
-        var promiseGetUser =  getUser();
-        return promiseGetUser.then(
-          function(result){
-          return result;
-          }, 
-          function(error) {
-            var ID = user.registerID; 
-            return registerUser(ID);
-          });
     },
     getRegisterID : function() {
       return user.registerID;
     },
     setRegisterID : function(id) {
       user.registerID = id;
+    },
+    getUser : function() {
+      return user;
     }
  	}   
 });

@@ -12,10 +12,16 @@ angular.module('maureillasApp.subscription')
 
     $scope.available = false;
 
-    RegisterService.registerAndStore().then(function(result) {
+    $scope.user = UserService.getUser();
+    if (angular.isUndefined($scope.user)) {
+        RegisterService.register().then(function(result) {
+            $scope.available = true;
+            $scope.user = result;
+        });        
+    }
+    else {
         $scope.available = true;
-        $scope.user = result;
-    });
+    }
    	
     $scope.update = function() {
     	var promiseUpdate = UserService.update();

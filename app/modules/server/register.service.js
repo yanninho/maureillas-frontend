@@ -8,48 +8,47 @@
  * Factory in the maureillasApp.
  */
 angular.module('maureillasApp.server')
-  .factory('RegisterService', function ($q, UserService, PushService, DeviceService) {
+  .factory('RegisterService', function ($q, UserService, PushService, DeviceService, NetworkService) {
 
 
     var successGetUser = function(result) {
         return result;
     }
 
-    var getUser = function() {
-        var promiseGetUser = UserService.get();
-        return promiseGetUser.then(successGetUser, function(error) {
-            return getUser();
+    var register = function() {
+        return UserService.register().then(successGetUser, function(error) {   
+            if (!NetworkService.networkConnectionExist()) {
+                var deferred = $q.defer();
+                return deferred.reject('No network connection');            
+            }            
+            if (angular.isUndefined(UserService.getRegisterID())) {
+                return pushRegister();
+            }                 
+            return register();
         });
     }
 
-    var findOrCreateUser = function() {
-        return UserService.findOrCreate().then(successGetUser, function(error) {
-            return findOrCreateUser();
-        });
-    }
-
-    var successPushRegister = function(result) {
-        return findOrCreateUser();
+    var successPushRegister = function() {
+        if (angular.isUndefined(UserService.getRegisterID())) {
+            return pushRegister();
+        }
+        return register();
     }
 
     var pushRegister = function() {
         return PushService.register().then(successPushRegister, function(error) {
+            if (!NetworkService.networkConnectionExist()) {
+                var deferred = $q.defer();
+                deferred.reject('No network connection');            
+            }            
             return pushRegister();
         });
     }
 
  	return {
- 		registerAndStore : function() {
+ 		register : function() {
             if (DeviceService.isMobile()) { 
-              // 1 - get id from cookie
-              var ID = UserService.getRegisterID();     
-              // 2a - cookie exist = getUser()
-              if (angular.isDefined(ID)) {
-                return getUser();
-              }
-              else {
-                return pushRegister();
-              }
+              return pushRegister();              
             }
             else {
                 var deferred = $q.defer();

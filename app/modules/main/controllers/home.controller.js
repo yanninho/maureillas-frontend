@@ -14,7 +14,7 @@ angular.module('maureillasApp.main')
         
         $scope.user = result;
     }, function(error) {
-      alert(error);
+
     });
 
 });

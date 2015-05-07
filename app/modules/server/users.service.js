@@ -34,7 +34,6 @@ angular.module('maureillasApp.server')
         return deferred.promise;        
       }
       else {
-        alert('getUser : ' + user.registerID);
         var registerId = user.registerID;
         var config = REMOTE.maureillasService.users.getUser;
         config.url = config.url.replace('{ID}', registerId);

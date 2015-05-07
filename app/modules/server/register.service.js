@@ -45,7 +45,6 @@ angular.module('maureillasApp.server')
               var ID = UserService.getRegisterID();     
               // 2a - cookie exist = getUser()
               if (angular.isDefined(ID)) {
-                alert('angular.isDefined(ID) : ' + ID);
                 return getUser();
               }
               else {

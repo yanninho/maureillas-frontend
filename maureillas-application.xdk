@@ -4,7 +4,7 @@
     "creationData": {
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "projectGuid": "8bfb4f49-268b-4bec-9419-6b79acc6bdcd",
-      "lastModifiedDate": 1430821798056,
+      "lastModifiedDate": 1430934891852,
       "creationDate": 1430223981729
     },
     "XDK-app-designer": "false",
@@ -69,22 +69,104 @@
           "android-installLocation": "auto"
         },
         "isActive_": true,
-        "appName_": "maureillas-application",
+        "appName_": "Ville de Maureillas",
         "appID_": "com.maureillas",
         "appAccess_": [
           {
             "origin": "*"
           }
         ],
-        "icons_": [],
-        "splashes_": [],
+        "icons_": [
+          {
+            "relPath": "LaunchIcons/MDPI48x48px-01.png",
+            "density": "mdpi",
+            "height": 48,
+            "width": 48
+          },
+          {
+            "relPath": "LaunchIcons/LDPI36x36px.png",
+            "density": "ldpi",
+            "height": 36,
+            "width": 36
+          },
+          {
+            "relPath": "LaunchIcons/HDPI72x72px.png",
+            "density": "hdpi",
+            "height": 72,
+            "width": 72
+          },
+          {
+            "relPath": "LaunchIcons/XHDPI96x96px.png",
+            "density": "xhdpi",
+            "height": 96,
+            "width": 96
+          }
+        ],
+        "splashes_": [
+          {
+            "relPath": "splashScreens/Portrait/LDPI320x426px.png",
+            "density": "ldpi",
+            "height": 426,
+            "width": 320,
+            "orientation": "portrait"
+          },
+          {
+            "relPath": "splashScreens/Portrait/MDPI320x470px.png",
+            "density": "mdpi",
+            "height": 470,
+            "width": 320,
+            "orientation": "portrait"
+          },
+          {
+            "relPath": "splashScreens/Portrait/HDPI480x640px.png",
+            "density": "hdpi",
+            "height": 640,
+            "width": 480,
+            "orientation": "portrait"
+          },
+          {
+            "relPath": "splashScreens/Portrait/XHDPI720x960px.png",
+            "density": "xhdpi",
+            "height": 960,
+            "width": 720,
+            "orientation": "portrait"
+          },
+          {
+            "relPath": "splashScreens/Landscape/LDPI426x320px.png",
+            "density": "ldpi",
+            "height": 320,
+            "width": 426,
+            "orientation": "landscape"
+          },
+          {
+            "relPath": "splashScreens/Landscape/MDPI470x320px.png",
+            "density": "mdpi",
+            "height": 320,
+            "width": 470,
+            "orientation": "landscape"
+          },
+          {
+            "relPath": "splashScreens/Landscape/HDPI640x480px.png",
+            "density": "hdpi",
+            "height": 480,
+            "width": 640,
+            "orientation": "landscape"
+          },
+          {
+            "relPath": "splashScreens/Landscape/XHDPI960x720px.png",
+            "density": "xhdpi",
+            "height": 720,
+            "width": 960,
+            "orientation": "landscape"
+          }
+        ],
         "addlPermissions_": "com.google.android.c2dm.permission.RECEIVE;android.permission.INTERNET;android.permission.GET_ACCOUNTS;android.permission.WAKE_LOCK;com.yannsm.permission.C2D_MESSAGE",
         "excludedLibraries_": "",
         "iosProvs_": [],
         "cordovaCLIVersion_": "3.5",
         "crosswalkVersion_": "11",
         "appVersion_": "0.0.1",
-        "appDescription_": "Application mobile de la mairie de Maurillas",
+        "appDescription_": "Application mobile de la ville de Maurillas",
         "appAuthor_": "Surikwat",
         "appVersionCode_": "1"
       },
@@ -123,14 +205,40 @@
           "exit-on-suspend": true
         },
         "isActive_": true,
-        "appName_": "maureillas-application",
+        "appName_": "Ville de Maureillas",
         "appID_": "com.maureillas",
         "appAccess_": [
           {
             "origin": "*"
           }
         ],
-        "icons_": [],
+        "icons_": [
+          {
+            "relPath": "LaunchIcons/iPhone 6 Plus/180x180px.png",
+            "height": 180,
+            "width": 180
+          },
+          {
+            "relPath": "LaunchIcons/iPhone/60x60px.png",
+            "height": 60,
+            "width": 60
+          },
+          {
+            "relPath": "LaunchIcons/iPad (Retina)/152x152px.png",
+            "height": 152,
+            "width": 152
+          },
+          {
+            "relPath": "LaunchIcons/iPhone (Retina)/120x120px.png",
+            "height": 120,
+            "width": 120
+          },
+          {
+            "relPath": "LaunchIcons/iPad_iPadmini/76x76px.png",
+            "height": 76,
+            "width": 76
+          }
+        ],
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
@@ -139,7 +247,7 @@
         "crosswalkVersion_": "11",
         "appVersion_": "0.0.1",
         "appAuthor_": "Surikwat",
-        "appDescription_": "Application mobile de la mairie de Maurillas"
+        "appDescription_": "Application mobile de la ville de Maurillas"
       },
       "Windows8": {
         "platform_": "windows8",
@@ -150,14 +258,30 @@
           "windows-publisher-id": ""
         },
         "isActive_": true,
-        "appName_": "maureillas-application",
+        "appName_": "Ville de Maureillas",
         "appID_": "com.maureillas",
         "appAccess_": [
           {
             "origin": "*"
           }
         ],
-        "icons_": [],
+        "icons_": [
+          {
+            "relPath": "LaunchIcons/Small Logo/30x30px.png",
+            "height": 30,
+            "width": 30
+          },
+          {
+            "relPath": "LaunchIcons/Store Logo/50x50px.png",
+            "height": 50,
+            "width": 50
+          },
+          {
+            "relPath": "LaunchIcons/Logo/150x150px.png",
+            "height": 150,
+            "width": 150
+          }
+        ],
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
@@ -166,7 +290,7 @@
         "crosswalkVersion_": "11",
         "appVersion_": "0.0.0.1",
         "appAuthor_": "Surikwat",
-        "appDescription_": "Application mobile de la mairie de Maurillas"
+        "appDescription_": "Application mobile de la ville de Maurillas"
       },
       "WebApp": {
         "platform_": "webapp",

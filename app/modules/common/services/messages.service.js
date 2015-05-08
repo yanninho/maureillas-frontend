@@ -14,8 +14,7 @@ angular.module('maureillasApp.common')
         PRIMARY: 'alert-primary',
         SUCCESS: 'alert-success',
         WARNING: 'alert-warning',
-        DANGER:  'alert-danger',
-        BOUYGUES: 'alert-bouygues'        
+        DANGER:  'alert-danger',        
       }
 
       var data = {

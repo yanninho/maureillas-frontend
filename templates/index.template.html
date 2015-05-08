@@ -11,6 +11,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -43,30 +44,46 @@
     <!--[if gt IE 8]>
     <loading-widget>Chargement en cours...</loading-widget>
     <![endif]-->
-    <header class="header" ng-controller="NavigationCtrl">       
-        <ul>
-            <li>
-                <a href="#/subscription">{{'navigation.SUBSCRIPTION' | translate}}</a>
-            </li>
-            <li>
-                Evenements : <a href="#/feeds?feed=agenda">Afficher</a>
-            </li>
-            <li>
-                Annonces : <a href="#/feeds?feed=annonces">Afficher</a>
-            </li>
-        </ul>
-        <div class="alert"  ng-class="data.message.type" ng-show="data.message.textes">
-            <div ng-repeat="texte in data.message.textes">
-                <pre ng-show="data.message.json">{{texte | json}}</pre>
-                <p ng-show="!data.message.json">{{texte}}</p>
-            </div>
+
+<md-content ng-controller="NavigationCtrl" class="main-panel">
+    <div class="alert" ng-class="alert.message.type" ng-show="alert.message.textes">
+        <div ng-repeat="texte in alert.message.textes">
+            <pre ng-show="alert.message.json">{{texte | json}}</pre>
+            <p ng-show="!alert.message.json">{{texte}}</p>
         </div>
-    </header>
-    <div class="view view-animate" ng-view=""></div>
+    </div>   
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="menu" ng-click="toggleRight()">
+                <md-icon md-svg-icon="images/ic_menu_48px.svg"></md-icon>
+            </md-button>
+            <h2>
+                <span>{{'main.VILLE' | translate}}</span>
+            </h2>
+            <span flex=""></span>
+            <img src="images/MDPI48x48px-01.png">
+        </div>
+    </md-toolbar>
+    <md-sidenav class="md-sidenav-right md-whiteframe-z2 menu" md-component-id="right">
+      <md-toolbar class="md-theme-light">
+        <h1 class="md-toolbar-tools"></h1>
+      </md-toolbar>
+      <md-content>
+        <!-- menu -->
+        <h3 ng-repeat="item in menus">
+            <md-icon md-svg-icon="{{item.icon}}"></md-icon>
+            <a href="{{ item.link }}" ng-click="closeMenu()">{{ item.name | translate}}</a>
+        </h3>   
+      </md-content>
+    </md-sidenav>   
+    <div class="view-container">
+        <div class="view view-animate" ng-view=""></div>
+    <div>
+</md-content>
+
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-messages/angular-messages.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
@@ -75,6 +92,8 @@
     <script src="bower_components/angular-translate/angular-translate.js"></script>
     <script src="bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

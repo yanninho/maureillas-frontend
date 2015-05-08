@@ -28,6 +28,8 @@ module.exports = function(config) {
       'bower_components/angular-translate/angular-translate.js',
       'bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js',
       'bower_components/angular-sanitize/angular-sanitize.js',
+      'bower_components/angular-aria/angular-aria.js',
+      'bower_components/angular-material/angular-material.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       // fichiers de l'application : ordre important !!

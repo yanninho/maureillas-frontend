@@ -1,13 +1,18 @@
-<h1>{{'FEEDS' | translate}}</h1>
+<div class="feeds">
+	<div layout="row" ng-show="loading">
+		<div flex offset="45">
+			<md-progress-circular md-mode="indeterminate" md-diameter="40"></md-progress-circular>
+		</div>
+	</div>
 
-<div ng-show="loading">
-	{{'LOADING' | translate}}
-</div>
-
-{{feedList.feeds.title}} {{feedList.feeds.description}}
-
-<div ng-repeat="feed in feedList.feeds.entries">
-	
-	<div ng-bind-html='feed.content'></div>
-	
+	<h1>{{feedList.feeds.title}}</h1> 
+	<h2>{{feedList.feeds.description}}</h2>
+	<md-content ng-repeat="feed in feedList.feeds.entries" class="feed-item">	
+	  <md-toolbar>
+	    <div class="md-toolbar-tools">
+	      <h2 class="md-flex">{{feed.title}}</h2>
+	    </div>
+	  </md-toolbar>	
+	  <div class="feed-content" ng-bind-html='feed.content'></div>		
+	</md-content>
 </div>

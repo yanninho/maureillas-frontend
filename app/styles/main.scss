@@ -1,4 +1,130 @@
+body {
+	width : 100%;
+	height: 100%;	
+	color: #236792;
+}
+
 /*  */
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
     display: none !important;
+}
+
+.main-panel {
+	height : 100%;	
+}
+
+.view-container {
+  position: relative;
+  height: 100%;
+}
+
+.view {
+  height: 100%;	
+  padding: 10px;
+	h1,h2,h3,h4,h5,h6 {
+	  font-style: italic;	
+	}
+
+	h1 {
+		color: #236792;
+	}
+
+	h2 {
+		color: #106801;
+	}  
+}
+
+.view-animate.ng-enter, .view-animate.ng-leave {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+
+  display:block;
+  width:100%;
+
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
+
+.view-animate.ng-enter {
+  left:100%;
+}
+.view-animate.ng-enter.ng-enter-active {
+  left:0;
+}
+.view-animate.ng-leave.ng-leave-active {
+  left:-100%;
+}
+
+.feeds {
+	md-content {
+		margin : 5px;
+	}
+}
+
+.home {
+	height: 100%;
+	background-image: url('../images/fond-maureillas-ok.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    .txt-elem {
+    	padding: 10px;
+    	text-align: center;
+    }	
+}
+
+md-toolbar {
+	background-color: #106801 !important;
+	h1, h2, h3, h4, h5, h6, p, span {
+		color: white !important;
+	}
+	z-index: 1000000;
+}
+
+.menu {
+	a {
+		color: #106801;
+	}
+	md-icon {
+		color: #236792;
+	}
+}
+
+md-checkbox.md-default-theme.md-checked .md-icon {
+	background-color: #106801;
+}
+
+.alert {
+	top: 65px;
+	position: absolute;
+	width: 100%;
+	padding: 5px;
+	color: white;
+	z-index: 500000;
+
+}
+
+.alert-danger {
+	background-color: #f2dede;
+	color: #a94442;
+	border: 1px solid #ebccd1; 
+}
+
+.alert-success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #3c763d;	
+}
+
+.alert.ng-hide-add.ng-hide-add-active,
+.alert.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition: all linear 0.8s;
+  transition: all linear 0.8s;
+}
+
+.alert.ng-hide {
+  top: -65px;
 }

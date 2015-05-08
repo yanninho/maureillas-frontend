@@ -39,6 +39,10 @@ module.exports = function (grunt) {
         files: ['bower.json'],
         tasks: ['wiredep']
       },
+      preprocess: {
+        files: ['templates/**.*'],
+        tasks: ['preprocess']
+      },
       js: {
         files: ['<%= yeoman.app %>/{,*/}*.js'],
         tasks: ['newer:jshint:all'],
@@ -258,11 +262,12 @@ module.exports = function (grunt) {
     usemin: {
       html: ['<%= yeoman.dist %>/*.html', '<%= yeoman.dist %>/**/*.html'],
       htmlalternative: ['<%= yeoman.dist %>/*.html','<%= yeoman.dist %>/**/*.html'],
-      css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
+      css: ['<%= yeoman.dist %>/styles/{,*/}*.css'], 
       options: {
         patterns: {
           htmlalternative: [
-            [/<img[^\>]*[^\>\S]+ng-src=['"]([^'"\)#]+)(#.+)?["']/gm, 'Update the HTML with non standard ng-src attribute on img']
+            [/<img[^\>]*[^\>\S]+ng-src=['"]([^'"\)#]+)(#.+)?["']/gm, 'Update the HTML with non standard ng-src attribute on img'],
+            [/<md-icon[^\>]*[^\>\S]+md-svg-icon=['"]([^'"\)#]+)(#.+)?["']/gm, 'Update the HTML with non standard md-svg-icon attribute on md-icon"']
           ]
         },
         assetsDirs: [

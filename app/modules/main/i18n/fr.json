@@ -1,7 +1,11 @@
 {
+	"main" : {
+		"VILLE" : "Ville de Maureillas Las Illas"
+	},
 	"navigation" : {
 		"SUBSCRIPTION" : "Abonnements aux notifications",
 		"EVENTS" : "Evenements",
+		"NOTIFICATIONS" : "Notifications",
 		"NEWS" : "Annonces",
 		"NETWORK_OK" : "Connexion réseau à nouveau disponible, vous pouvez reprendre la navigation"
 	},

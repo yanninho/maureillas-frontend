@@ -19,6 +19,7 @@
                 'ngTouch',
                 'pascalprecht.translate',
                 'ngSanitize',
+                'ngMaterial',
                 //Application modules
                 'maureillasApp.main',
                 'maureillasApp.common',

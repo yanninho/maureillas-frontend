@@ -28,12 +28,14 @@ angular.module('maureillasApp.subscription')
     	promiseUpdate.then(function() {    		
 			 $translate('subscription.UPDATE_OK').then(function (updateOK) {
 			    var message = MessageService.newMessage();
+                message.type = MessageService.getTypesMessages().SUCCESS;
 			    message.textes = [updateOK];
     			MessageService.setMessage(message);
 			});    		
     	},
         function(error) {
             var message = MessageService.newMessage();
+            message.type = MessageService.getTypesMessages().DANGER;
             message.textes = [error];
             MessageService.setMessage(message);            
         });

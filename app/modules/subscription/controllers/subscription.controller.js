@@ -13,7 +13,7 @@ angular.module('maureillasApp.subscription')
     $scope.available = false;
 
     $scope.user = UserService.getUser();
-    if (angular.isUndefined($scope.user)) {
+    if (angular.isUndefined($scope.user.info)) {
         RegisterService.register().then(function(result) {
             $scope.available = true;
             $scope.user = result;

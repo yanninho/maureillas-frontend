@@ -36,13 +36,19 @@ angular.module('maureillasApp.server')
     }
 
     var pushRegister = function() {
-        return PushService.register().then(successPushRegister, function(error) {
-            if (!NetworkService.networkConnectionExist()) {
-                var deferred = $q.defer();
-                deferred.reject('No network connection');            
-            }            
-            return pushRegister();
-        });
+        if (angular.isDefined(PushService)) {
+            return PushService.register().then(successPushRegister, function(error) {
+                if (!NetworkService.networkConnectionExist()) {
+                    var deferred = $q.defer();
+                    deferred.reject('No network connection');            
+                }            
+                return pushRegister();
+            });
+        }
+        else {
+            var deferred = $q.defer();
+            deferred.reject('No Push service'); 
+        }
     }
 
  	return {

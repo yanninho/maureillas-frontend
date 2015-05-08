@@ -81,14 +81,6 @@
 					"url" : "/v1/users/{ID}/{PLATFORM}",
 					"method" : "PUT"
 				},
-				"deleteUser" : {
-					"url" : "/v1/users/{ID}",
-					"method" : "DELETE"
-				},
-				"getUser" : {
-					"url" : "/v1/users/{ID}",
-					"method" : "GET"
-				},
 				"updateUser" : {
 					"url" : "/v1/users/{ID}",
 					"method" : "POST"

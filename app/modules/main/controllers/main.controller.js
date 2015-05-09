@@ -51,25 +51,25 @@ angular.module('maureillasApp.main')
     $scope.menus = [
       {
         name : 'navigation.HOME',
-        link : '#/home',
+        link : '/home',
         icon : 'images/ic_home_48px.svg',
         selected : false
       },
       {
         name : 'navigation.NEWS',
-        link : '#/feeds?feed=agenda',
+        link : '/feeds?feed=agenda',
         icon : 'images/ic_bookmark_48px.svg',
         selected : false
       },
       {
         name : 'navigation.EVENTS',
-        link : '#/feeds?feed=annonces',
+        link : '/feeds?feed=annonces',
         icon : 'images/ic_bookmark_48px.svg',
         selected : false
       },
       {
         name : 'navigation.NOTIFICATIONS',
-        link : '#/subscription',
+        link : '/subscription',
         icon : 'images/ic_notifications_48px.svg',        
         selected : false
       }

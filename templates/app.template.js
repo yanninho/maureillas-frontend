@@ -34,10 +34,7 @@ angular
   .module('maureillasApp')
 // @endif  
   .config(function ($httpProvider, $routeProvider, $locationProvider, $translateProvider, $translatePartialLoaderProvider, VIEWS) {
-    $locationProvider.html5Mode({
-      enabled: true,
-      requireBase: false
-    });
+    $locationProvider.html5Mode(true);
     $httpProvider.defaults.withCredentials = true;
     // les routes (views.json)
     angular.forEach(VIEWS, function(module, keyModule) {

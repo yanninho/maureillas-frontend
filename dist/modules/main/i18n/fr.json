@@ -3,6 +3,7 @@
 		"VILLE" : "Ville de Maureillas Las Illas"
 	},
 	"navigation" : {
+		"HOME" : "Accueil",
 		"SUBSCRIPTION" : "Abonnements aux notifications",
 		"EVENTS" : "Evenements",
 		"NOTIFICATIONS" : "Notifications",

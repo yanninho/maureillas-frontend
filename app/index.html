@@ -28,7 +28,7 @@
 
   </head>
 
-  <body ng-app="maureillasApp" class="ng-cloak" layout="column" ng-controller="MainCtrl"> 
+  <body class="ng-cloak" layout="column" ng-controller="MainCtrl"> 
     <!--[if lt IE 9]>
       <p class="browsehappy">Vous utilisez un navigateur <strong>obsolète</strong>. Merci de <a href="http://browsehappy.com/">mettre à jour votre navigateur</a>.</p>
     <![endif]-->
@@ -84,6 +84,22 @@
     <!-- endbower -->
     <!-- endbuild -->
 
+        <script src="intelxdk.js"></script>
+        <!-- phantom library, needed for Intel XDK "legacy" container api calls -->
+        <script src="cordova.js"></script>
+        <!-- phantom library, needed for Cordova api calls -->
+        <script src="xhr.js"></script>
+        <!-- phantom library, needed for Intel XDK "legacy" container CORS -->
+
+       
+        <!-- for your event code, see README and file comments for details -->
+        <script src="init-app.js"></script>
+        <!-- for your init code, see README and file comments for details -->
+        <script src="init-dev.js"></script>
+        <!-- normalizes device and document ready events, see file for details -->
+        
+        <!-- Cordova push plugin -->
+        <script type="text/javascript" charset="utf-8" src="PushNotification.js"></script>
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
             <script src="app.js"></script>
             

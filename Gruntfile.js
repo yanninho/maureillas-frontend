@@ -233,7 +233,7 @@ module.exports = function (grunt) {
         src: [
           '<%= yeoman.dist %>/scripts/{,*/}*.js',
           '<%= yeoman.dist %>/styles/{,*/}*.css',
-          '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+          '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
           '<%= yeoman.dist %>/styles/fonts/*'
         ]
       }
@@ -259,6 +259,7 @@ module.exports = function (grunt) {
     },
 
     // Performs rewrites based on filerev and the useminPrepare configuration
+    // svg : [/<md-icon[^\>]*[^\>\S]+md-svg-icon=['"]([^'"\)#]+)(#.+)?["']/gm, 'Update the HTML with non standard md-svg-icon attribute on md-icon"']
     usemin: {
       html: ['<%= yeoman.dist %>/*.html', '<%= yeoman.dist %>/**/*.html'],
       htmlalternative: ['<%= yeoman.dist %>/*.html','<%= yeoman.dist %>/**/*.html'],
@@ -266,8 +267,7 @@ module.exports = function (grunt) {
       options: {
         patterns: {
           htmlalternative: [
-            [/<img[^\>]*[^\>\S]+ng-src=['"]([^'"\)#]+)(#.+)?["']/gm, 'Update the HTML with non standard ng-src attribute on img'],
-            [/<md-icon[^\>]*[^\>\S]+md-svg-icon=['"]([^'"\)#]+)(#.+)?["']/gm, 'Update the HTML with non standard md-svg-icon attribute on md-icon"']
+            [/<img[^\>]*[^\>\S]+ng-src=['"]([^'"\)#]+)(#.+)?["']/gm, 'Update the HTML with non standard ng-src attribute on img']
           ]
         },
         assetsDirs: [

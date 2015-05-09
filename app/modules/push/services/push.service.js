@@ -92,7 +92,7 @@ angular.module('maureillasApp.push')
     register: function () {
       var q = $q.defer();
       if (DeviceService.isMobile()) {        
-        if (angular.isDefined(window.plugins.pushNotification)) {
+        if (angular.isDefined(window.plugins)) {
           window.plugins.pushNotification.register(
           function (result) {
               q.resolve(result);

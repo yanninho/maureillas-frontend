@@ -92,14 +92,16 @@ angular.module('maureillasApp.push')
     register: function () {
       var q = $q.defer();
       if (DeviceService.isMobile()) {        
-        window.plugins.pushNotification.register(
-        function (result) {
-            q.resolve(result);
-        },
-        function (error) {
-            q.reject(error);
-        },
-        pushConfig);        
+        if (angular.isDefined(window.plugins.pushNotification)) {
+          window.plugins.pushNotification.register(
+          function (result) {
+              q.resolve(result);
+          },
+          function (error) {
+              q.reject(error);
+          },
+          pushConfig); 
+        }       
       }
       else {
         q.reject('not on mobile device');        

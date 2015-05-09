@@ -8,25 +8,8 @@
  * Controller of the maureillasApp
  */
 angular.module('maureillasApp.main')
-  .controller('NavigationCtrl', function ($scope, MessageService, $location, $mdSidenav, $mdUtil) {
+  .controller('MainCtrl', function ($scope, MessageService, $location, $mdSidenav, $mdUtil) {
   	$scope.alert = MessageService.getData();
-  	$scope.menus = [
-  		{
-  			name : 'navigation.NEWS',
-  			link : '#/feeds?feed=agenda',
-  			icon : 'images/ic_bookmark_48px.svg'
-  		},
-  		{
-  			name : 'navigation.EVENTS',
-  			link : '#/feeds?feed=annonces',
-  			icon : 'images/ic_bookmark_48px.svg'
-  		},
-  		{
-  			name : 'navigation.NOTIFICATIONS',
-  			link : '#/subscription',
-  			icon : 'images/ic_notifications_48px.svg'
-  		}
-  	]
 
 	function onOffline() {
 	    $location.path(VIEWS.main.pages.networkError.path);
@@ -65,11 +48,52 @@ angular.module('maureillasApp.main')
       return debounceFn;
     }
 
-    $scope.closeMenu = function () {
+    $scope.menus = [
+      {
+        name : 'navigation.HOME',
+        link : '#/home',
+        icon : 'images/ic_home_48px.svg',
+        selected : false
+      },
+      {
+        name : 'navigation.NEWS',
+        link : '#/feeds?feed=agenda',
+        icon : 'images/ic_bookmark_48px.svg',
+        selected : false
+      },
+      {
+        name : 'navigation.EVENTS',
+        link : '#/feeds?feed=annonces',
+        icon : 'images/ic_bookmark_48px.svg',
+        selected : false
+      },
+      {
+        name : 'navigation.NOTIFICATIONS',
+        link : '#/subscription',
+        icon : 'images/ic_notifications_48px.svg',        
+        selected : false
+      }
+    ]
+
+    $scope.indexMenuSelected = 0;
+
+    var closeMenu = function() {
       $mdSidenav('right').close()
-        .then(function () {
-          
-        });
-    };    
+        .then(function () {          
+        });      
+    }
+
+    var changeSelectedMenu = function(indexMenuSelected) {
+      $scope.indexMenuSelected = indexMenuSelected;
+      $scope.menus.forEach(function(menu) {
+        menu.selected = false;
+      });
+      $scope.menus[indexMenuSelected].selected = true;
+    }
+
+    $scope.goTo = function (indexMenuSelected) {
+        closeMenu();
+        changeSelectedMenu(indexMenuSelected);
+    }
 
 });

@@ -4,10 +4,10 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Ville de Maureillas - Las Illas</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -28,7 +28,7 @@
 
   </head>
 
-  <body class="ng-cloak"> 
+  <body ng-app="maureillasApp" class="ng-cloak" layout="column" ng-controller="MainCtrl"> 
     <!--[if lt IE 9]>
       <p class="browsehappy">Vous utilisez un navigateur <strong>obsolète</strong>. Merci de <a href="http://browsehappy.com/">mettre à jour votre navigateur</a>.</p>
     <![endif]-->
@@ -37,42 +37,36 @@
     <!--[if gt IE 8]>
     <loading-widget>Chargement en cours...</loading-widget>
     <![endif]-->
-
-<md-content ng-controller="NavigationCtrl" class="main-panel">
     <div class="alert" ng-class="alert.message.type" ng-show="alert.message.textes">
         <div ng-repeat="texte in alert.message.textes">
             <pre ng-show="alert.message.json">{{texte | json}}</pre>
             <p ng-show="!alert.message.json">{{texte}}</p>
         </div>
     </div>   
-    <md-toolbar>
+    <md-toolbar layout="row">
         <div class="md-toolbar-tools">
             <md-button class="md-icon-button" aria-label="menu" ng-click="toggleRight()">
                 <md-icon md-svg-icon="images/ic_menu_48px.svg"></md-icon>
             </md-button>
-            <h2>
+            <h1>
                 <span>{{'main.VILLE' | translate}}</span>
-            </h2>
+            </h1>
             <span flex=""></span>
             <img src="images/MDPI48x48px-01.png">
         </div>
     </md-toolbar>
     <md-sidenav class="md-sidenav-right md-whiteframe-z2 menu" md-component-id="right">
-      <md-toolbar class="md-theme-light">
-        <h1 class="md-toolbar-tools"></h1>
-      </md-toolbar>
-      <md-content>
         <!-- menu -->
-        <h3 ng-repeat="item in menus">
-            <md-icon md-svg-icon="{{item.icon}}"></md-icon>
-            <a href="{{ item.link }}" ng-click="closeMenu()">{{ item.name | translate}}</a>
-        </h3>   
-      </md-content>
+        <md-content>
+            <h3 ng-repeat="item in menus" class="item-menu">
+                <md-icon md-svg-icon="{{item.icon}}"></md-icon>
+                <a href="{{ item.link }}" ng-click="goTo($index)">{{ item.name | translate}}</a>
+            </h3>  
+        </md-content>    
     </md-sidenav>   
-    <div class="view-container">
+    <md-content flex id="content" class="view-container">
         <div class="view view-animate" ng-view=""></div>
-    <div>
-</md-content>
+    </md-content>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -90,22 +84,6 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <script src="intelxdk.js"></script>
-        <!-- phantom library, needed for Intel XDK "legacy" container api calls -->
-        <script src="cordova.js"></script>
-        <!-- phantom library, needed for Cordova api calls -->
-        <script src="xhr.js"></script>
-        <!-- phantom library, needed for Intel XDK "legacy" container CORS -->
-
-       
-        <!-- for your event code, see README and file comments for details -->
-        <script src="init-app.js"></script>
-        <!-- for your init code, see README and file comments for details -->
-        <script src="init-dev.js"></script>
-        <!-- normalizes device and document ready events, see file for details -->
-        
-        <!-- Cordova push plugin -->
-        <script type="text/javascript" charset="utf-8" src="PushNotification.js"></script>
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
             <script src="app.js"></script>
             
@@ -114,8 +92,8 @@
                 <!-- services -->            
                                     
                 <!-- controllers -->           
-                <script src="modules/main/controllers/home.controller.js"></script>                     
-                <script src="modules/main/controllers/navigation.controller.js"></script>                     
+                <script src="modules/main/controllers/home.controller.js"></script>                           
+                <script src="modules/main/controllers/main.controller.js"></script>                     
                 <script src="modules/main/controllers/networkError.controller.js"></script>                     
             <!-- fin module feeds -->
                 

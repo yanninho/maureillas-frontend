@@ -6,6 +6,6 @@ angular.module('maureillasApp.common')
 
 .constant('REMOTE', {googleFeedsService:{url:'http://ajax.googleapis.com/ajax/services/feed/load',method:'JSONP',params:{v:'1.0',callback:'JSON_CALLBACK'}},pushService:{GCM:{key:'904172923113'}},maureillasService:{users:{createUser:{url:'/v1/users/{ID}/{PLATFORM}',method:'PUT'},updateUser:{url:'/v1/users/{ID}',method:'POST'}},feeds:{getAll:{url:'/v1/feeds',method:'GET'}}}})
 
-.constant('URLS', {urlBackend:'http://maureillas.herokuapp.com'})
+.constant('URLS', {urlBackend:'http://127.0.0.1:49166'})
 
 ;

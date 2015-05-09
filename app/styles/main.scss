@@ -82,9 +82,18 @@ md-toolbar {
 		color: white !important;
 	}
 	z-index: 1000000;
+	h1 {
+    font-size: 1.25em;
+    font-weight: 400;
+	}
+}
+
+md-sidenav {
+	z-index: 10000000;
 }
 
 .menu {
+	padding: 10px;
 	a {
 		color: #106801;
 	}

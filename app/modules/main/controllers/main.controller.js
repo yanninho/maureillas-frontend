@@ -58,12 +58,18 @@ angular.module('maureillasApp.main')
       {
         name : 'navigation.NEWS',
         link : '/feeds',
+        param : {
+          feed : 'agenda'
+        },
         icon : 'images/ic_bookmark_48px.svg',
         selected : false
       },
       {
         name : 'navigation.EVENTS',
         link : '/feeds',
+        param : {
+          feed : 'annonces'
+        },
         icon : 'images/ic_bookmark_48px.svg',
         selected : false
       },
@@ -94,14 +100,17 @@ angular.module('maureillasApp.main')
     $scope.goTo = function (indexMenuSelected) {
         closeMenu();
         changeSelectedMenu(indexMenuSelected);
-        go($scope.menus[indexMenuSelected].link);
+        go($scope.menus[indexMenuSelected]);
     }
 
-    var go = function(path) {      
-      if ($location.path() != path) {
-        $location.url($location.path());
-        $location.path( path );
-      }     
+    var go = function(menu) {      
+      $location.url($location.path());
+      if (angular.isDefined(menu.param)) {
+        $location.path( menu.link ).search(menu.param);
+      }
+      else {
+        $location.path( menu.link );
+      }      
     }
 
 

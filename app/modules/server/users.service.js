@@ -24,8 +24,8 @@ angular.module('maureillasApp.server')
         config.backend =true;
         var promiseRegisterUser = RestService.call(config);
         return promiseRegisterUser.then(function(result) {
-          user.info = result;
-          return result;
+          user.info = result.data;
+          return user.info;
         });        
       }
       else {

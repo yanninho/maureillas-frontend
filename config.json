@@ -96,13 +96,16 @@
 	},
 	"URLS": {
       "DEVELOPMENT": {
-        "urlBackend" : "http://127.0.0.1:49166"
+        "urlBackend" : "http://127.0.0.1:49166",
+        "security" : "f4P8I3CcCYoT15j6V2V1vn4NCRDIc5Rb"
       },
       "TEST": {
-        "urlBackend" : "http://localhost:49156"
+        "urlBackend" : "http://localhost:49156",
+        "security" : "2LG5D0Ge0Lk31nrE3FN1J1EpqgzVpJzC"
       },
       "PRODUCTION": {
-        "urlBackend" : "http://maureillas.herokuapp.com"
+        "urlBackend" : "http://maureillas.herokuapp.com",
+        "security" : "dvZ3UA6BqgUsLrP82Kj5bDCu6jcsDZ35"
       }
     }		
 }

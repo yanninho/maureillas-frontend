@@ -46,7 +46,10 @@ angular.module('maureillasApp.common')
           url : finalUrl,
           method : config.method,
           data : config.data || '',
-          params : config.params || undefined
+          params : config.params || undefined,
+          headers : {
+            'Authorization' : 'Basic key:' + URLS.security
+          },          
         }
       }
 

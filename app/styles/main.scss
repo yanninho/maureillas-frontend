@@ -137,3 +137,15 @@ md-checkbox.md-default-theme.md-checked .md-icon {
 .alert.ng-hide {
   top: -65px;
 }
+
+md-switch.md-default-theme.md-checked .md-bar {
+	background-color: rgba(16, 104, 1, 0.5) !important;
+}
+
+md-switch.md-default-theme.md-checked .md-thumb {
+	background-color: rgb(16, 104, 1) !important;
+}
+
+.network-error {
+	text-align: center;
+}

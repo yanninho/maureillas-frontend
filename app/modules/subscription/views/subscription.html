@@ -4,11 +4,9 @@
 	<md-divider></md-divider>
  	<md-list>
       <md-list-item ng-repeat="feed in user.info.feeds">
-		<md-checkbox ng-model="feed.suscriber" ng-change="update()" aria-label="{{feed.name}}">
-		</md-checkbox>
-		<div class="md-list-item-text">
+		<md-switch ng-model="feed.suscriber" ng-change="update()" aria-label="{{feed.name}}">
 			{{feed.name}}
-		</div>
+		</md-switch>
       </md-list-item>
 	</md-list>
 </div>

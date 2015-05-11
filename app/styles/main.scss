@@ -9,13 +9,10 @@ body {
     display: none !important;
 }
 
-.main-panel {
-	height : 100%;	
-}
-
 .view-container {
   position: relative;
   height: 100%;
+  background-color: #e9eff5;
 }
 
 .view {
@@ -58,9 +55,20 @@ body {
   left:-100%;
 }
 
+.title-page {
+	margin-bottom : 20px;
+	padding-left: 10px;
+	background-color: white;
+}
+
 .feeds {
-	md-content {
-		margin : 5px;
+	.feed {
+		margin-bottom : 20px;
+		background-color: white;
+		.feed-content {
+			padding-left: 10px;
+			min-height: 150px;
+		}
 	}
 }
 
@@ -76,6 +84,11 @@ body {
     }	
 }
 
+.feed-subscription {
+	background-color: white;
+	margin-bottom: 20px;
+}
+
 md-toolbar {
 	background-color: #106801 !important;
 	h1, h2, h3, h4, h5, h6, p, span {
@@ -83,7 +96,7 @@ md-toolbar {
 	}
 	z-index: 1000000;
 	h1 {
-    font-size: 1.25em;
+    font-size: 1em;
     font-weight: 400;
 	}
 }

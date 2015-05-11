@@ -1,18 +1,17 @@
-<div class="feeds">
-	<div layout="row" ng-show="loading">
-		<div flex offset="45">
-			<md-progress-circular md-mode="indeterminate" md-diameter="40"></md-progress-circular>
-		</div>
+<div layout="column" layout-fill class="feeds">
+	<div layout layout-align="center center" ng-show="loading">
+		<md-progress-circular md-mode="indeterminate" md-diameter="40"></md-progress-circular>
 	</div>
-
-	<h1>{{feedList.feeds.title}}</h1> 
-	<h2>{{feedList.feeds.description}}</h2>
-	<md-content ng-repeat="feed in feedList.feeds.entries" class="feed-item">	
+	<div class="md-whiteframe-z2 title-page">
+		<h1>{{feedList.feeds.title}}</h1> 
+		<h2>{{feedList.feeds.description}}</h2>
+	</div>
+	<md-whiteframe class="md-whiteframe-z2 feed" ng-repeat="feed in feedList.feeds.entries">	
 	  <md-toolbar>
 	    <div class="md-toolbar-tools">
-	      <h2 class="md-flex">{{feed.title}}</h2>
+	      <h3 class="md-flex">{{feed.title}}</h3>
 	    </div>
 	  </md-toolbar>	
 	  <div class="feed-content" ng-bind-html='feed.content'></div>		
-	</md-content>
+	</md-whiteframe>
 </div>

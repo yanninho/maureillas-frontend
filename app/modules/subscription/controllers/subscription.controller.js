@@ -11,24 +11,34 @@ angular.module('maureillasApp.subscription')
   .controller('SubscriptionCtrl', function ($scope, RegisterService, UserService, MessageService, $translate, $location, VIEWS) {
 
     $scope.available = false;
-
+    
+    $scope.loading = false; 
+    
     $scope.user = UserService.getUser();
     if (angular.isUndefined($scope.user.info)) {
-        RegisterService.register().then(function(result) {
-            $scope.available = true;
-            $scope.user = result;
-        });        
+        $scope.loading = true; 
+        RegisterService.register().then(
+            function(result) {
+                $scope.available = true;
+                $scope.user = result;
+                $scope.loading = false;
+            },
+            function(error) {
+                var message = MessageService.newMessage();
+                message.type = MessageService.getTypesMessages().DANGER;
+                message.textes = [error];
+                MessageService.setMessage(message); 
+                $scope.loading = false;                
+            });        
     }
     else {
         $scope.available = true;
     }
    	
     $scope.update = function() {
-        $scope.loading = true;
     	var promiseUpdate = UserService.update();
     	promiseUpdate.then(
         function() {   
-            $scope.loading = false; 		
 			 $translate('subscription.UPDATE_OK').then(function (updateOK) {
 			    var message = MessageService.newMessage();
                 message.type = MessageService.getTypesMessages().SUCCESS;
@@ -37,7 +47,6 @@ angular.module('maureillasApp.subscription')
 			});    		
     	},
         function(error) {
-            $scope.loading = false;
             var message = MessageService.newMessage();
             message.type = MessageService.getTypesMessages().DANGER;
             message.textes = [error];

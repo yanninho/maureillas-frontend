@@ -56,7 +56,7 @@ angular.module('maureillasApp.main')
         selected : false
       },
       {
-        name : 'navigation.NEWS',
+        name : 'navigation.EVENTS',
         link : '/feeds',
         param : {
           feed : 'agenda'
@@ -65,7 +65,7 @@ angular.module('maureillasApp.main')
         selected : false
       },
       {
-        name : 'navigation.EVENTS',
+        name : 'navigation.NEWS',
         link : '/feeds',
         param : {
           feed : 'annonces'

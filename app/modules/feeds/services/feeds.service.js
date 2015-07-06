@@ -10,18 +10,15 @@
 angular.module('maureillasApp.feeds')
   .factory('FeedListService', function (RestService, REMOTE) {
 
-  	var model = {
-  		feeds : {}
-  	};
+  		var feeds = {};
 
 
   	var getFeedSuccess = function(result) {
-  		console.log(result);
-  		model.feeds = result.data.responseData.feed;
+  		feeds = result.data.responseData.feed;
   	} 
 
   	var getFeeds = function(urlFeed, number) {
-      model.feeds = {};
+      feeds = {};
   		var config = REMOTE.googleFeedsService;
   		config.params['q'] = urlFeed;
   		config.params['num'] = number;
@@ -31,7 +28,9 @@ angular.module('maureillasApp.feeds')
 
 
  	return {
- 		get : model,
+ 		get : function() {
+      return feeds;
+    },
   	fetchFeeds : function(url, number) {
   			return getFeeds(url, number);
   	}

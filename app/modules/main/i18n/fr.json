@@ -14,6 +14,7 @@
 		"message" : "Aucune connexion réseau ! Cette application a besoin d'une connexion réseau pour fonctionner"
 	},
 	"home" : {
-		"message" : "Bienvenue sur l'application de la mairie de Maureillas"
+		"message" : "Ville de Maureillas Las Illas",
+		"sub-message" : "Bienvenue au coeur des vallées sauvages"
 	}
 }

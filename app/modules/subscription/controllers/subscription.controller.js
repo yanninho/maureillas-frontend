@@ -24,8 +24,11 @@ angular.module('maureillasApp.subscription')
     }
    	
     $scope.update = function() {
+        $scope.loading = true;
     	var promiseUpdate = UserService.update();
-    	promiseUpdate.then(function() {    		
+    	promiseUpdate.then(
+        function() {   
+            $scope.loading = false; 		
 			 $translate('subscription.UPDATE_OK').then(function (updateOK) {
 			    var message = MessageService.newMessage();
                 message.type = MessageService.getTypesMessages().SUCCESS;
@@ -34,6 +37,7 @@ angular.module('maureillasApp.subscription')
 			});    		
     	},
         function(error) {
+            $scope.loading = false;
             var message = MessageService.newMessage();
             message.type = MessageService.getTypesMessages().DANGER;
             message.textes = [error];

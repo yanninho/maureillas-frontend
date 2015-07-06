@@ -19,7 +19,8 @@ angular.module('maureillasApp.server')
         return UserService.register().then(successGetUser, function(error) {   
             if (!NetworkService.networkConnectionExist()) {
                 var deferred = $q.defer();
-                return deferred.reject('No network connection');            
+                deferred.reject('No network connection');  
+                return deferred.promise;          
             }            
             if (angular.isUndefined(UserService.getRegisterID())) {
                 return pushRegister();
@@ -40,14 +41,16 @@ angular.module('maureillasApp.server')
             return PushService.register().then(successPushRegister, function(error) {
                 if (!NetworkService.networkConnectionExist()) {
                     var deferred = $q.defer();
-                    return deferred.reject('No network connection');            
+                    deferred.reject('No network connection');   
+                    return deferred.promise;         
                 }            
                 return pushRegister();
             });
         }
         else {
             var deferred = $q.defer();
-            return deferred.reject('No Push service'); 
+            deferred.reject('No Push service');
+            return deferred.promise; 
         }
     }
 

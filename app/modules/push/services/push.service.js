@@ -101,7 +101,10 @@ angular.module('maureillasApp.push')
               q.reject(error);
           },
           pushConfig); 
-        }       
+        }   
+        else {
+          q.reject('window.plugin not defined, register not possible');
+        }    
       }
       else {
         q.reject('not on mobile device');        

@@ -57,7 +57,8 @@ console.log('7');
                     deferred.reject('No network connection');   
                     return deferred.promise;         
                 }  
-console.log('8');          
+console.log('8'); 
+console.log(error);         
                 return pushRegister();
             });
         }

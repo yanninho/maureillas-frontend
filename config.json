@@ -80,7 +80,7 @@
 		"maureillasService" : {
 			"users" : {
 				"createUser" : {
-					"url" : "/v1/users/{ID}/{PLATFORM}",
+					"url" : "/v1/users",
 					"method" : "PUT"
 				},
 				"updateUser" : {

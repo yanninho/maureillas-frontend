@@ -9,7 +9,7 @@
 		</div>
 	</div>	
  	<md-list>
-      <md-list-item class="md-whiteframe-z2 feed-subscription" layout="row" ng-repeat="feed in user.info.feeds" ng-hide="loading">
+      <md-list-item class="md-whiteframe-z2 feed-subscription" layout="row" ng-repeat="feed in user().info.feeds" ng-hide="loading">
 			<div flex-sm="80" flex-gt-sm="90" align="left center">
 			    {{feed.name}}
 			</div>

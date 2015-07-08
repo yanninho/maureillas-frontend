@@ -29,11 +29,11 @@
   </head>
 
    <!-- @if NODE_ENV='PRODUCTION' -->
-  <body class="ng-cloak" layout="column" ng-controller="MainCtrl"> 
+  <body class="ng-cloak" ng-controller="MainCtrl"> 
   <!-- @endif -->
 
    <!-- @if NODE_ENV='DEVELOPMENT' -->
-  <body ng-app="maureillasApp" class="ng-cloak" layout="column" ng-controller="MainCtrl"> 
+  <body ng-app="maureillasApp" class="ng-cloak" ng-controller="MainCtrl"> 
   <!-- @endif -->
 
     <!--[if lt IE 9]>
@@ -71,8 +71,8 @@
             </h3>  
         </md-content>    
     </md-sidenav>   
-    <div flex layout="column" id="content" class="view-container">
-        <div layout="column" flex auto-fill class="view view-animate" ng-view=""></div>
+    <div id="content" class="view-container">
+        <div class="view view-animate" ng-view=""></div>
     </div>
 
     <!-- build:js(.) scripts/vendor.js -->

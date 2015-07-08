@@ -9,18 +9,14 @@
  */
 angular.module('maureillasApp.subscription')
   .controller('SubscriptionCtrl', function ($scope, RegisterService, UserService, MessageService, $translate, $location, VIEWS) {
-
-    $scope.available = false;
-    
+  
     $scope.loading = false; 
     
-    $scope.user = UserService.getUser();
+    $scope.user = UserService.getUser;
     if (angular.isUndefined($scope.user.info)) {
         $scope.loading = true; 
         RegisterService.register().then(
             function(result) {
-                $scope.available = true;
-                $scope.user = result;
                 $scope.loading = false;
             },
             function(error) {
@@ -30,9 +26,6 @@ angular.module('maureillasApp.subscription')
                 MessageService.setMessage(message); 
                 $scope.loading = false;                
             });        
-    }
-    else {
-        $scope.available = true;
     }
    	
     $scope.update = function() {

@@ -28,7 +28,7 @@
 
   </head>
 
-  <body class="ng-cloak" layout="column" ng-controller="MainCtrl"> 
+  <body class="ng-cloak" ng-controller="MainCtrl"> 
     <!--[if lt IE 9]>
       <p class="browsehappy">Vous utilisez un navigateur <strong>obsolète</strong>. Merci de <a href="http://browsehappy.com/">mettre à jour votre navigateur</a>.</p>
     <![endif]-->
@@ -64,8 +64,8 @@
             </h3>  
         </md-content>    
     </md-sidenav>   
-    <div flex layout="column" id="content" class="view-container">
-        <div layout="column" flex auto-fill class="view view-animate" ng-view=""></div>
+    <div id="content" class="view-container">
+        <div class="view view-animate" ng-view=""></div>
     </div>
 
     <!-- build:js(.) scripts/vendor.js -->

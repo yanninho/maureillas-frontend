@@ -1,5 +1,5 @@
-<div layout="column" layout-fill class="feeds">
- 	<md-whiteframe class="md-whiteframe-z2 title-page">
+<div layout="column" class="feeds">
+ 	<md-whiteframe class="md-whiteframe-z2 title-page" flex>
 		<h1>{{title}}</h1> 
 	</md-whiteframe>
 	<div layout="row" flex layout-align="center center" ng-show="loading">
@@ -8,7 +8,7 @@
 		</div>
 	</div>	
 
-	<md-whiteframe class="md-whiteframe-z2 feed" ng-repeat="feed in feedList().entries" ng-hide="loading">	
+	<md-whiteframe flex class="md-whiteframe-z2 feed" ng-repeat="feed in feedList().entries" ng-hide="loading">	
 	  <md-toolbar>
 	    <div class="md-toolbar-tools">
 	      <h3 class="md-flex">{{feed.title}}</h3>

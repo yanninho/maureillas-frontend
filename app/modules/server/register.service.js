@@ -23,8 +23,7 @@ angular.module('maureillasApp.server')
             }            
             if (angular.isUndefined(UserService.getRegisterID())) {
                 return pushRegister();
-            }
-window.alert('16');                 
+            }             
             return register();
         });
     }
@@ -62,7 +61,7 @@ window.alert('16');
             else {
                 var deferred = $q.defer();
                 deferred.resolve('Not on mobile device');
-                window.alert('not mobile device');
+                console.log('not mobile device');
                 return deferred.promise;
             }
  		}

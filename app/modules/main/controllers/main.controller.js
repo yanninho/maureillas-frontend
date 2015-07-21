@@ -8,11 +8,11 @@
  * Controller of the maureillasApp
  */
 angular.module('maureillasApp.main')
-  .controller('MainCtrl', function ($scope, MessageService, $location, $mdSidenav, $mdUtil) {
+  .controller('MainCtrl', function ($scope, MessageService, $location, $mdSidenav, $mdUtil, CONFIG) {
   	$scope.alert = MessageService.getData();
 
 	function onOffline() {
-	    $location.path(VIEWS.main.pages.networkError.path);
+	    $location.path(CONFIG.VIEWS.main.pages.networkError.path);
 	}
 
 	function onOnline() {
@@ -22,7 +22,7 @@ angular.module('maureillasApp.main')
 		    message.textes = [networkOK];
     		MessageService.setMessage(message);
 		}); 		
-	    $location.path(VIEWS.main.pages.home.path);
+	    $location.path(CONFIG.VIEWS.main.pages.home.path);
 	}
 
 	document.addEventListener("offline", onOffline, false);
@@ -48,38 +48,22 @@ angular.module('maureillasApp.main')
       return debounceFn;
     }
 
-    $scope.menus = [
-      {
-        name : 'navigation.HOME',
-        link : '/home',
-        icon : 'images/ic_home_48px.svg',
-        selected : false
-      },
-      {
-        name : 'navigation.EVENTS',
-        link : '/feeds',
-        param : {
-          feed : 'agenda'
-        },
-        icon : 'images/ic_bookmark_48px.svg',
-        selected : false
-      },
-      {
-        name : 'navigation.NEWS',
-        link : '/feeds',
-        param : {
-          feed : 'annonces'
-        },
-        icon : 'images/ic_bookmark_48px.svg',
-        selected : false
-      },
-      {
-        name : 'navigation.NOTIFICATIONS',
-        link : '/subscription',
-        icon : 'images/ic_notifications_48px.svg',        
-        selected : false
+    $scope.menus = [];
+    for(var keyView in CONFIG.VIEWS) {
+      var view = CONFIG.VIEWS[keyView];
+      for(var keyPage in view.pages) {
+        var page = view.pages[keyPage];
+        if (!page.hideMenu) {
+          $scope.menus.push({
+            selected : false,
+            icon : page.icon,
+            link : page.path,
+            name : page.label,
+            param : page.param
+          });
+        }
       }
-    ]
+    }
 
     $scope.indexMenuSelected = 0;
 

@@ -1,22 +1,122 @@
 {
 	"VIEWS": {
+		"main" : {
+			"definition" : {
+				"path" : "main"
+			},
+			"pages" : {
+				"home" : {
+					  "label" : "navigation.HOME",	
+			          "path": "/home",
+			          "templateHtml": "home.html",
+			          "controller": "HomeCtrl",
+			          "icon" : "images/ic_home_48px.svg"					
+				},
+				"networkError" : {
+					  "label" : "navigation.NETWORK_ERROR",	
+			          "path": "/networkError",
+			          "templateHtml": "networkError.html",
+			          "controller": "NetworkErrorCtrl",
+			          "hideMenu" : true					
+				}
+			}				
+		},
 		"feeds" : {
 			"definition" : {
 				"path" : "feeds"
 			},
 			"pages" : {
+				"news" : {
+
+					  "label" : "navigation.NEWS",	
+			          "path": "/feeds",
+			          "templateHtml": "feeds.html",
+			          "controller": "FeedsCtrl",
+			          "icon" : "images/ic_bookmark_48px.svg",
+			          "param" : {
+			            "feed" : "news"
+			          }			          					
+				},
 				"agenda" : {
 
 					  "label" : "navigation.AGENDA",	
 			          "path": "/feeds",
 			          "templateHtml": "feeds.html",
-			          "controller": "FeedsCtrl"					
+			          "controller": "FeedsCtrl",					
+			          "icon" : "images/ic_bookmark_48px.svg",
+			          "param" : {
+			            "feed" : "agenda"
+			          }			          					
 				},
-				"annonces" : {
-					  "label" : "navigation.ANNONCES",	
+				"practicalNews" : {
+					  "label" : "navigation.PRACTICAL_NEWS",	
 			          "path": "/feeds",
 			          "templateHtml": "feeds.html",
-			          "controller": "FeedsCtrl"					
+			          "controller": "FeedsCtrl",					
+			          "icon" : "images/ic_bookmark_48px.svg",
+			          "param" : {
+			            "feed" : "practicalNews"
+			          }			          					
+				},
+				"historicalPatrimony" : {
+					  "label" : "navigation.HISTORICAL_PATRIMONY",	
+			          "path": "/feeds",
+			          "templateHtml": "feeds.html",
+			          "controller": "FeedsCtrl",					
+			          "icon" : "images/ic_bookmark_48px.svg",
+			          "param" : {
+			            "feed" : "historicalPatrimony"
+			          }			          					
+				},
+				"naturalHeritage" : {
+					  "label" : "navigation.NATURAL_HERITAGE",	
+			          "path": "/feeds",
+			          "templateHtml": "feeds.html",
+			          "controller": "FeedsCtrl",					
+			          "icon" : "images/ic_bookmark_48px.svg",
+			          "param" : {
+			            "feed" : "naturalHeritage"
+			          }			          					
+				},
+				"accomodation" : {
+					  "label" : "navigation.ACCOMMODATION",	
+			          "path": "/feeds",
+			          "templateHtml": "feeds.html",
+			          "controller": "FeedsCtrl",					
+			          "icon" : "images/ic_bookmark_48px.svg",
+			          "param" : {
+			            "feed" : "accomodation"
+			          }			          					
+				},
+				"restaurants" : {
+					  "label" : "navigation.RESTAURANTS",	
+			          "path": "/feeds",
+			          "templateHtml": "feeds.html",
+			          "controller": "FeedsCtrl",					
+			          "icon" : "images/ic_bookmark_48px.svg",
+			          "param" : {
+			            "feed" : "restaurants"
+			          }			          					
+				},
+				"market" : {
+					  "label" : "navigation.MARKET",	
+			          "path": "/feeds",
+			          "templateHtml": "feeds.html",
+			          "controller": "FeedsCtrl",					
+			          "icon" : "images/ic_bookmark_48px.svg",
+			          "param" : {
+			            "feed" : "market"
+			          }			          					
+				},
+				"administrativeProcedures" : {
+					  "label" : "navigation.ADMINISTRATIVE_PROCEDURES",	
+			          "path": "/feeds",
+			          "templateHtml": "feeds.html",
+			          "controller": "FeedsCtrl",					
+			          "icon" : "images/ic_bookmark_48px.svg",
+			          "param" : {
+			            "feed" : "administrativeProcedures"
+			          }			          					
 				}
 			}
 		},
@@ -29,28 +129,10 @@
 					  "label" : "navigation.SUBSCRIPTION",	
 			          "path": "/subscription",
 			          "templateHtml": "subscription.html",
-			          "controller": "SubscriptionCtrl"					
+			          "controller": "SubscriptionCtrl",
+			          "icon" : "images/ic_notifications_48px.svg"					
 				}
 			}			
-		},
-		"main" : {
-			"definition" : {
-				"path" : "main"
-			},
-			"pages" : {
-				"home" : {
-					  "label" : "navigation.HOME",	
-			          "path": "/home",
-			          "templateHtml": "home.html",
-			          "controller": "HomeCtrl"					
-				},
-				"networkError" : {
-					  "label" : "navigation.NETWORK_ERROR",	
-			          "path": "/networkError",
-			          "templateHtml": "networkError.html",
-			          "controller": "NetworkErrorCtrl"					
-				}
-			}				
 		}
 	},
 	"FEEDS": {

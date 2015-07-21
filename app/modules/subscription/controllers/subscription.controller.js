@@ -8,7 +8,7 @@
  * Controller of the maureillasApp
  */
 angular.module('maureillasApp.subscription')
-  .controller('SubscriptionCtrl', function ($scope, RegisterService, UserService, MessageService, $translate, $location, VIEWS) {
+  .controller('SubscriptionCtrl', function ($scope, RegisterService, UserService, MessageService, $translate) {
   
     $scope.loading = false; 
     

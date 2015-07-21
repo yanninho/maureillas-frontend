@@ -8,7 +8,7 @@
  * Factory in the maureillasApp.
  */
 angular.module('maureillasApp.feeds')
-  .factory('FeedListService', function (RestService, REMOTE) {
+  .factory('FeedListService', function (RestService, CONFIG) {
 
   		var feeds = {};
 
@@ -19,7 +19,7 @@ angular.module('maureillasApp.feeds')
 
   	var getFeeds = function(urlFeed, number) {
       feeds = {};
-  		var config = REMOTE.googleFeedsService;
+  		var config = CONFIG.REMOTE.googleFeedsService;
   		config.params['q'] = urlFeed;
   		config.params['num'] = number;
   		var promiseGetFeed = RestService.call(config);

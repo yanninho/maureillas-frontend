@@ -21,9 +21,7 @@ module.exports = function (grunt) {
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
     dist: 'dist',
-    VIEWS: require('./config.json').VIEWS,
-    FEEDS: require('./config.json').FEEDS,
-    REMOTE: require('./config.json').REMOTE,
+    CONFIG: require('./config.json'),
     URLS: require('./config.json').URLS,
   };
 
@@ -436,41 +434,25 @@ module.exports = function (grunt) {
     },
     ngconstant: {
       options: {
-        deps: false
+        deps: false,
+        name: 'maureillasApp.common',
+        dest: '<%= yeoman.app %>/modules/common/services/config.service.js',
+        constants: {
+          CONFIG: '<%= yeoman.CONFIG %>'        
+        }  
       },
       development: {
-        options: {
-        name: 'maureillasApp.common',
-        dest: '<%= yeoman.app %>/modules/common/services/config.service.js'
-        },
         constants: {
-          VIEWS: '<%= yeoman.VIEWS %>',
-          FEEDS: '<%= yeoman.FEEDS %>',
-          REMOTE: '<%= yeoman.REMOTE %>',
           URLS: '<%= yeoman.URLS.DEVELOPMENT %>'
         }
       },
       test: {
-        options: {
-          name: 'maureillasApp.common',
-          dest: '<%= yeoman.app %>/modules/common/services/config.service.js',
-        },
         constants: {
-          VIEWS: '<%= yeoman.VIEWS %>',
-          FEEDS: '<%= yeoman.FEEDS %>',
-          REMOTE: '<%= yeoman.REMOTE %>',
           URLS: '<%= yeoman.URLS.TEST %>'
         }
       },
       production: {
-        options: {
-          name: 'maureillasApp.common',
-          dest: '<%= yeoman.app %>/modules/common/services/config.service.js',
-        },
         constants: {
-          VIEWS: '<%= yeoman.VIEWS %>',
-          FEEDS: '<%= yeoman.FEEDS %>',
-          REMOTE: '<%= yeoman.REMOTE %>',
           URLS: '<%= yeoman.URLS.PRODUCTION %>'
         }
       }

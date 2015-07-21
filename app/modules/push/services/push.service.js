@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('maureillasApp.push')
-.factory('PushService', function($q, $window, REMOTE, UserService, DeviceService) {
+.factory('PushService', function($q, $window, CONFIG, UserService, DeviceService) {
 
   var pushConfig = {};
 
@@ -9,7 +9,7 @@ angular.module('maureillasApp.push')
 
     if (device.platform == 'android' || device.platform == 'Android') {
       pushConfig = {
-        "senderID": REMOTE.pushService.GCM.key,
+        "senderID": CONFIG.REMOTE.pushService.GCM.key,
         "ecb":"onNotificationGCM"
       };
     } else {

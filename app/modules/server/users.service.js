@@ -8,7 +8,7 @@
  * Factory in the maureillasApp.
  */
 angular.module('maureillasApp.server')
-  .factory('UserService', function ($q, RestService, REMOTE, PlatformService) {
+  .factory('UserService', function ($q, RestService, CONFIG, PlatformService) {
 
     var user = {
       registerID : undefined,
@@ -18,7 +18,7 @@ angular.module('maureillasApp.server')
     var registerUser = function() {
       var registerId = user.registerID;
       if (angular.isDefined(registerId)) {
-        var config = REMOTE.maureillasService.users.createUser;
+        var config = CONFIG.REMOTE.maureillasService.users.createUser;
         config.data = {      
                         'user': {
                           'id' : registerId,
@@ -40,7 +40,7 @@ angular.module('maureillasApp.server')
     } 
 
     var updateUser = function() {
-      var config = REMOTE.maureillasService.users.updateUser;
+      var config = CONFIG.REMOTE.maureillasService.users.updateUser;
       var registerId = user.registerID;
       config.url = config.url.replace('{ID}', user.info._id);
       config.data = {

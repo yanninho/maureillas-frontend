@@ -8,16 +8,16 @@
  * Controller of the maureillasApp
  */
 angular.module('maureillasApp.feeds')
-  .controller('FeedsCtrl', function ($scope, $location, FeedListService, FEEDS) {
+  .controller('FeedsCtrl', function ($scope, $location, FeedListService, CONFIG) {
 
     $scope.feedList = FeedListService.get;
     var searchUrlObject = $location.search();
 
     if (!angular.isUndefined(searchUrlObject["feed"])) {
       var feedValue = searchUrlObject["feed"];
-      $scope.title = FEEDS[feedValue].title;
+      $scope.title = CONFIG.FEEDS[feedValue].title;
       $scope.loading = true;
-      var promiseFeedList = FeedListService.fetchFeeds(FEEDS[feedValue].url, 10);
+      var promiseFeedList = FeedListService.fetchFeeds(CONFIG.FEEDS[feedValue].url, 10);
       var resultGetFeeds = function(res) {
       	$scope.loading = false;
       }

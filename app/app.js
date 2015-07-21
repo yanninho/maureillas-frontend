@@ -10,21 +10,37 @@
  * Main module of the application.
  */
 angular
-  .module('maureillasApp')
-  .config(function ($httpProvider, $routeProvider, $locationProvider, $translateProvider, $translatePartialLoaderProvider, VIEWS) {
+  .module('maureillasApp', [
+                'ngMessages',
+                'ngResource',
+                'ngRoute',
+                'ngAnimate',
+                'ngTouch',
+                'pascalprecht.translate',
+                'ngSanitize',
+                'ngMaterial',
+                //Application modules
+                'maureillasApp.common',
+                'maureillasApp.main',
+                'maureillasApp.feeds',
+                'maureillasApp.push',
+                'maureillasApp.server',
+                'maureillasApp.subscription'
+            ])
+  .config(function ($httpProvider, $routeProvider, $locationProvider, $translateProvider, $translatePartialLoaderProvider, CONFIG) {
     $httpProvider.defaults.withCredentials = true;
     // les routes (views.json)
-    angular.forEach(VIEWS, function(module, keyModule) {
+    angular.forEach(CONFIG.VIEWS, function(module, keyModule) {
       angular.forEach(module.pages, function(page, view) {
         $routeProvider.when(page.path, {
           templateUrl: 'modules/' + keyModule + '/views/'+ page.templateHtml,
           controller: page.controller,
           resolve : {
             'network' : function($location, NetworkService, DeviceService) { 
-              if (page.label != VIEWS.main.pages.networkError.label && DeviceService.isMobile())  {
+              if (page.label != CONFIG.VIEWS.main.pages.networkError.label && DeviceService.isMobile())  {
                 // network error
                 if (!NetworkService.networkConnectionExist()) {   
-                  $location.path(VIEWS.main.pages.networkError.path);
+                  $location.path(CONFIG.VIEWS.main.pages.networkError.path);
                   return false;
                 }                 
               }              
@@ -36,7 +52,7 @@ angular
     });
     //routes inconnues >> accueil
     $routeProvider.otherwise({
-      redirectTo: VIEWS.main.pages.home.path
+      redirectTo: CONFIG.VIEWS.main.pages.home.path
     });
 
     //translate

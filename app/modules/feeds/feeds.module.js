@@ -6,7 +6,7 @@
  * @description 
  */
  angular.module('maureillasApp.feeds',['maureillasApp.common'])
-    .config(function($translatePartialLoaderProvider, VIEWS) {
+    .config(function($translatePartialLoaderProvider, CONFIG) {
     //translate
-    $translatePartialLoaderProvider.addPart(VIEWS.feeds.definition.path); 	
+    $translatePartialLoaderProvider.addPart(CONFIG.VIEWS.feeds.definition.path); 	
  });

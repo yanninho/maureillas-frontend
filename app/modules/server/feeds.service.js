@@ -8,10 +8,10 @@
  * Factory in the maureillasApp.
  */
 angular.module('maureillasApp.server')
-  .factory('FeedService', function ($q, RestService, REMOTE) {
+  .factory('FeedService', function ($q, RestService, CONFIG) {
 
     var getAll = function() {
-        var config = REMOTE.maureillasService.feeds.getAll;
+        var config = CONFIG.REMOTE.maureillasService.feeds.getAll;
         config.backend =true;
         var promiseGetFeeds = RestService.call(config);
         promiseGetFeeds.then(function(result) {

@@ -4,10 +4,18 @@
 	},
 	"navigation" : {
 		"HOME" : "Accueil",
-		"SUBSCRIPTION" : "Abonnements aux notifications",
+		"SUBSCRIPTION" : "Notifications",
 		"EVENTS" : "Evenements",
 		"NOTIFICATIONS" : "Notifications",
-		"NEWS" : "Annonces",
+		"NEWS" : "Actualités",
+		"AGENDA": "Agenda",
+		"PRACTICAL_NEWS" : "Informations pratiques",
+		"HISTORICAL_PATRIMONY" : "Patrimoine historique",
+		"NATURAL_HERITAGE" : "Patrimoine naturel",
+		"ACCOMMODATION" : "Hébergements",
+		"RESTAURANTS" : "Restaurants",
+		"MARKET" : "Marché",
+		"ADMINISTRATIVE_PROCEDURES" : "Démarches administratives",
 		"NETWORK_OK" : "Connexion réseau à nouveau disponible, vous pouvez reprendre la navigation"
 	},
 	"networkError" : {

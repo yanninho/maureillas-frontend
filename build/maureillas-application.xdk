@@ -4,7 +4,7 @@
     "creationData": {
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "projectGuid": "8bfb4f49-268b-4bec-9419-6b79acc6bdcd",
-      "lastModifiedDate": 1430934891852,
+      "lastModifiedDate": 1438261179587,
       "creationDate": 1430223981729
     },
     "XDK-app-designer": "false",
@@ -18,7 +18,7 @@
     "cordovaPlugins": [
       {
         "id": "org.apache.cordova.device",
-        "version": "0.2.9",
+        "version": "0.2.13",
         "selectedState": "Included",
         "data": {},
         "paramvals": {},
@@ -27,7 +27,7 @@
       },
       {
         "id": "org.apache.cordova.splashscreen",
-        "version": "0.3.0",
+        "version": "0.3.5",
         "selectedState": "Included",
         "data": {},
         "paramvals": {},
@@ -163,7 +163,7 @@
         "addlPermissions_": "com.google.android.c2dm.permission.RECEIVE;android.permission.INTERNET;android.permission.GET_ACCOUNTS;android.permission.WAKE_LOCK;com.yannsm.permission.C2D_MESSAGE",
         "excludedLibraries_": "",
         "iosProvs_": [],
-        "cordovaCLIVersion_": "3.5",
+        "cordovaCLIVersion_": "4.1.2",
         "crosswalkVersion_": "11",
         "appVersion_": "0.0.1",
         "appDescription_": "Application mobile de la ville de Maurillas",

@@ -14,8 +14,8 @@
 <icon platform="ios" src="LaunchIcons/iPad (Retina)/152x152px.png" width="152" height="152"/>
 <icon platform="ios" src="LaunchIcons/iPhone (Retina)/120x120px.png" width="120" height="120"/>
 <icon platform="ios" src="LaunchIcons/iPad_iPadmini/76x76px.png" width="76" height="76"/>
-<intelxdk:plugin intelxdk:name="Device" intelxdk:value="org.apache.cordova.device" intelxdk:version="0.2.9"/>
-<intelxdk:plugin intelxdk:name="SplashScreen" intelxdk:value="org.apache.cordova.splashscreen" intelxdk:version="0.3.0"/>
+<intelxdk:plugin intelxdk:name="Device" intelxdk:value="org.apache.cordova.device" intelxdk:version="0.2.13"/>
+<intelxdk:plugin intelxdk:name="SplashScreen" intelxdk:value="org.apache.cordova.splashscreen" intelxdk:version="0.3.5"/>
 <intelxdk:plugin intelxdk:name="PushPlugin" intelxdk:value="https://github.com/phonegap-build/PushPlugin.git"/>
 <intelxdk:plugin intelxdk:name="Connection" intelxdk:value="org.apache.cordova.network-information" intelxdk:version="0.2.14"/>
 <preference name="ios-target" value="6"/>

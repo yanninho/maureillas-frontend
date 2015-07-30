@@ -1,5 +1,6 @@
-<!-- WARNING GENERATED FROM TEMPLATE -->
-
+<!-- @if NODE_ENV='DEVELOPMENT' -->
+    <!-- WARNING GENERATED FROM TEMPLATE -->
+<!-- @endif -->
 <!doctype html>
 <html class="no-js">
   <head>
@@ -28,12 +29,14 @@
 
   </head>
 
-   <!-- @if NODE_ENV='PRODUCTION' -->
+  <!-- @if NODE_ENV='MOBILE' -->
+   <!-- MOBILE VERSION -->
   <body class="ng-cloak" ng-controller="MainCtrl"> 
   <!-- @endif -->
 
-   <!-- @if NODE_ENV='DEVELOPMENT' -->
-  <body ng-app="maureillasApp" class="ng-cloak" ng-controller="MainCtrl"> 
+  <!-- @if NODE_ENV='DEVELOPMENT' || NODE_ENV='DESKTOP' -->
+    <!-- DESKTOP VERSION -->
+    <body ng-app="maureillasApp" class="ng-cloak" ng-controller="MainCtrl"> 
   <!-- @endif -->
 
     <!--[if lt IE 9]>
@@ -91,7 +94,7 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- @if NODE_ENV='PRODUCTION' -->
+    <!-- @if NODE_ENV='MOBILE' -->
         <script src="intelxdk.js"></script>
         <!-- phantom library, needed for Intel XDK "legacy" container api calls -->
         <script src="cordova.js"></script>

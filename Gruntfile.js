@@ -38,7 +38,7 @@ module.exports = function (grunt) {
         tasks: ['wiredep']
       },
       preprocess: {
-        files: ['templates/**.*'],
+        files: ['app/*.tmpl.*'],
         tasks: ['preprocess']
       },
       js: {
@@ -276,32 +276,6 @@ module.exports = function (grunt) {
       }
     },
 
-    // The following *-min tasks will produce minified files in the dist folder
-    // By default, your `index.html`'s <!-- Usemin block --> will take care of
-    // minification. These next options are pre-configured if you do not wish
-    // to use the Usemin blocks.
-    // cssmin: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/styles/main.css': [
-    //         '.tmp/styles/{,*/}*.css'
-    //       ]
-    //     }
-    //   }
-    // },
-    // uglify: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/scripts/scripts.js': [
-    //         '<%= yeoman.dist %>/scripts/scripts.js'
-    //       ]
-    //     }
-    //   }
-    // },
-    // concat: {
-    //   dist: {}
-    // },
-
     imagemin: {
       dist: {
         files: [{
@@ -374,8 +348,10 @@ module.exports = function (grunt) {
           src: [
             '*.{ico,png,txt}',
             '.htaccess',
-            '*.html',
-            '**/*.html',
+            '404.html',
+            'index.html',
+            '!index.tmpl.html',
+            'modules/**/*.html',
             '**/i18n/*.json',
             'images/{,*/}*.{webp}',
             'styles/fonts/{,*/}*.*',
@@ -432,6 +408,7 @@ module.exports = function (grunt) {
         'svgmin'
       ]
     },
+
     ngconstant: {
       options: {
         deps: false,
@@ -457,6 +434,7 @@ module.exports = function (grunt) {
         }
       }
     },
+
     // Test settings
     karma: {
       unit: {
@@ -464,6 +442,7 @@ module.exports = function (grunt) {
         singleRun: true
       }
     },
+
     replace: {
       image_path: {
         src: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
@@ -474,6 +453,7 @@ module.exports = function (grunt) {
         }]
       }
     },
+
     preprocess : {
       options: {
         context : {
@@ -481,23 +461,29 @@ module.exports = function (grunt) {
         }
       },
       html : {
-        src : 'templates/index.template.html',
+        src : 'app/index.tmpl.html',
         dest : 'app/index.html'
       },
       js : {
-        src : 'templates/app.template.js',
+        src : 'app/app.tmpl.js',
         dest : 'app/app.js'
       }
-    },    
+    },   
+
     env : {
         options : {
         },
         dev: {
             NODE_ENV : 'DEVELOPMENT'
         },
-        prod : {
-            NODE_ENV : 'PRODUCTION'
-        }
+        
+            mobile : {
+              NODE_ENV : 'MOBILE'
+            },
+            desktop : {
+              NODE_ENV : 'DESKTOP'
+            }            
+        
     }
   });
 
@@ -536,20 +522,26 @@ module.exports = function (grunt) {
       grunt.log.ok('Construction de l\'application pour l\'environnement de Dévelopement');
       return grunt.task.run(['ngconstant:development', 'buildAll']);
     }
-    if (target === 'PRODUCTION') {
-      grunt.log.ok('Construction de l\'application pour l\'environnement de Production');
-      return grunt.task.run(['ngconstant:production', 'buildAll']);
+    
+    if (target === 'PRODUCTION-MOBILE') {
+      grunt.log.ok('Construction de l\'application pour l\'environnement de Production version mobile');
+      return grunt.task.run(['ngconstant:production', 'env:mobile', 'buildAll']);
     }
+    
+    if (target === 'PRODUCTION-DESKTOP') {
+      grunt.log.ok('Construction de l\'application pour l\'environnement de Production version desktop');
+      return grunt.task.run(['ngconstant:production', 'env:desktop', 'buildAll']);
+    }
+
    if (target === 'TEST') {
        grunt.log.ok('Construction de l\'application pour l\'environnement de Test');
       return grunt.task.run(['ngconstant:test', 'buildAll']);
     }
-    grunt.log.warn('Vous devez spécifier un argument pour cette tache : grunt build:env avec env = DEVELOPMENT, PRODUCTION ou TEST');
+    grunt.log.warn('Vous devez spécifier un argument pour cette tache : grunt build:env avec env = DEVELOPMENT, PRODUCTION-MOBILE, PRODUCTION-DESKTOP ou TEST');
   });
 
   grunt.registerTask('buildAll', [
       'clean:dist',
-      'env:prod',
       'preprocess',
       'wiredep',
       'useminPrepare',

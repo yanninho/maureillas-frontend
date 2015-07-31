@@ -1,7 +1,6 @@
 'use strict';
 
 /**
- * WARNING GENERATED FROM TEMPLATE
  * @ngdoc overview
  * @name maureillasApp
  * @description
@@ -9,6 +8,8 @@
  *
  * Main module of the application.
  */
+ 
+/* MOBILE VERSION */
 angular
   .module('maureillasApp')
   .config(function ($httpProvider, $routeProvider, $locationProvider, $translateProvider, $translatePartialLoaderProvider, CONFIG) {

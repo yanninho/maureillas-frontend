@@ -1,7 +1,10 @@
 'use strict';
 
+// @if NODE_ENV='DEVELOPMENT' 
+    /* WARNING GENERATED FROM TEMPLATE */
+// @endif
+
 /**
- * WARNING GENERATED FROM TEMPLATE
  * @ngdoc overview
  * @name maureillasApp
  * @description
@@ -9,7 +12,9 @@
  *
  * Main module of the application.
  */
-// @if NODE_ENV='DEVELOPMENT' 
+ 
+// @if NODE_ENV='DEVELOPMENT' || NODE_ENV='DESKTOP'
+/* DESKTOP VERSION */
 angular
   .module('maureillasApp', [
                 'ngMessages',
@@ -29,7 +34,8 @@ angular
                 'maureillasApp.subscription'
             ])
 // @endif  
-// @if NODE_ENV='PRODUCTION' 
+// @if NODE_ENV='MOBILE' 
+/* MOBILE VERSION */
 angular
   .module('maureillasApp')
 // @endif  

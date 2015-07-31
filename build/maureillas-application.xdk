@@ -4,7 +4,7 @@
     "creationData": {
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "projectGuid": "8bfb4f49-268b-4bec-9419-6b79acc6bdcd",
-      "lastModifiedDate": 1438261179587,
+      "lastModifiedDate": 1438344937285,
       "creationDate": 1430223981729
     },
     "XDK-app-designer": "false",
@@ -35,7 +35,16 @@
         "dependedBy": []
       },
       {
-        "id": "com.phonegap.plugins.PushPlugin",
+        "id": "org.apache.cordova.network-information",
+        "version": "0.2.14",
+        "selectedState": "Included",
+        "data": {},
+        "paramvals": {},
+        "dependsOn": [],
+        "dependedBy": []
+      },
+      {
+        "id": "com.clone.phonegap.plugins.pushplugin",
         "version": "",
         "selectedState": "Included",
         "data": {},
@@ -44,18 +53,9 @@
         "dependedBy": [],
         "custom": "true",
         "name": "PushPlugin",
-        "origin": "https://github.com/phonegap-build/PushPlugin.git",
-        "originType": "repo",
+        "origin": "com.clone.phonegap.plugins.pushplugin",
+        "originType": "cordova.io",
         "sourceLocation": ""
-      },
-      {
-        "id": "org.apache.cordova.network-information",
-        "version": "0.2.14",
-        "selectedState": "Included",
-        "data": {},
-        "paramvals": {},
-        "dependsOn": [],
-        "dependedBy": []
       }
     ],
     "buildConfigurations": {
@@ -69,8 +69,8 @@
           "android-installLocation": "auto"
         },
         "isActive_": true,
-        "appName_": "Ville de Maureillas",
-        "appID_": "com.maureillas",
+        "appName_": "maureillas",
+        "appID_": "com.surikwat",
         "appAccess_": [
           {
             "origin": "*"
@@ -165,7 +165,7 @@
         "iosProvs_": [],
         "cordovaCLIVersion_": "4.1.2",
         "crosswalkVersion_": "11",
-        "appVersion_": "0.0.1",
+        "appVersion_": "0.0.2",
         "appDescription_": "Application mobile de la ville de Maurillas",
         "appAuthor_": "Surikwat",
         "appVersionCode_": "1"
@@ -204,7 +204,7 @@
           "ios-configuration": "adhoc",
           "exit-on-suspend": true
         },
-        "isActive_": true,
+        "isActive_": false,
         "appName_": "Ville de Maureillas",
         "appID_": "com.maureillas",
         "appAccess_": [
@@ -257,7 +257,7 @@
           "windows-publisher-display-name": "",
           "windows-publisher-id": ""
         },
-        "isActive_": true,
+        "isActive_": false,
         "appName_": "Ville de Maureillas",
         "appID_": "com.maureillas",
         "appAccess_": [

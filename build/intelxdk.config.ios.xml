@@ -16,8 +16,8 @@
 <icon platform="ios" src="LaunchIcons/iPad_iPadmini/76x76px.png" width="76" height="76"/>
 <intelxdk:plugin intelxdk:name="Device" intelxdk:value="org.apache.cordova.device" intelxdk:version="0.2.13"/>
 <intelxdk:plugin intelxdk:name="SplashScreen" intelxdk:value="org.apache.cordova.splashscreen" intelxdk:version="0.3.5"/>
-<intelxdk:plugin intelxdk:name="PushPlugin" intelxdk:value="https://github.com/phonegap-build/PushPlugin.git"/>
 <intelxdk:plugin intelxdk:name="Connection" intelxdk:value="org.apache.cordova.network-information" intelxdk:version="0.2.14"/>
+<intelxdk:plugin intelxdk:name="PushPlugin" intelxdk:value="com.clone.phonegap.plugins.pushplugin"/>
 <preference name="ios-target" value="6"/>
 <preference name="ios-configuration" value="adhoc"/>
 <preference name="exit-on-suspend" value="true"/>

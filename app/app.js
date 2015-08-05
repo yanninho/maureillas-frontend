@@ -9,25 +9,9 @@
  * Main module of the application.
  */
  
-/* DESKTOP VERSION */
+/* MOBILE VERSION */
 angular
-  .module('maureillasApp', [
-                'ngMessages',
-                'ngResource',
-                'ngRoute',
-                'ngAnimate',
-                'ngTouch',
-                'pascalprecht.translate',
-                'ngSanitize',
-                'ngMaterial',
-                //Application modules
-                'maureillasApp.common',
-                'maureillasApp.main',
-                'maureillasApp.feeds',
-                'maureillasApp.push',
-                'maureillasApp.server',
-                'maureillasApp.subscription'
-            ])
+  .module('maureillasApp')
   .config(function ($httpProvider, $routeProvider, $locationProvider, $translateProvider, $translatePartialLoaderProvider, CONFIG) {
     $httpProvider.defaults.withCredentials = true;
     // les routes (views.json)

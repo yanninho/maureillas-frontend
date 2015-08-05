@@ -8,7 +8,7 @@
  * Controller of the maureillasApp
  */
 angular.module('maureillasApp.main')
-  .controller('MainCtrl', function ($scope, MessageService, $location, $mdSidenav, $mdUtil, CONFIG) {
+  .controller('MainCtrl', function ($scope, MessageService, $location, $mdSidenav, $mdUtil, CONFIG, MenuService) {
   	$scope.alert = MessageService.getData();
 
 	function onOffline() {
@@ -16,7 +16,6 @@ angular.module('maureillasApp.main')
 	}
 
 	function onOnline() {
-        var message = MessageService.newMessage();
 		$translate('navigation.NETWORK_OK').then(function (networkOK) {
 		    var message = MessageService.newMessage();
 		    message.textes = [networkOK];
@@ -57,7 +56,7 @@ angular.module('maureillasApp.main')
           $scope.menus.push({
             selected : false,
             icon : page.icon,
-            link : page.path,
+            path : page.path,
             name : page.label,
             param : page.param
           });
@@ -88,14 +87,7 @@ angular.module('maureillasApp.main')
     }
 
     var go = function(menu) {      
-      $location.url($location.path());
-      if (angular.isDefined(menu.param)) {
-        $location.path( menu.link ).search(menu.param);
-      }
-      else {
-        $location.path( menu.link );
-      }      
+      MenuService.go(menu);    
     }
-
 
 });

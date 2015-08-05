@@ -26,6 +26,17 @@ angular.module('maureillasApp.common')
         }
       }
 
+      var setMessage = function(type, text, timestamp) {
+          data.message.type = type;
+          data.message.textes = [text];
+          var timeoutService = $injector.get('$timeout'); 
+          timeoutService(function() {              
+              data.message.textes = undefined;
+              data.message.type = TYPES_MESSAGES.PRIMARY;
+              data.message.json = false;
+          }, data.message.timestamp);       
+      }
+
       return {
         newMessage: function() {
           return {
@@ -66,6 +77,12 @@ angular.module('maureillasApp.common')
               data.message.json = false;
           }, data.message.timestamp);
 
+        },
+        setSuccess : function(text) {
+         setMessage(TYPES_MESSAGES.SUCCESS, text, 5000);
+        },
+        setError : function(text) {
+          setMessage(TYPES_MESSAGES.DANGER, text, 5000);          
         }
       }    
   });

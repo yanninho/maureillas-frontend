@@ -32,6 +32,7 @@
   <!-- @if NODE_ENV='MOBILE' -->
    <!-- MOBILE VERSION -->
   <body class="ng-cloak" ng-controller="MainCtrl"> 
+        <div ng-controller="PushCtrl"></div>
   <!-- @endif -->
 
   <!-- @if NODE_ENV='DEVELOPMENT' || NODE_ENV='DESKTOP' -->
@@ -80,17 +81,7 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-messages/angular-messages.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <script src="bower_components/angular-translate/angular-translate.js"></script>
-    <script src="bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-aria/angular-aria.js"></script>
-    <script src="bower_components/angular-material/angular-material.js"></script>
+
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -136,6 +127,8 @@
                 <script src="modules/common/services/exceptionHandlerOverride.service.js"></script>           
                 <script src="modules/common/services/config.service.js"></script>  
                 <script src="modules/common/services/messages.service.js"></script>         
+                <script src="modules/common/services/menu.service.js"></script>         
+                <script src="modules/common/services/underscore.service.js"></script>         
                 <!-- directives -->           
                 <!-- models -->       
             <!-- fin module common -->
@@ -161,6 +154,7 @@
                 <!-- services -->            
                 <script src="modules/push/services/push.service.js"></script>                     
                 <!-- controllers -->           
+                <script src="modules/push/controllers/push.controller.js"></script>                     
                                    
             <!-- fin module push -->
            

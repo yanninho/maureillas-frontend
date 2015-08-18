@@ -7,7 +7,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
     <title>Ville de Maureillas - Las Illas</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="stylesheet" href="styles/vendor.e854a80f.css">
+    <link rel="stylesheet" href="styles/vendor.44b8e4f9.css">
     <link rel="stylesheet" href="styles/main.cc0e6854.css">
 
     <!-- Recommandation Bootstrap -->
@@ -20,9 +20,8 @@
 
   </head>
 
-   <!-- MOBILE VERSION -->
-  <body class="ng-cloak" ng-controller="MainCtrl"> 
-        <div ng-controller="PushCtrl"></div>
+    <!-- DESKTOP VERSION -->
+    <body ng-app="maureillasApp" class="ng-cloak" ng-controller="MainCtrl"> 
     <!--[if lt IE 9]>
       <p class="browsehappy">Vous utilisez un navigateur <strong>obsolète</strong>. Merci de <a href="http://browsehappy.com/">mettre à jour votre navigateur</a>.</p>
     <![endif]-->
@@ -62,25 +61,9 @@
         <div class="view view-animate" ng-view=""></div>
     </div>
 
-    <script src="scripts/vendor.d1694e2e.js"></script>
+    <script src="scripts/vendor.4e875537.js"></script>
 
-        <script src="intelxdk.js"></script>
-        <!-- phantom library, needed for Intel XDK "legacy" container api calls -->
-        <script src="cordova.js"></script>
-        <!-- phantom library, needed for Cordova api calls -->
-        <script src="xhr.js"></script>
-        <!-- phantom library, needed for Intel XDK "legacy" container CORS -->
-
-       
-        <!-- for your event code, see README and file comments for details -->
-        <script src="init-app.js"></script>
-        <!-- for your init code, see README and file comments for details -->
-        <script src="init-dev.js"></script>
-        <!-- normalizes device and document ready events, see file for details -->
-        
-        <!-- Cordova push plugin -->
-        <script type="text/javascript" charset="utf-8" src="PushNotification.js"></script>
-        <script src="scripts/scripts.b5f178c1.js"></script>
+        <script src="scripts/scripts.454ee08f.js"></script>
       
 </body>
 </html>

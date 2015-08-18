@@ -1,12 +1,14 @@
+html {
+    background: #f0f7fd url("../images/fond-maureillas-ok.jpg") no-repeat fixed center center;
+    margin: 0;
+    padding: 0;	
+}
+
 body {
 	width : 100%;
 	height: 100%;	
 	color: #236792;
-/*	background-image: url('../images/fond-maureillas-ok.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center; 
-*/
+	background-color: transparent;
 }
 
 /*  */
@@ -63,7 +65,7 @@ body {
 .title-page {
 	margin-bottom : 20px;
 	padding: 10px;
-	background-color: white;
+	background-color: transparent;
 	text-transform: capitalize;
 	text-align:center;
 }

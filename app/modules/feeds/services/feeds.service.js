@@ -10,18 +10,40 @@
 angular.module('maureillasApp.feeds')
   .factory('FeedListService', function (RestService, CONFIG) {
 
-  		var feeds = {};
+  	var feeds = {};
 
+    var getGoogleFeedsConfig = function(feed,number) {
+      var config = CONFIG.REMOTE.googleFeedsService;
+      config.params['q'] = feed.url;
+      config.params['num'] = number; 
+      return config;     
+    }
 
-  	var getFeedSuccess = function(result) {
-  		feeds = result.data.responseData.feed;
-  	} 
+    var getDirectHtmlConfig = function(feed) {
+      var config = feed.request;
+      return config;     
+    }
 
-  	var getFeeds = function(urlFeed, number) {
-      feeds = {};
-  		var config = CONFIG.REMOTE.googleFeedsService;
-  		config.params['q'] = urlFeed;
-  		config.params['num'] = number;
+    var getGoogleFeedSuccess = function(result) {
+      feeds = result.data.responseData.feed;
+    } 
+
+    var getDirectHtmlSuccess = function(result) {
+      feeds = result.data;
+    } 
+
+  	var getFeeds = function(feed, number) {
+      var config = {};
+      var getFeedSuccess = null;
+      if (angular.isUndefined(feed.request)) {
+        config = getGoogleFeedsConfig(feed, number);
+        getFeedSuccess = getGoogleFeedSuccess;
+      }
+      else {
+        config = getDirectHtmlConfig(feed);
+        getFeedSuccess = getDirectHtmlSuccess;
+      }
+  		
   		var promiseGetFeed = RestService.call(config);
   		return promiseGetFeed.then(getFeedSuccess);
   	}
@@ -31,8 +53,8 @@ angular.module('maureillasApp.feeds')
  		get : function() {
       return feeds;
     },
-  	fetchFeeds : function(url, number) {
-  			return getFeeds(url, number);
+  	fetchFeeds : function(feed, number) {
+  			return getFeeds(feed, number);
   	}
  	}   
 });

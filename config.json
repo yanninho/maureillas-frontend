@@ -29,94 +29,67 @@
 				"news" : {
 
 					  "label" : "navigation.NEWS",	
-			          "path": "/feeds",
+			          "path": "/news",
 			          "templateHtml": "feeds.html",
 			          "controller": "FeedsCtrl",
-			          "icon" : "images/ic_bookmark_48px.svg",
-			          "param" : {
-			            "feed" : "news"
-			          }			          					
+			          "icon" : "images/ic_bookmark_48px.svg"		          					
 				},
 				"agenda" : {
 
 					  "label" : "navigation.AGENDA",	
-			          "path": "/feeds",
+			          "path": "/agenda",
 			          "templateHtml": "feeds.html",
 			          "controller": "FeedsCtrl",					
-			          "icon" : "images/ic_bookmark_48px.svg",
-			          "param" : {
-			            "feed" : "agenda"
-			          }			          					
+			          "icon" : "images/ic_bookmark_48px.svg"			          		          					
 				},
 				"practicalNews" : {
 					  "label" : "navigation.PRACTICAL_NEWS",	
-			          "path": "/feeds",
-			          "templateHtml": "feeds.html",
+			          "path": "/practicalNews",
+			          "templateHtml": "direct.html",
 			          "controller": "FeedsCtrl",					
-			          "icon" : "images/ic_bookmark_48px.svg",
-			          "param" : {
-			            "feed" : "practicalNews"
-			          }			          					
+			          "icon" : "images/ic_bookmark_48px.svg"			          		          					
 				},
 				"historicalPatrimony" : {
 					  "label" : "navigation.HISTORICAL_PATRIMONY",	
-			          "path": "/feeds",
-			          "templateHtml": "feeds.html",
+			          "path": "/historicalPatrimony",
+			          "templateHtml": "direct.html",
 			          "controller": "FeedsCtrl",					
-			          "icon" : "images/ic_bookmark_48px.svg",
-			          "param" : {
-			            "feed" : "historicalPatrimony"
-			          }			          					
+			          "icon" : "images/ic_bookmark_48px.svg"			          			          					
 				},
 				"naturalHeritage" : {
 					  "label" : "navigation.NATURAL_HERITAGE",	
-			          "path": "/feeds",
-			          "templateHtml": "feeds.html",
+			          "path": "/naturalHeritage",
+			          "templateHtml": "direct.html",
 			          "controller": "FeedsCtrl",					
-			          "icon" : "images/ic_bookmark_48px.svg",
-			          "param" : {
-			            "feed" : "naturalHeritage"
-			          }			          					
+			          "icon" : "images/ic_bookmark_48px.svg"			          			          					
 				},
 				"accomodation" : {
 					  "label" : "navigation.ACCOMMODATION",	
-			          "path": "/feeds",
-			          "templateHtml": "feeds.html",
+			          "path": "/accomodation",
+			          "templateHtml": "direct.html",
 			          "controller": "FeedsCtrl",					
-			          "icon" : "images/ic_bookmark_48px.svg",
-			          "param" : {
-			            "feed" : "accomodation"
-			          }			          					
+			          "icon" : "images/ic_bookmark_48px.svg"			          		          					
 				},
 				"restaurants" : {
 					  "label" : "navigation.RESTAURANTS",	
-			          "path": "/feeds",
-			          "templateHtml": "feeds.html",
+			          "path": "/restaurants",
+			          "templateHtml": "direct.html",
 			          "controller": "FeedsCtrl",					
-			          "icon" : "images/ic_bookmark_48px.svg",
-			          "param" : {
-			            "feed" : "restaurants"
-			          }			          					
+			          "icon" : "images/ic_bookmark_48px.svg"			          		          					
 				},
 				"market" : {
 					  "label" : "navigation.MARKET",	
-			          "path": "/feeds",
-			          "templateHtml": "feeds.html",
+			          "path": "/market",
+			          "templateHtml": "direct.html",
 			          "controller": "FeedsCtrl",					
-			          "icon" : "images/ic_bookmark_48px.svg",
-			          "param" : {
-			            "feed" : "market"
-			          }			          					
+			          "icon" : "images/ic_bookmark_48px.svg"			          		          					
 				},
 				"administrativeProcedures" : {
 					  "label" : "navigation.ADMINISTRATIVE_PROCEDURES",	
-			          "path": "/feeds",
-			          "templateHtml": "feeds.html",
+			          "path": "/administrativeProcedures",
+			          "templateHtml": "direct.html",
 			          "controller": "FeedsCtrl",					
-			          "icon" : "images/ic_bookmark_48px.svg",
-			          "param" : {
-			            "feed" : "administrativeProcedures"
-			          }			          					
+			          "icon" : "images/ic_bookmark_48px.svg"			          		          					
 				}
 			}
 		},
@@ -137,12 +110,19 @@
 	},
 	"FEEDS": {
 		"agenda" : {
-			"url" : "http://maureillas.surikwat.com/evenements/feed/",
-			"title" : "agenda"
+			"url" : "http://maureillas.surikwat.com/evenements/feed/"
 		},
 		"annonces" : {
-			"url" : "http://maureillas.surikwat.com/category/annonces/feed/",
-			"title" : "annonces"
+			"url" : "http://maureillas.surikwat.com/category/annonces/feed/"
+		},
+		"practicalNews" : {
+			"request" : {
+				"url" : "http://www.maureillas.fr/flux/",
+				"method" : "GET",
+				"params" : {
+					"id" : "86"
+				}
+			}
 		}
 	},
 	"REMOTE" : {

@@ -39,8 +39,7 @@ angular
 angular
   .module('maureillasApp')
 // @endif  
-  .config(function ($httpProvider, $routeProvider, $locationProvider, $translateProvider, $translatePartialLoaderProvider, CONFIG) {
-    $httpProvider.defaults.withCredentials = true;
+  .config(function ($routeProvider, $locationProvider, $translateProvider, $translatePartialLoaderProvider, CONFIG) {
     // les routes (views.json)
     angular.forEach(CONFIG.VIEWS, function(module, keyModule) {
       angular.forEach(module.pages, function(page, view) {

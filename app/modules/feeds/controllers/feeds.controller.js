@@ -11,13 +11,13 @@ angular.module('maureillasApp.feeds')
   .controller('FeedsCtrl', function ($scope, $location, FeedListService, CONFIG) {
 
     $scope.feedList = FeedListService.get;
-    var searchUrlObject = $location.search();
+    var searchUrlObject = $location.path().substring(1,$location.path().length);
 
-    if (!angular.isUndefined(searchUrlObject["feed"])) {
-      var feedValue = searchUrlObject["feed"];
-      $scope.title = CONFIG.FEEDS[feedValue].title;
+    if (!angular.isUndefined(searchUrlObject)) {
+      var feedValue = searchUrlObject;
+      $scope.title = CONFIG.VIEWS.feeds.pages[feedValue].label;
       $scope.loading = true;
-      var promiseFeedList = FeedListService.fetchFeeds(CONFIG.FEEDS[feedValue].url, 10);
+      var promiseFeedList = FeedListService.fetchFeeds(CONFIG.FEEDS[feedValue], 10);
       var resultGetFeeds = function(res) {
       	$scope.loading = false;
       }

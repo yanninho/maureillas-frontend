@@ -120,10 +120,55 @@
 				"url" : "http://www.maureillas.fr/flux/",
 				"method" : "GET",
 				"params" : {
-					"id" : "86"
+					"id" : "318"
 				}
 			}
-		}
+		},
+		"news" : {
+		          					
+		},
+		"historicalPatrimony" : {
+			"request" : {
+				"url" : "http://www.maureillas.fr/flux/",
+				"method" : "GET",
+				"params" : {
+					"id" : "110"
+				}
+			}			          			          					
+		},
+		"naturalHeritage" : {
+			"request" : {
+				"url" : "http://www.maureillas.fr/flux/",
+				"method" : "GET",
+				"params" : {
+					"id" : "116"
+				}
+			}			          			          					
+		},
+		"accomodation" : {
+			          		          					
+		},
+		"restaurants" : {
+			"request" : {
+				"url" : "http://www.maureillas.fr/flux/",
+				"method" : "GET",
+				"params" : {
+					"id" : "88"
+				}
+			}			          		          					
+		},
+		"market" : {
+			"request" : {
+				"url" : "http://www.maureillas.fr/flux/",
+				"method" : "GET",
+				"params" : {
+					"id" : "90"
+				}
+			}			          		          					
+		},
+		"administrativeProcedures" : {
+			          		          					
+		}		
 	},
 	"REMOTE" : {
 		"googleFeedsService" : {

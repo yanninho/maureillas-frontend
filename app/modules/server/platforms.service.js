@@ -18,11 +18,17 @@ angular.module('maureillasApp.server')
     		platform = "IOS";
     	}   
     	return platform;  
-    } 
+    }; 
 
  	return {
  		getPlatform : function() {
  			return getPlatform();
- 		}
- 	}   
+ 		},
+        isGoogle : function() {
+            return getPlatform() === "GOOGLE";
+        },
+        isIos : function() {
+            return getPlatform() === "IOS";
+        },
+ 	};   
 });

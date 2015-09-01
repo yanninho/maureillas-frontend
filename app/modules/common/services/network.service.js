@@ -4,8 +4,11 @@ angular.module('maureillasApp.common')
 .factory('NetworkService', function() {
 	return {
 		'networkConnectionExist' : function() {
-			var networkState = navigator.connection.type;
-			return networkState != Connection.NONE;
+			var connectionExist = true;
+			if (navigator !== undefined && navigator.connection !== undefined) {
+				connectionExist = navigator.connection.type != 'No network connection';
+			}
+			return connectionExist;
 		}
-	}
+	};
 });

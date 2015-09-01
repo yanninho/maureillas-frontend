@@ -4,7 +4,7 @@
     "creationData": {
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "projectGuid": "8bfb4f49-268b-4bec-9419-6b79acc6bdcd",
-      "lastModifiedDate": 1438344937285,
+      "lastModifiedDate": 1441064786175,
       "creationDate": 1430223981729
     },
     "XDK-app-designer": "false",
@@ -201,12 +201,12 @@
         "name_": "iOS",
         "preferences_": {
           "ios-target": "6",
-          "ios-configuration": "adhoc",
+          "ios-configuration": "production",
           "exit-on-suspend": true
         },
-        "isActive_": false,
-        "appName_": "Ville de Maureillas",
-        "appID_": "com.maureillas",
+        "isActive_": true,
+        "appName_": "maureillas",
+        "appID_": "com.surikwat.maureillas",
         "appAccess_": [
           {
             "origin": "*"
@@ -239,15 +239,88 @@
             "width": 76
           }
         ],
-        "splashes_": [],
+        "splashes_": [
+          {
+            "relPath": "splashScreens/ios/portrait/1242x2208.png",
+            "height": 2208,
+            "width": 1242,
+            "orientation": "portrait"
+          },
+          {
+            "relPath": "splashScreens/ios/portrait/640x1136.png",
+            "height": 1136,
+            "width": 640,
+            "orientation": "portrait"
+          },
+          {
+            "relPath": "splashScreens/ios/portrait/640x960.png",
+            "height": 960,
+            "width": 640,
+            "orientation": "portrait"
+          },
+          {
+            "relPath": "splashScreens/ios/portrait/320x480.png",
+            "height": 480,
+            "width": 320,
+            "orientation": "portrait"
+          },
+          {
+            "relPath": "splashScreens/ios/portrait/1536x2008.png",
+            "height": 2008,
+            "width": 1536,
+            "orientation": "portrait"
+          },
+          {
+            "relPath": "splashScreens/ios/portrait/768x1004.png",
+            "height": 1004,
+            "width": 768,
+            "orientation": "portrait"
+          },
+          {
+            "relPath": "splashScreens/ios/lanscape/1334x750.png",
+            "height": 750,
+            "width": 1334,
+            "orientation": "landscape"
+          },
+          {
+            "relPath": "splashScreens/ios/lanscape/2208x1242.png",
+            "height": 1242,
+            "width": 2208,
+            "orientation": "landscape"
+          },
+          {
+            "relPath": "splashScreens/ios/lanscape/2048x1496.png",
+            "height": 1496,
+            "width": 2048,
+            "orientation": "landscape"
+          },
+          {
+            "relPath": "splashScreens/ios/lanscape/1024x748.png",
+            "height": 748,
+            "width": 1024,
+            "orientation": "landscape"
+          },
+          {
+            "relPath": "splashScreens/ios/portrait/750x1334.png",
+            "height": 1334,
+            "width": 750,
+            "orientation": "portrait"
+          }
+        ],
         "addlPermissions_": "",
         "excludedLibraries_": "",
-        "iosProvs_": [],
+        "iosProvs_": [
+          {
+            "relPath": "ios_profiles/store.mobileprovision",
+            "type": "production"
+          }
+        ],
         "cordovaCLIVersion_": "4.1.2",
         "crosswalkVersion_": "11",
-        "appVersion_": "0.0.1",
+        "appVersion_": "0.0.2",
         "appAuthor_": "Surikwat",
-        "appDescription_": "Application mobile de la ville de Maurillas"
+        "appDescription_": "Application mobile de la ville de Maurillas",
+        "appVersionCode_": ""
       },
       "Windows8": {
         "platform_": "windows8",

@@ -1,5 +1,6 @@
 'use strict';
 
+    /* WARNING GENERATED FROM TEMPLATE */
 /**
  * @ngdoc overview
  * @name maureillasApp

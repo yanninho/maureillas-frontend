@@ -9,7 +9,7 @@
  */
 angular.module('maureillasApp.push')
   .controller('PushCtrl', function ($rootScope, $location, $window, UserService, MenuService, MessageService) {
-  
+
     // handle GCM notifications for Android
     $window.onNotificationGCM = function (event) {
       switch (event.event) {
@@ -75,6 +75,14 @@ angular.module('maureillasApp.push')
       if (e.badge) {
         pushNotification.setApplicationIconBadgeNumber("successIosHandler", e.badge);
       }
+
+      $rootScope.$apply(
+        function() { 
+          var menu = MenuService.find('actus');
+          MenuService.go(menu);
+        }
+      );
+
     };
 
 });

@@ -383,6 +383,14 @@ module.exports = function (grunt) {
             '**/*.jpg',
             '**/*.gif'
           ]         
+        }, {
+           expand: true,
+          dot: true,
+          cwd: 'ios_profiles',
+          dest: '<%= yeoman.dist %>/ios_profiles',
+          src: [
+            '*.mobileprovision'            
+          ]         
         }]
       },
       styles: {

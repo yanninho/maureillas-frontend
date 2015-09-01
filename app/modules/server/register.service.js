@@ -8,11 +8,11 @@
  * Factory in the maureillasApp.
  */
 angular.module('maureillasApp.server')
-  .factory('RegisterService', function ($q, UserService, PushService, DeviceService, NetworkService) {
-
+  .factory('RegisterService', function ($q, UserService, PushService, DeviceService, NetworkService, PlatformService) {
+  
     var successGetUser = function(result) {
         return result;
-    }
+    };
 
     var register = function() {
         return UserService.register().then(successGetUser, function(error) {   
@@ -26,18 +26,28 @@ angular.module('maureillasApp.server')
             }             
             return register();
         });
-    }
+    };
 
-    var successPushRegister = function() {
+    var successGooglePushRegister = function() {
         if (angular.isUndefined(UserService.getRegisterID())) {
             return pushRegister();
         }
         return register();
-    }
+    };
+
+    // IOS registered
+    var successIosPushRegister = function (result) {
+        UserService.setRegisterID(result);
+        return register();
+    };
 
     var pushRegister = function() {
+        var successHandler = successGooglePushRegister;
+        if (PlatformService.isIos()) {
+            successHandler = successIosPushRegister;
+        }       
         if (angular.isDefined(PushService)) {
-            return PushService.register().then(successPushRegister, function(error) {
+            return PushService.register().then(successHandler, function(error) {
                 if (!NetworkService.networkConnectionExist()) {
                     var deferred = $q.defer();
                     deferred.reject('No network connection');   
@@ -51,7 +61,7 @@ angular.module('maureillasApp.server')
             deferred.reject('No Push service');
             return deferred.promise; 
         }
-    }
+    };
 
  	return {
  		register : function() {
@@ -65,5 +75,5 @@ angular.module('maureillasApp.server')
                 return deferred.promise;
             }
  		}
- 	}   
+ 	};   
 });

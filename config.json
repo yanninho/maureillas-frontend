@@ -26,10 +26,10 @@
 				"path" : "feeds"
 			},
 			"pages" : {
-				"news" : {
+				"actus" : {
 
 					  "label" : "navigation.NEWS",	
-			          "path": "/news",
+			          "path": "/actus",
 			          "templateHtml": "feeds.html",
 			          "controller": "FeedsCtrl",
 			          "icon" : "images/ic_bookmark_48px.svg"		          					
@@ -38,7 +38,7 @@
 
 					  "label" : "navigation.AGENDA",	
 			          "path": "/agenda",
-			          "templateHtml": "feeds.html",
+			          "templateHtml": "agenda.html",
 			          "controller": "FeedsCtrl",					
 			          "icon" : "images/ic_bookmark_48px.svg"			          		          					
 				},
@@ -103,17 +103,17 @@
 			          "path": "/subscription",
 			          "templateHtml": "subscription.html",
 			          "controller": "SubscriptionCtrl",
-			          "icon" : "images/ic_notifications_48px.svg"					
+			          "icon" : "images/ic_bookmark_48px.svg"					
 				}
 			}			
 		}
 	},
 	"FEEDS": {
 		"agenda" : {
-			"url" : "http://maureillas.surikwat.com/evenements/feed/"
+			"url" : "http://www.maureillas.fr/evenements/feed/"
 		},
-		"annonces" : {
-			"url" : "http://maureillas.surikwat.com/category/annonces/feed/"
+		"actus" : {
+			"url" : "http://www.maureillas.fr/category/mobile/feed/"
 		},
 		"practicalNews" : {
 			"request" : {
@@ -123,9 +123,6 @@
 					"id" : "318"
 				}
 			}
-		},
-		"news" : {
-		          					
 		},
 		"historicalPatrimony" : {
 			"request" : {
@@ -146,7 +143,13 @@
 			}			          			          					
 		},
 		"accomodation" : {
-			          		          					
+			"request" : {
+				"url" : "http://www.maureillas.fr/flux/",
+				"method" : "GET",
+				"params" : {
+					"id" : "86"
+				}
+			}			          		          					
 		},
 		"restaurants" : {
 			"request" : {
@@ -167,7 +170,13 @@
 			}			          		          					
 		},
 		"administrativeProcedures" : {
-			          		          					
+			"request" : {
+				"url" : "http://www.maureillas.fr/flux/",
+				"method" : "GET",
+				"params" : {
+					"id" : "66"
+				}
+			}			          		          					
 		}		
 	},
 	"REMOTE" : {

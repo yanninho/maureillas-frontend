@@ -1,8 +1,4 @@
 <div class="subscription" layout="column" layout-fill>
-	<div class="md-whiteframe-z2 title-page">
-		<h1>{{'subscription.CHOOSE_SUBSCRIPTION' | translate}}</h1>
-		<h2>{{'subscription.RECEIVE_INFOS' | translate}}</h2>
-	</div>
 	<div layout="row" flex layout-align="center center" ng-show="loading">
 		<div>
 			<md-progress-circular md-mode="indeterminate" md-diameter="40"></md-progress-circular>			
@@ -11,7 +7,7 @@
  	<md-list>
       <md-list-item class="md-whiteframe-z2 feed-subscription" layout="row" ng-repeat="feed in user().info.feeds" ng-hide="loading">
 			<div flex-sm="80" flex-gt-sm="90" align="left center">
-			    {{feed.name}}
+			    {{'subscription.RECEIVE_INFOS' | translate}}
 			</div>
 			<div flex="20" flex-gt-sm="10">
 				<md-switch  ng-model="feed.suscriber" ng-change="update()" aria-label="{{feed.name}}"></md-switch>

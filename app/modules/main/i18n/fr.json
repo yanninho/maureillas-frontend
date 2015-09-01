@@ -1,15 +1,14 @@
 {
 	"main" : {
-		"VILLE" : "Ville de Maureillas Las Illas"
+		"VILLE" : "Maureillas Las Illas"
 	},
 	"navigation" : {
 		"HOME" : "Accueil",
-		"SUBSCRIPTION" : "Notifications",
+		"SUBSCRIPTION" : "Paramètres",
 		"EVENTS" : "Evenements",
-		"NOTIFICATIONS" : "Notifications",
 		"NEWS" : "Actualités",
 		"AGENDA": "Agenda",
-		"PRACTICAL_NEWS" : "Informations pratiques",
+		"PRACTICAL_NEWS" : "Numéros utiles",
 		"HISTORICAL_PATRIMONY" : "Patrimoine historique",
 		"NATURAL_HERITAGE" : "Patrimoine naturel",
 		"ACCOMMODATION" : "Hébergements",

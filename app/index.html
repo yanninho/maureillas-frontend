@@ -1,3 +1,4 @@
+    <!-- WARNING GENERATED FROM TEMPLATE -->
 <!doctype html>
 <html class="no-js">
   <head>
@@ -81,7 +82,9 @@
     <script src="bower_components/angular-aria/angular-aria.js"></script>
     <script src="bower_components/angular-material/angular-material.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
     <!-- endbower -->
+    <script src="bower_components/moment/locale/fr.js"></script>
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
@@ -99,6 +102,8 @@
                 
             <!-- module common -->
                 <script src="modules/common/common.module.js"></script>
+                <!-- filters -->            
+                <script src="modules/common/filters/rssdate.js"></script>           
                 <!-- services -->            
                 <script src="modules/common/services/rest.service.js"></script>           
                 <script src="modules/common/services/device.service.js"></script>           

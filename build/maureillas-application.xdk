@@ -4,7 +4,7 @@
     "creationData": {
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "projectGuid": "8bfb4f49-268b-4bec-9419-6b79acc6bdcd",
-      "lastModifiedDate": 1441064786175,
+      "lastModifiedDate": 1441295755755,
       "creationDate": 1430223981729
     },
     "XDK-app-designer": "false",
@@ -165,10 +165,10 @@
         "iosProvs_": [],
         "cordovaCLIVersion_": "4.1.2",
         "crosswalkVersion_": "11",
-        "appVersion_": "0.0.2",
+        "appVersion_": "0.0.3",
         "appDescription_": "Application mobile de la ville de Maurillas",
         "appAuthor_": "Surikwat",
-        "appVersionCode_": "1"
+        "appVersionCode_": "2"
       },
       "Android-Crosswalk": {
         "platform_": "android",
@@ -317,7 +317,7 @@
         ],
         "cordovaCLIVersion_": "4.1.2",
         "crosswalkVersion_": "11",
-        "appVersion_": "0.0.2",
+        "appVersion_": "0.0.3",
         "appAuthor_": "Surikwat",
         "appDescription_": "Application mobile de la ville de Maurillas",
         "appVersionCode_": ""

@@ -9,25 +9,9 @@
  * Main module of the application.
  */
  
-/* DESKTOP VERSION */
+/* MOBILE VERSION */
 angular
-  .module('maureillasApp', [
-                'ngMessages',
-                'ngResource',
-                'ngRoute',
-                'ngAnimate',
-                'pascalprecht.translate',
-                'ngSanitize',
-                'ngMaterial',
-                //Application modules
-                'maureillasApp.common',
-                'maureillasApp.main',
-                'maureillasApp.feeds',
-                'maureillasApp.push',
-                'maureillasApp.server',
-                'maureillasApp.subscription',
-                'angular-cache'
-            ])
+  .module('maureillasApp')
   .config(function ($routeProvider, $locationProvider, $translateProvider, $translatePartialLoaderProvider, $mdGestureProvider, CONFIG) {
     // les routes (views.json)
     angular.forEach(CONFIG.VIEWS, function(module, keyModule) {
@@ -44,7 +28,6 @@ angular
     });
 
     //translate
-    $translateProvider.useSanitizeValueStrategy('sanitize');
     $translatePartialLoaderProvider.addPart('main');  
     $translateProvider.useLoader('$translatePartialLoader', {
       urlTemplate: 'modules/{part}/i18n/{lang}.json'

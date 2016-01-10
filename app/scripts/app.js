@@ -38,6 +38,7 @@ angular
     });
 
     //translate
+    $translateProvider.preferredLanguage('fr');
     $translateProvider.useLoader('$translatePartialLoader', {
       urlTemplate: 'i18n/{lang}.json'
     });

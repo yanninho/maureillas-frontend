@@ -44,6 +44,7 @@ angular
     });
 
     //translate
+    $translateProvider.useSanitizeValueStrategy('sanitize');
     $translatePartialLoaderProvider.addPart('main');  
     $translateProvider.useLoader('$translatePartialLoader', {
       urlTemplate: 'modules/{part}/i18n/{lang}.json'

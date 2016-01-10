@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-project-lite/sample.zip",
       "projectGuid": "ad42940f-34e3-42c9-a83a-a66772a557cd",
-      "lastModifiedDate": 1446112787241,
+      "lastModifiedDate": 1452468708404,
       "creationDate": 1446072367677
     },
     "XDK-app-designer": "false",
@@ -145,7 +145,7 @@
           "android-minSdkVersion": "14",
           "android-targetSdkVersion": "19",
           "android-installLocation": "auto",
-          "Fullscreen": true
+          "Fullscreen": false
         },
         "isActive_": true,
         "appName_": "maureillas",
@@ -258,7 +258,7 @@
         "preferences_": {
           "ios-target": "7",
           "ios-configuration": "production",
-          "Fullscreen": true,
+          "Fullscreen": false,
           "exit-on-suspend": true
         },
         "isActive_": true,

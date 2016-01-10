@@ -39,5 +39,8 @@
 		"manifestations" : "Manifestations",
 		"projets" : "Projets",
 		"travaux" : "Travaux"
+	},
+	"PARAMETERS" : {
+		"WantNotifs" : "Recevoir les notifications ?"
 	}	
 }

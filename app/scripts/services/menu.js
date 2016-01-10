@@ -16,8 +16,6 @@ angular.module('maureillasApp')
           $location.path( menu.path ).search(menu.param);
         }
         else {
-          console.log('menu.path')
-          console.log(menu.path)
           $location.path( menu.path );
         }       
     },

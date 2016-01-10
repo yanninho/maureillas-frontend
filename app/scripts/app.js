@@ -26,7 +26,6 @@ angular
     // les routes (views.json)
     angular.forEach(CONFIG.VIEWS, function(module, keyModule) {
       angular.forEach(module.pages, function(page, view) {
-        console.log(page)
         $routeProvider.when(page.path, {
           templateUrl: page.templateUrl,
           controller: page.controller         

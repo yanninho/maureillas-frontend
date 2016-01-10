@@ -9,10 +9,8 @@
  */
 angular.module('maureillasApp')
   .controller('FeedsCtrl', function ($scope, $location, FeedList, CONFIG, messages) {
-console.log('feedsCtrl')
     $scope.feedList = FeedList.get;
     var searchUrlObject = $location.path().substring(1,$location.path().length);
-console.log(searchUrlObject)
     if (!angular.isUndefined(searchUrlObject)) {
       var feedValue = searchUrlObject;
       $scope.title = CONFIG.VIEWS.feeds.pages[feedValue].label;

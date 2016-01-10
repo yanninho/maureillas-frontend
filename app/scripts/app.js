@@ -10,6 +10,7 @@
  */
 angular
   .module('maureillasApp', [
+    'pascalprecht.translate',
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -22,7 +23,7 @@ angular
     'ngIOS9UIWebViewPatch',
     'angular-cache'
   ])
-  .config(function ($routeProvider, CONFIG) { //$translatePartialLoaderProvider, $translateProvider
+  .config(function ($routeProvider, CONFIG, $translateProvider) { //$translatePartialLoaderProvider, $translateProvider
     // les routes (views.json)
     angular.forEach(CONFIG.VIEWS, function(module, keyModule) {
       angular.forEach(module.pages, function(page, view) {
@@ -35,4 +36,10 @@ angular
     $routeProvider.otherwise({
       redirectTo: CONFIG.VIEWS.main.pages.home.path
     });
+
+    //translate
+    $translateProvider.useLoader('$translatePartialLoader', {
+      urlTemplate: 'i18n/{lang}.json'
+    });
+
 });

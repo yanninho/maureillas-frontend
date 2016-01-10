@@ -319,7 +319,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>/images',
-          src: '{,*/}*.{png,jpg,jpeg,gif,svg}',
+          src: '{,*/}*.{png,jpg,jpeg,gif}',
           dest: '<%= yeoman.dist %>/images'
         }]
       }
@@ -410,6 +410,13 @@ module.exports = function (grunt) {
         {
            expand: true,
           dot: true,
+          cwd: 'i18n',
+          dest: '<%= yeoman.dist %>/i18n',
+          src: ['*.json']         
+        }, 
+        {
+           expand: true,
+          dot: true,
           cwd: 'LaunchIcons',
           dest: '<%= yeoman.dist %>/LaunchIcons',
           src: [
@@ -418,7 +425,8 @@ module.exports = function (grunt) {
             '**/*.jpg',
             '**/*.gif'
           ]         
-        }, {
+        }, 
+        {
            expand: true,
           dot: true,
           cwd: 'splashScreens',

@@ -16,6 +16,7 @@ angular.module('maureillasApp.feeds')
     if (!angular.isUndefined(searchUrlObject)) {
       var feedValue = searchUrlObject;
       $scope.title = CONFIG.VIEWS.feeds.pages[feedValue].label;
+      $scope.link = CONFIG.VIEWS.feeds.pages[feedValue].link;
       $scope.loading = true;
       var promiseFeedList = FeedListService.fetchFeeds(feedValue, 10);
       var resultGetFeeds = function(res) {

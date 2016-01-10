@@ -47,42 +47,48 @@
 			          "path": "/practicalNews",
 			          "templateHtml": "direct.html",
 			          "controller": "FeedsCtrl",					
-			          "icon" : "images/ic_bookmark_48px.svg"			          		          					
+			          "icon" : "images/ic_bookmark_48px.svg",
+			          "link" : "http://www.maureillas.fr/s-informer-sortir-promenades-sud-de-la-france/informations-pratiques/"			          		          					
 				},
 				"historicalPatrimony" : {
 					  "label" : "navigation.HISTORICAL_PATRIMONY",	
 			          "path": "/historicalPatrimony",
 			          "templateHtml": "direct.html",
 			          "controller": "FeedsCtrl",					
-			          "icon" : "images/ic_bookmark_48px.svg"			          			          					
+			          "icon" : "images/ic_bookmark_48px.svg",
+			          "link" : "http://www.maureillas.fr/decouvrir-identite-patrimoine-village-pyrenees/patrimoine-historique/"			          			          					
 				},
 				"naturalHeritage" : {
 					  "label" : "navigation.NATURAL_HERITAGE",	
 			          "path": "/naturalHeritage",
 			          "templateHtml": "direct.html",
 			          "controller": "FeedsCtrl",					
-			          "icon" : "images/ic_bookmark_48px.svg"			          			          					
+			          "icon" : "images/ic_bookmark_48px.svg",
+			          "link" : "http://www.maureillas.fr/decouvrir-identite-patrimoine-village-pyrenees/patrimoine-naturel/"			          			          					
 				},
 				"accomodation" : {
 					  "label" : "navigation.ACCOMMODATION",	
 			          "path": "/accomodation",
 			          "templateHtml": "direct.html",
 			          "controller": "FeedsCtrl",					
-			          "icon" : "images/ic_bookmark_48px.svg"			          		          					
+			          "icon" : "images/ic_bookmark_48px.svg",
+			          "link" : "http://www.maureillas.fr/vivre-a-maureillas/hebergement/"			          		          					
 				},
 				"restaurants" : {
 					  "label" : "navigation.RESTAURANTS",	
 			          "path": "/restaurants",
 			          "templateHtml": "direct.html",
 			          "controller": "FeedsCtrl",					
-			          "icon" : "images/ic_bookmark_48px.svg"			          		          					
+			          "icon" : "images/ic_bookmark_48px.svg",
+			          "link" : "http://www.maureillas.fr/vivre-a-maureillas/restaurants-bars/"			          		          					
 				},
 				"administrativeProcedures" : {
 					  "label" : "navigation.ADMINISTRATIVE_PROCEDURES",	
 			          "path": "/administrativeProcedures",
 			          "templateHtml": "direct.html",
 			          "controller": "FeedsCtrl",					
-			          "icon" : "images/ic_bookmark_48px.svg"			          		          					
+			          "icon" : "images/ic_bookmark_48px.svg",
+			          "link" : "http://www.maureillas.fr/la-mairie/guichet-des-services/"			          		          					
 				}
 			}
 		},

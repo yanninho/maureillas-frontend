@@ -65,8 +65,7 @@ angular.module('maureillasApp')
         });
     };
 
-    var go = function(menuItem) {    
-      console.log("menuItem")  
+    var go = function(menuItem) {      
       menu.go(menuItem);    
     };
 

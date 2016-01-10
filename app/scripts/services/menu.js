@@ -11,12 +11,13 @@ angular.module('maureillasApp')
   .factory('menu', function ($location, _, CONFIG) {
   return {
     'go' : function(menu) {
-      console.log(menu)
       $location.url($location.path());
         if (angular.isDefined(menu.param)) {  
           $location.path( menu.path ).search(menu.param);
         }
         else {
+          console.log('menu.path')
+          console.log(menu.path)
           $location.path( menu.path );
         }       
     },

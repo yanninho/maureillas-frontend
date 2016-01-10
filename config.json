@@ -116,7 +116,7 @@
 				"url" : "http://www.maureillas.fr/flux/",
 				"method" : "GET",
 				"params" : {
-					"id" : "110"
+					"id" : "3160"
 				}
 			}			          			          					
 		},
@@ -125,7 +125,7 @@
 				"url" : "http://www.maureillas.fr/flux/",
 				"method" : "GET",
 				"params" : {
-					"id" : "116"
+					"id" : "3162"
 				}
 			}			          			          					
 		},

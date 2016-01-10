@@ -8,7 +8,7 @@
 				"home" : {
 					  "label" : "navigation.HOME",	
 			          "path": "/home",
-			          "templateHtml": "views/home.html",
+			          "templateUrl": "views/home.html",
 			          "controller": "HomeCtrl",
 			          "icon" : "images/ic_home_48px.svg"					
 				}
@@ -18,12 +18,13 @@
 			"definition" : {
 				"path" : "feeds"
 			},
+			
 			"pages" : {
 				"actus" : {
 
 					  "label" : "navigation.NEWS",	
 			          "path": "/actus",
-			          "templateHtml": "views/feeds.html",
+			          "templateUrl": "views/feeds.html",
 			          "controller": "FeedsCtrl",
 			          "icon" : "images/ic_bookmark_48px.svg"		          					
 				},
@@ -31,49 +32,49 @@
 
 					  "label" : "navigation.AGENDA",	
 			          "path": "/agenda",
-			          "templateHtml": "views/agenda.html",
+			          "templateUrl": "views/agenda.html",
 			          "controller": "FeedsCtrl",					
 			          "icon" : "images/ic_bookmark_48px.svg"			          		          					
 				},
 				"practicalNews" : {
 					  "label" : "navigation.PRACTICAL_NEWS",	
 			          "path": "/practicalNews",
-			          "templateHtml": "views/direct.html",
+			          "templateUrl": "views/direct.html",
 			          "controller": "FeedsCtrl",					
 			          "icon" : "images/ic_bookmark_48px.svg"			          		          					
 				},
 				"historicalPatrimony" : {
 					  "label" : "navigation.HISTORICAL_PATRIMONY",	
 			          "path": "/historicalPatrimony",
-			          "templateHtml": "views/direct.html",
+			          "templateUrl": "views/direct.html",
 			          "controller": "FeedsCtrl",					
 			          "icon" : "images/ic_bookmark_48px.svg"			          			          					
 				},
 				"naturalHeritage" : {
 					  "label" : "navigation.NATURAL_HERITAGE",	
 			          "path": "/naturalHeritage",
-			          "templateHtml": "views/direct.html",
+			          "templateUrl": "views/direct.html",
 			          "controller": "FeedsCtrl",					
 			          "icon" : "images/ic_bookmark_48px.svg"			          			          					
 				},
 				"accomodation" : {
 					  "label" : "navigation.ACCOMMODATION",	
 			          "path": "/accomodation",
-			          "templateHtml": "views/direct.html",
+			          "templateUrl": "views/direct.html",
 			          "controller": "FeedsCtrl",					
 			          "icon" : "images/ic_bookmark_48px.svg"			          		          					
 				},
 				"restaurants" : {
 					  "label" : "navigation.RESTAURANTS",	
 			          "path": "/restaurants",
-			          "templateHtml": "views/direct.html",
+			          "templateUrl": "views/direct.html",
 			          "controller": "FeedsCtrl",					
 			          "icon" : "images/ic_bookmark_48px.svg"			          		          					
 				},
 				"administrativeProcedures" : {
 					  "label" : "navigation.ADMINISTRATIVE_PROCEDURES",	
 			          "path": "/administrativeProcedures",
-			          "templateHtml": "views/direct.html",
+			          "templateUrl": "views/direct.html",
 			          "controller": "FeedsCtrl",					
 			          "icon" : "images/ic_bookmark_48px.svg"			          		          					
 				}

@@ -22,7 +22,7 @@ angular
     'ngIOS9UIWebViewPatch',
     'angular-cache'
   ])
-  .config(function ($routeProvider, CONFIG, $translateProvider) { //$translatePartialLoaderProvider, $translateProvider
+  .config(function ($routeProvider, CONFIG, $translateProvider, $translatePartialLoaderProvider) { //$translatePartialLoaderProvider, $translateProvider
     // les routes (views.json)
     angular.forEach(CONFIG.VIEWS, function(module, keyModule) {
       angular.forEach(module.pages, function(page, view) {

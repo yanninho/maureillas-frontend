@@ -16,7 +16,6 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch',
     'ngMaterial',
     'ngCordova',
     'maureillasAppTemplates',
@@ -39,6 +38,7 @@ angular
 
     //translate
     $translateProvider.preferredLanguage('fr');
+    $translateProvider.useSanitizeValueStrategy('sanitize');
     $translateProvider.useLoader('$translatePartialLoader', {
       urlTemplate: 'i18n/{lang}.json'
     });

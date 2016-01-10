@@ -44,7 +44,7 @@
             <md-content>
                 <h3 ng-repeat="item in menus" class="item-menu">
                     <md-icon md-svg-icon="{{item.icon}}"></md-icon>
-                    <a ng-href="" ng-click="goTo($index)">{{ item.name}}</a>
+                    <a ng-href="" ng-click="goTo($index)">{{ item.name | transmate}}</a>
                 </h3>
                 <h3 class="item-menu">
                     <a ng-href="" ng-click="quitApp()">{{ 'MAIN.quitApp' | translate }}</a>

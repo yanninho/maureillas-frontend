@@ -2,8 +2,9 @@
 	"FEEDS" : "Flux",
 	"LOADING" : "Chargement en cours",
 	"EMPTY" : "Aucun évènement à venir",
-	"main" : {
-		"VILLE" : "Maureillas Las Illas"
+	"MAIN" : {
+		"ville" : "Maureillas Las Illas",
+		"quitApp" : "Quitter l'application"
 	},
 	"navigation" : {
 		"HOME" : "Accueil",

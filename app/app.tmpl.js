@@ -31,7 +31,8 @@ angular
                 'maureillasApp.feeds',
                 'maureillasApp.push',
                 'maureillasApp.server',
-                'maureillasApp.subscription'
+                'maureillasApp.subscription',
+                'angular-cache'
             ])
 // @endif  
 // @if NODE_ENV='MOBILE' 
@@ -39,25 +40,13 @@ angular
 angular
   .module('maureillasApp')
 // @endif  
-  .config(function ($routeProvider, $locationProvider, $translateProvider, $translatePartialLoaderProvider, CONFIG) {
+  .config(function ($routeProvider, $locationProvider, $translateProvider, $translatePartialLoaderProvider, $mdGestureProvider, CONFIG) {
     // les routes (views.json)
     angular.forEach(CONFIG.VIEWS, function(module, keyModule) {
       angular.forEach(module.pages, function(page, view) {
         $routeProvider.when(page.path, {
           templateUrl: 'modules/' + keyModule + '/views/'+ page.templateHtml,
-          controller: page.controller,
-          resolve : {
-            'network' : function($location, NetworkService, DeviceService) { 
-              if (page.label != CONFIG.VIEWS.main.pages.networkError.label && DeviceService.isMobile())  {
-                // network error
-                if (!NetworkService.networkConnectionExist()) {   
-                  $location.path(CONFIG.VIEWS.main.pages.networkError.path);
-                  return false;
-                }                 
-              }              
-              return true;
-            }            
-          }          
+          controller: page.controller        
         })
       })
     });
@@ -74,5 +63,4 @@ angular
 
     // load 'fr' table on startup
     $translateProvider.preferredLanguage('fr');
-
   });

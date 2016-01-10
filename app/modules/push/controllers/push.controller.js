@@ -9,7 +9,6 @@
  */
 angular.module('maureillasApp.push')
   .controller('PushCtrl', function ($rootScope, $location, $window, UserService, MenuService, MessageService) {
-
     // handle GCM notifications for Android
     $window.onNotificationGCM = function (event) {
       switch (event.event) {

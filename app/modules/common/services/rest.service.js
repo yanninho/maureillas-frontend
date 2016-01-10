@@ -44,6 +44,7 @@ angular.module('maureillasApp.common')
 
         return {
           url : finalUrl,
+          cache : true,
           method : config.method,
           data : config.data || '',
           params : config.params || undefined,

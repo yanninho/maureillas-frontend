@@ -8,9 +8,33 @@
  * Factory in the maureillasApp.
  */
 angular.module('maureillasApp.feeds')
-  .factory('FeedListService', function (RestService, CONFIG) {
+  .factory('FeedListService', function (RestService, CacheFactory, CONFIG) {
 
-  	var feeds = {};
+    var getCache = function() {
+      if (!CacheFactory.get('feeds')) {
+        CacheFactory.createCache('feeds', {
+          storageMode: 'localStorage'
+        });
+      }
+      return CacheFactory.get('feeds');      
+    };
+
+    var feeds = {};
+    var cache = getCache();
+    var feedName = '';
+    
+    var setCacheData = function(feeds) {
+      cache.put(feedName, feeds);
+    }
+
+    var getCacheData = function() {
+      if (angular.isDefined(cache.get(feedName))) {
+        feeds = cache.get(feedName);
+      }
+      else {
+        feeds = {};
+      }
+    };
 
     var getGoogleFeedsConfig = function(feed,number) {
       var config = CONFIG.REMOTE.googleFeedsService;
@@ -26,13 +50,19 @@ angular.module('maureillasApp.feeds')
 
     var getGoogleFeedSuccess = function(result) {
       feeds = result.data.responseData.feed;
+      setCacheData(feeds);
     } 
 
     var getDirectHtmlSuccess = function(result) {
       feeds = result.data;
+      setCacheData(feeds);
     } 
 
-  	var getFeeds = function(feed, number) {
+  	var getFeeds = function(feedValue, number) {
+      feedName = feedValue;
+      getCacheData();
+
+      var feed = CONFIG.FEEDS[feedValue];
       var config = {};
       var getFeedSuccess = null;
       if (angular.isUndefined(feed.request)) {
@@ -45,7 +75,11 @@ angular.module('maureillasApp.feeds')
       }
   		
   		var promiseGetFeed = RestService.call(config);
-  		return promiseGetFeed.then(getFeedSuccess);
+  		return promiseGetFeed.then(getFeedSuccess, function() {
+          if (angular.isUndefined(cache.get(feedName))) {
+            feeds = {};
+          }        
+      });
   	}
 
 

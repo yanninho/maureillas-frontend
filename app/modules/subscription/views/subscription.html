@@ -7,7 +7,7 @@
  	<md-list>
       <md-list-item class="md-whiteframe-z2 feed-subscription" layout="row" ng-repeat="feed in user().info.feeds" ng-hide="loading">
 			<div flex-sm="80" flex-gt-sm="90" align="left center">
-			    {{'subscription.RECEIVE_INFOS' | translate}}
+			    {{feed.name | translate}}
 			</div>
 			<div flex="20" flex-gt-sm="10">
 				<md-switch  ng-model="feed.suscriber" ng-change="update()" aria-label="{{feed.name}}"></md-switch>

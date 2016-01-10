@@ -16,7 +16,7 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/main.css" />
     <!-- endbuild -->
 
     <!-- Recommandation Bootstrap -->
@@ -31,15 +31,15 @@
 
   <!-- @if NODE_ENV='MOBILE' -->
    <!-- MOBILE VERSION -->
-  <body class="ng-cloak" ng-controller="MainCtrl"> 
+  <body> 
         <div ng-controller="PushCtrl"></div>
   <!-- @endif -->
 
   <!-- @if NODE_ENV='DEVELOPMENT' || NODE_ENV='DESKTOP' -->
     <!-- DESKTOP VERSION -->
-    <body ng-app="maureillasApp" class="ng-cloak" ng-controller="MainCtrl"> 
+    <body ng-app="maureillasApp"> 
   <!-- @endif -->
-
+    <div ng-controller="MainCtrl">
     <!--[if lt IE 9]>
       <p class="browsehappy">Vous utilisez un navigateur <strong>obsolète</strong>. Merci de <a href="http://browsehappy.com/">mettre à jour votre navigateur</a>.</p>
     <![endif]-->
@@ -56,14 +56,14 @@
     </div>   
     <md-toolbar layout="row">
         <div class="md-toolbar-tools">
-            <md-button class="md-icon-button" aria-label="menu" ng-click="toggleRight()">
+            <md-button class="md-icon-button" aria-label="menu" ng-click="toggleMenu()">
                 <md-icon md-svg-icon="images/ic_menu_48px.svg"></md-icon>
             </md-button>
             <h1>
-                <span>{{'main.VILLE' | translate}}</span>
+                <span class="ng-cloak">{{'main.VILLE' | translate}}</span>
             </h1>
             <span flex=""></span>
-            <img src="images/MDPI48x48px-01.png">
+            <img src="images/MDPI48x48px-01.png" />
         </div>
     </md-toolbar>
     <md-sidenav class="md-sidenav-right md-whiteframe-z2 menu" md-component-id="right">
@@ -120,6 +120,9 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
             <script src="app.js"></script>
             
+            <!-- patchs -->
+            <script src="modules/patchs/angular-ios9-uiwebview.patch.js"></script> 
+
             <!-- module main -->
                 <script src="modules/main/main.module.js"></script>
                 <!-- services -->            
@@ -182,6 +185,6 @@
             <!-- fin module server -->
 
         <!-- endbuild -->
-      
+    </div> 
 </body>
 </html>

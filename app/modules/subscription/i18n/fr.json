@@ -1,6 +1,13 @@
 {
 	"subscription" : {
 		"RECEIVE_INFOS" : "Recevoir les notifications ?",
-		"UPDATE_OK" : "Information mise à jour"
+		"UPDATE_OK" : "Information mise à jour",
+		"alertes" : "Alertes",
+		"annonces" : "Annonces",
+		"bulletin-municipal" : "Bulletin municipal",
+		"conseil_municipal" : "Conseil municipal",
+		"manifestations" : "Manifestations",
+		"projets" : "Projets",
+		"travaux" : "Travaux"
 	}
 }

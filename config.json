@@ -77,13 +77,6 @@
 			          "controller": "FeedsCtrl",					
 			          "icon" : "images/ic_bookmark_48px.svg"			          		          					
 				},
-				"market" : {
-					  "label" : "navigation.MARKET",	
-			          "path": "/market",
-			          "templateHtml": "direct.html",
-			          "controller": "FeedsCtrl",					
-			          "icon" : "images/ic_bookmark_48px.svg"			          		          					
-				},
 				"administrativeProcedures" : {
 					  "label" : "navigation.ADMINISTRATIVE_PROCEDURES",	
 			          "path": "/administrativeProcedures",
@@ -157,15 +150,6 @@
 				"method" : "GET",
 				"params" : {
 					"id" : "88"
-				}
-			}			          		          					
-		},
-		"market" : {
-			"request" : {
-				"url" : "http://www.maureillas.fr/flux/",
-				"method" : "GET",
-				"params" : {
-					"id" : "90"
 				}
 			}			          		          					
 		},

@@ -8,44 +8,17 @@
  * Controller of the maureillasApp
  */
 angular.module('maureillasApp.main')
-  .controller('MainCtrl', function ($scope, MessageService, $location, $mdSidenav, $mdUtil, CONFIG, MenuService) {
-  	$scope.alert = MessageService.getData();
+  .controller('MainCtrl', function ($scope, MessageService, $translate, $location, $mdSidenav, $mdUtil, CONFIG, MenuService) {
+  
+  $scope.alert = MessageService.getData();
 
-	function onOffline() {
-	    $location.path(CONFIG.VIEWS.main.pages.networkError.path);
-	}
-
-	function onOnline() {
-		$translate('navigation.NETWORK_OK').then(function (networkOK) {
-		    var message = MessageService.newMessage();
-		    message.textes = [networkOK];
-    		MessageService.setMessage(message);
-		}); 		
-	    $location.path(CONFIG.VIEWS.main.pages.home.path);
-	}
-
-	document.addEventListener("offline", onOffline, false);
-	document.addEventListener("online", onOnline, false);
-
-
-    $scope.toggleLeft = buildToggler('left');
-    $scope.toggleRight = buildToggler('right');
-
-    /**
-     * Build handler to open/close a SideNav; when animation finishes
-     * report completion in console
-     */
-    function buildToggler(navID) {
-      var debounceFn =  $mdUtil.debounce(function(){
-            $mdSidenav(navID)
-              .toggle()
-              .then(function () {
-                
-              });
-          },300);
-
-      return debounceFn;
-    }
+  $scope.toggleMenu = function() {
+        $mdSidenav('right')
+          .toggle()
+          .then(function () {
+            
+          });
+    };
 
     $scope.menus = [];
     for(var keyView in CONFIG.VIEWS) {
@@ -70,7 +43,7 @@ angular.module('maureillasApp.main')
       $mdSidenav('right').close()
         .then(function () {          
         });      
-    }
+    };
 
     var changeSelectedMenu = function(indexMenuSelected) {
       $scope.indexMenuSelected = indexMenuSelected;
@@ -78,16 +51,16 @@ angular.module('maureillasApp.main')
         menu.selected = false;
       });
       $scope.menus[indexMenuSelected].selected = true;
-    }
+    };
 
     $scope.goTo = function (indexMenuSelected) {
         closeMenu();
         changeSelectedMenu(indexMenuSelected);
         go($scope.menus[indexMenuSelected]);
-    }
+    };
 
     var go = function(menu) {      
       MenuService.go(menu);    
-    }
+    };
 
 });

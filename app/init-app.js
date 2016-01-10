@@ -26,7 +26,9 @@
                 'maureillasApp.feeds',
                 'maureillasApp.push',
                 'maureillasApp.server',
-                'maureillasApp.subscription'
+                'maureillasApp.subscription',
+                'ngIOS9UIWebViewPatch',
+                'angular-cache'
             ]);
 
 

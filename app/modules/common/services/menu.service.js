@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('maureillasApp.common')
-.factory('MenuService', function($location, CONFIG, _, MessageService) {
+.factory('MenuService', function($location, CONFIG, _) {
 	return {
 		'go' : function(menu) {
 			$location.url($location.path());

@@ -8,7 +8,7 @@
  * Controller of the maureillasApp
  */
 angular.module('maureillasApp.feeds')
-  .controller('FeedsCtrl', function ($scope, $location, FeedListService, CONFIG) {
+  .controller('FeedsCtrl', function ($scope, $location, FeedListService, CONFIG, MessageService) {
 
     $scope.feedList = FeedListService.get;
     var searchUrlObject = $location.path().substring(1,$location.path().length);
@@ -17,11 +17,15 @@ angular.module('maureillasApp.feeds')
       var feedValue = searchUrlObject;
       $scope.title = CONFIG.VIEWS.feeds.pages[feedValue].label;
       $scope.loading = true;
-      var promiseFeedList = FeedListService.fetchFeeds(CONFIG.FEEDS[feedValue], 10);
+      var promiseFeedList = FeedListService.fetchFeeds(feedValue, 10);
       var resultGetFeeds = function(res) {
       	$scope.loading = false;
       }
-      promiseFeedList.then(resultGetFeeds, resultGetFeeds);
+      var resultGetFeedsError = function() {
+        $scope.loading = false;
+        MessageService.setError('Erreur de communication réseau. Vérifiez votre connexion.');
+      }
+      promiseFeedList.then(resultGetFeeds, resultGetFeedsError);
     }
 
 });

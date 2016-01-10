@@ -1,11 +1,12 @@
 {
   "project": {
-    "projectSettingsVersion": "1.2",
+    "projectSettingsVersion": "2.0.0",
     "creationData": {
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
-      "projectGuid": "8bfb4f49-268b-4bec-9419-6b79acc6bdcd",
-      "lastModifiedDate": 1441295755755,
-      "creationDate": 1430223981729
+      "src": "jsapp/template-blank-cordova-project-lite/sample.zip",
+      "projectGuid": "ad42940f-34e3-42c9-a83a-a66772a557cd",
+      "lastModifiedDate": 1446112787241,
+      "creationDate": 1446072367677
     },
     "XDK-app-designer": "false",
     "sourceDirectory": "dist",
@@ -17,77 +18,158 @@
     "cordovaPluginsDirectory": "plugins",
     "cordovaPlugins": [
       {
-        "id": "org.apache.cordova.device",
-        "version": "0.2.13",
-        "selectedState": "Included",
-        "data": {},
+        "id": "cordova-plugin-statusbar",
+        "name": "StatusBar",
+        "version": "1.0.0",
+        "originType": "cordova.io",
+        "origin": "cordova-plugin-statusbar",
+        "gitref": "",
         "paramvals": {},
+        "selectedState": "Included",
         "dependsOn": [],
-        "dependedBy": []
+        "topLevel": true,
+        "cordovaVersion": ">=3.0.0",
+        "permissions": {},
+        "description": "Cordova StatusBar Plugin",
+        "data": {},
+        "dependedBy": [],
+        "checksum": "b4e7aac6"
       },
       {
-        "id": "org.apache.cordova.splashscreen",
-        "version": "0.3.5",
-        "selectedState": "Included",
-        "data": {},
-        "paramvals": {},
-        "dependsOn": [],
-        "dependedBy": []
-      },
-      {
-        "id": "org.apache.cordova.network-information",
-        "version": "0.2.14",
-        "selectedState": "Included",
-        "data": {},
-        "paramvals": {},
-        "dependsOn": [],
-        "dependedBy": []
-      },
-      {
-        "id": "com.clone.phonegap.plugins.pushplugin",
-        "version": "",
+        "id": "cordova-plugin-device",
+        "version": "1.0.1",
         "selectedState": "Included",
         "data": {},
         "paramvals": {},
         "dependsOn": [],
         "dependedBy": [],
-        "custom": "true",
-        "name": "PushPlugin",
-        "origin": "com.clone.phonegap.plugins.pushplugin",
         "originType": "cordova.io",
-        "sourceLocation": ""
+        "origin": "cordova-plugin-device",
+        "permissions": {},
+        "topLevel": true,
+        "gitref": "",
+        "name": "Device",
+        "description": "Cordova Device Plugin",
+        "checksum": "adfc61ba",
+        "cordovaVersion": ">=3.0.0"
+      },
+      {
+        "id": "cordova-plugin-splashscreen",
+        "version": "2.1.0",
+        "selectedState": "Included",
+        "data": {},
+        "paramvals": {},
+        "dependsOn": [],
+        "dependedBy": [],
+        "originType": "cordova.io",
+        "origin": "cordova-plugin-splashscreen",
+        "permissions": {},
+        "topLevel": true,
+        "gitref": "",
+        "name": "Splashscreen",
+        "description": "Cordova Splashscreen Plugin",
+        "checksum": "170efb68",
+        "cordovaVersion": ">=3.0.0"
+      },
+      {
+        "id": "com.phonegap.plugins.PushPlugin",
+        "name": "PushPlugin",
+        "version": "2.4.0",
+        "originType": "repo",
+        "origin": "https://github.com/phonegap-build/PushPlugin.git",
+        "gitref": "2.4.0",
+        "subdir": ".",
+        "paramvals": {},
+        "sourceLocation": "plugins/com.phonegap.plugins.PushPlugin",
+        "selectedState": "Included",
+        "checksum": "be03c2d0",
+        "dependsOn": [],
+        "topLevel": true,
+        "cordovaVersion": ">=3.0.0",
+        "author": "Bob Easterday",
+        "permissions": {
+          "android:name": [
+            "android.permission.ACCESS_NETWORK_STATE",
+            "android.permission.GET_ACCOUNTS",
+            "android.permission.WAKE_LOCK",
+            "android.permission.VIBRATE",
+            "com.google.android.c2dm.permission.RECEIVE",
+            "$PACKAGE_NAME.permission.C2D_MESSAGE",
+            "$PACKAGE_NAME.permission.RECEIVE_ADM_MESSAGE",
+            "com.amazon.device.messaging.permission.RECEIVE"
+          ]
+        },
+        "description": "\n\t\tThis plugin allows your application to receive push notifications on Android, iOS, WP8 and Windows8 devices.\n    Android uses Google Cloud Messaging.\n    iOS uses Apple APNS Notifications.\n    WP8 uses Microsoft MPNS Notifications.\n    Windows8 uses Microsoft WNS Notifications.\n\t",
+        "data": {},
+        "dependedBy": [],
+        "custom": "true"
       }
     ],
     "buildConfigurations": {
+      "Android-Crosswalk": {
+        "platform_": "android",
+        "runtime_": "Crosswalk with Cordova 3.x",
+        "name_": "Android-Crosswalk",
+        "preferences_": {
+          "android-minSdkVersion": "14",
+          "android-targetSdkVersion": "19",
+          "android-installLocation": "auto"
+        },
+        "isActive_": false,
+        "appName_": "maureillas-application",
+        "appID_": "xdk.intel.cordova.template.lite",
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
+        "icons_": [],
+        "splashes_": [],
+        "addlPermissions_": "",
+        "excludedLibraries_": "",
+        "cordovaCLIVersion_": "5.1.1",
+        "crosswalkVersion_": "15",
+        "appVersion_": "0.0.1",
+        "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection, as well as within browser.",
+        "appAuthor_": "Intel XDK",
+        "appVersionCode_": "1"
+      },
       "Android": {
         "platform_": "android",
         "runtime_": "Cordova 3.x",
         "name_": "Android",
         "preferences_": {
-          "android-minSdkVersion": "10",
+          "android-minSdkVersion": "14",
           "android-targetSdkVersion": "19",
-          "android-installLocation": "auto"
+          "android-installLocation": "auto",
+          "Fullscreen": true
         },
         "isActive_": true,
         "appName_": "maureillas",
         "appID_": "com.surikwat",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
         "icons_": [
-          {
-            "relPath": "LaunchIcons/MDPI48x48px-01.png",
-            "density": "mdpi",
-            "height": 48,
-            "width": 48
-          },
           {
             "relPath": "LaunchIcons/LDPI36x36px.png",
             "density": "ldpi",
             "height": 36,
             "width": 36
+          },
+          {
+            "relPath": "LaunchIcons/MDPI48x48px-01.png",
+            "density": "mdpi",
+            "height": 48,
+            "width": 48
           },
           {
             "relPath": "LaunchIcons/HDPI72x72px.png",
@@ -160,39 +242,13 @@
             "orientation": "landscape"
           }
         ],
-        "addlPermissions_": "com.google.android.c2dm.permission.RECEIVE;android.permission.INTERNET;android.permission.GET_ACCOUNTS;android.permission.WAKE_LOCK;com.yannsm.permission.C2D_MESSAGE",
-        "excludedLibraries_": "",
-        "iosProvs_": [],
-        "cordovaCLIVersion_": "4.1.2",
-        "crosswalkVersion_": "11",
-        "appVersion_": "0.0.3",
-        "appDescription_": "Application mobile de la ville de Maurillas",
-        "appAuthor_": "Surikwat",
-        "appVersionCode_": "2"
-      },
-      "Android-Crosswalk": {
-        "platform_": "android",
-        "runtime_": "Crosswalk with Cordova 3.x",
-        "name_": "Android-Crosswalk",
-        "preferences_": {
-          "android-minSdkVersion": "14",
-          "android-targetSdkVersion": "19",
-          "android-installLocation": "auto"
-        },
-        "isActive_": false,
-        "appName_": "maureillas-application",
-        "appID_": "xdk.intel.blank.template.crosswalk",
-        "appAccess_": [],
-        "icons_": [],
-        "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
-        "iosProvs_": [],
-        "cordovaCLIVersion_": "4.1.2",
-        "crosswalkVersion_": "11",
-        "appVersion_": "0.0.1",
-        "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection.",
-        "appAuthor_": "Intel XDK",
+        "cordovaCLIVersion_": "5.1.1",
+        "crosswalkVersion_": "14",
+        "appVersion_": "0.1.0",
+        "appDescription_": "Application de la ville de Maureillas",
+        "appAuthor_": "Surikwat",
         "appVersionCode_": "1"
       },
       "iOS": {
@@ -200,23 +256,32 @@
         "runtime_": "Cordova 3.x",
         "name_": "iOS",
         "preferences_": {
-          "ios-target": "6",
+          "ios-target": "7",
           "ios-configuration": "production",
+          "Fullscreen": true,
           "exit-on-suspend": true
         },
         "isActive_": true,
         "appName_": "maureillas",
         "appID_": "com.surikwat.maureillas",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
         "icons_": [
           {
             "relPath": "LaunchIcons/iPhone 6 Plus/180x180px.png",
             "height": 180,
             "width": 180
+          },
+          {
+            "relPath": "LaunchIcons/iPhone (Retina)/120x120px.png",
+            "height": 120,
+            "width": 120
           },
           {
             "relPath": "LaunchIcons/iPhone/60x60px.png",
@@ -229,17 +294,18 @@
             "width": 152
           },
           {
-            "relPath": "LaunchIcons/iPhone (Retina)/120x120px.png",
-            "height": 120,
-            "width": 120
-          },
-          {
             "relPath": "LaunchIcons/iPad_iPadmini/76x76px.png",
             "height": 76,
             "width": 76
           }
         ],
         "splashes_": [
+          {
+            "relPath": "splashScreens/ios/portrait/750x1334.png",
+            "height": 1334,
+            "width": 750,
+            "orientation": "portrait"
+          },
           {
             "relPath": "splashScreens/ios/portrait/1242x2208.png",
             "height": 2208,
@@ -299,12 +365,6 @@
             "height": 748,
             "width": 1024,
             "orientation": "landscape"
-          },
-          {
-            "relPath": "splashScreens/ios/portrait/750x1334.png",
-            "height": 1334,
-            "width": 750,
-            "orientation": "portrait"
           }
         ],
         "addlPermissions_": "",
@@ -315,12 +375,11 @@
             "type": "production"
           }
         ],
-        "cordovaCLIVersion_": "4.1.2",
-        "crosswalkVersion_": "11",
-        "appVersion_": "0.0.3",
+        "cordovaCLIVersion_": "5.1.1",
         "appAuthor_": "Surikwat",
-        "appDescription_": "Application mobile de la ville de Maurillas",
-        "appVersionCode_": ""
+        "crosswalkVersion_": "14",
+        "appVersion_": "0.1.0",
+        "appDescription_": "Application de la ville de Maureillas"
       },
       "Windows8": {
         "platform_": "windows8",
@@ -331,39 +390,25 @@
           "windows-publisher-id": ""
         },
         "isActive_": false,
-        "appName_": "Ville de Maureillas",
-        "appID_": "com.maureillas",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
-        "icons_": [
-          {
-            "relPath": "LaunchIcons/Small Logo/30x30px.png",
-            "height": 30,
-            "width": 30
-          },
-          {
-            "relPath": "LaunchIcons/Store Logo/50x50px.png",
-            "height": 50,
-            "width": 50
-          },
-          {
-            "relPath": "LaunchIcons/Logo/150x150px.png",
-            "height": 150,
-            "width": 150
-          }
-        ],
+        "appName_": "maureillas-application",
+        "appID_": "xdk.intel.cordova.template.lite",
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
+        "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
-        "iosProvs_": [],
-        "cordovaCLIVersion_": "4.1.2",
-        "crosswalkVersion_": "11",
+        "cordovaCLIVersion_": "5.1.1",
+        "crosswalkVersion_": "14",
+        "appAuthor_": "Intel XDK",
         "appVersion_": "0.0.0.1",
-        "appAuthor_": "Surikwat",
-        "appDescription_": "Application mobile de la ville de Maurillas"
+        "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection, as well as within browser."
       },
       "WebApp": {
         "platform_": "webapp",
@@ -373,35 +418,21 @@
         "isActive_": false,
         "appName_": "maureillas-application",
         "appID_": "not.yet.specified",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
-        "appVersion_": "0.0.1"
-      },
-      "Firefox": {
-        "platform_": "firefoxos",
-        "runtime_": "W3C on Firefox OS",
-        "name_": "Firefox",
-        "preferences_": {},
-        "isActive_": false,
-        "appName_": "maureillas-application",
-        "appID_": "not.yet.specified",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
-        "icons_": [],
-        "splashes_": [],
-        "addlPermissions_": "",
-        "excludedLibraries_": "",
-        "appVersion_": "0.0.1"
+        "appAuthor_": "Intel XDK",
+        "appVersion_": "0.0.1",
+        "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection, as well as within browser."
       },
       "Chrome": {
         "platform_": "chromeos",
@@ -411,16 +442,45 @@
         "isActive_": false,
         "appName_": "maureillas-application",
         "appID_": "not.yet.specified",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
-        "appVersion_": "0.0.1"
+        "appAuthor_": "Intel XDK",
+        "appVersion_": "0.0.1",
+        "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection, as well as within browser."
+      },
+      "Firefox": {
+        "platform_": "firefoxos",
+        "runtime_": "W3C on Firefox OS",
+        "name_": "Firefox",
+        "preferences_": {},
+        "isActive_": false,
+        "appName_": "maureillas-application",
+        "appID_": "not.yet.specified",
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
+        "icons_": [],
+        "splashes_": [],
+        "addlPermissions_": "",
+        "excludedLibraries_": "",
+        "appAuthor_": "Intel XDK",
+        "appVersion_": "0.0.1",
+        "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection, as well as within browser."
       },
       "Facebook": {
         "platform_": "facebook",
@@ -430,20 +490,48 @@
         "isActive_": false,
         "appName_": "maureillas-application",
         "appID_": "not.yet.specified",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
-        "appVersion_": "0.0.1"
+        "appAuthor_": "Intel XDK",
+        "appVersion_": "0.0.1",
+        "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection, as well as within browser."
+      },
+      "WP81": {
+        "platform_": "wp81",
+        "runtime_": "Cordova 3.x",
+        "name_": "WP81",
+        "preferences_": {},
+        "isActive_": true,
+        "appName_": "maureillas-application",
+        "appID_": "not.yet.specified",
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [],
+          "intents": [],
+          "navigation": []
+        },
+        "icons_": [],
+        "splashes_": [],
+        "addlPermissions_": "",
+        "excludedLibraries_": "",
+        "appVersion_": "0.0.0.1",
+        "cordovaCLIVersion_": "5.1.1",
+        "appAuthor_": "Intel XDK"
       }
     },
     "gameAssetDirectory": "asset",
     "gameMetadata": {},
-    "projectTags": []
+    "projectTags": [],
+    "testDirectory": "test"
   }
 }

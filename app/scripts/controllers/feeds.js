@@ -9,7 +9,7 @@
  */
 angular.module('maureillasApp')
   .controller('FeedsCtrl', function ($scope, $location, FeedList, CONFIG, messages) {
-
+console.log('feedsCtrl')
     $scope.feedList = FeedList.get;
     var searchUrlObject = $location.path().substring(1,$location.path().length);
 console.log(searchUrlObject)

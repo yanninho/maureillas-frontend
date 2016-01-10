@@ -38,9 +38,10 @@ angular
 
     //translate
     $translateProvider.preferredLanguage('fr');
+    $translatePartialLoaderProvider.addPart('main');
     $translateProvider.useSanitizeValueStrategy('sanitize');
     $translateProvider.useLoader('$translatePartialLoader', {
-      urlTemplate: 'i18n/{lang}.json'
+      urlTemplate: 'i18n/{lang}-{part}.json'
     });
 
 });

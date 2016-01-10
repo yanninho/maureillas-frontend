@@ -9,7 +9,7 @@
 	
 	"navigation" : {
 		"HOME" : "Accueil",
-		"SUBSCRIPTION" : "Paramètres",
+		"PARAMETERS" : "Paramètres",
 		"EVENTS" : "Evenements",
 		"NEWS" : "Evènements récents",
 		"AGENDA": "Agenda",

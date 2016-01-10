@@ -85,7 +85,7 @@
 			},
 			"pages" : {
 				"parameters" : {
-					  "label" : "Paramètres",	
+					  "label" : "navigation.PARAMETERS",	
 			          "path": "/parameters",
 			          "templateUrl": "views/parameters.html",
 			          "controller": "ParametersCtrl",

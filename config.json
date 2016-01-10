@@ -11,13 +11,6 @@
 			          "templateHtml": "home.html",
 			          "controller": "HomeCtrl",
 			          "icon" : "images/ic_home_48px.svg"					
-				},
-				"networkError" : {
-					  "label" : "navigation.NETWORK_ERROR",	
-			          "path": "/networkError",
-			          "templateHtml": "networkError.html",
-			          "controller": "NetworkErrorCtrl",
-			          "hideMenu" : true					
 				}
 			}				
 		},
@@ -86,16 +79,16 @@
 				}
 			}
 		},
-		"subscription" : {
+		"parameters" : {
 			"definition" : {
-				"path" : "subscription"
+				"path" : "parameters"
 			},
 			"pages" : {
-				"subscription" : {
-					  "label" : "navigation.SUBSCRIPTION",	
-			          "path": "/subscription",
-			          "templateHtml": "subscription.html",
-			          "controller": "SubscriptionCtrl",
+				"parameters" : {
+					  "label" : "Paramètres",	
+			          "path": "/parameters",
+			          "templateUrl": "views/parameters.html",
+			          "controller": "ParametersCtrl",
 			          "icon" : "images/ic_bookmark_48px.svg"					
 				}
 			}			

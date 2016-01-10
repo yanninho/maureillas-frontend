@@ -14,7 +14,6 @@
         var maureillasApp = angular.module('maureillasApp', [
                 'ngMessages',
                 'ngResource',
-                'ngRoute',
                 'ngAnimate',
                 'ngTouch',
                 'pascalprecht.translate',

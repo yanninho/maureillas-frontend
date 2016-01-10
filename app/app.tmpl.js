@@ -21,7 +21,6 @@ angular
                 'ngResource',
                 'ngRoute',
                 'ngAnimate',
-                'ngTouch',
                 'pascalprecht.translate',
                 'ngSanitize',
                 'ngMaterial',

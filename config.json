@@ -8,16 +8,9 @@
 				"home" : {
 					  "label" : "navigation.HOME",	
 			          "path": "/home",
-			          "templateHtml": "home.html",
+			          "templateUrl": "views/home.html",
 			          "controller": "HomeCtrl",
 			          "icon" : "images/ic_home_48px.svg"					
-				},
-				"networkError" : {
-					  "label" : "navigation.NETWORK_ERROR",	
-			          "path": "/networkError",
-			          "templateHtml": "networkError.html",
-			          "controller": "NetworkErrorCtrl",
-			          "hideMenu" : true					
 				}
 			}				
 		},
@@ -25,12 +18,13 @@
 			"definition" : {
 				"path" : "feeds"
 			},
+			
 			"pages" : {
 				"actus" : {
 
 					  "label" : "navigation.NEWS",	
 			          "path": "/actus",
-			          "templateHtml": "feeds.html",
+			          "templateUrl": "views/feeds.html",
 			          "controller": "FeedsCtrl",
 			          "icon" : "images/ic_bookmark_48px.svg"		          					
 				},
@@ -38,14 +32,14 @@
 
 					  "label" : "navigation.AGENDA",	
 			          "path": "/agenda",
-			          "templateHtml": "agenda.html",
+			          "templateUrl": "views/agenda.html",
 			          "controller": "FeedsCtrl",					
 			          "icon" : "images/ic_bookmark_48px.svg"			          		          					
 				},
 				"practicalNews" : {
 					  "label" : "navigation.PRACTICAL_NEWS",	
 			          "path": "/practicalNews",
-			          "templateHtml": "direct.html",
+			          "templateUrl": "views/direct.html",
 			          "controller": "FeedsCtrl",					
 			          "icon" : "images/ic_bookmark_48px.svg",
 			          "link" : "http://www.maureillas.fr/s-informer-sortir-promenades-sud-de-la-france/informations-pratiques/"			          		          					
@@ -53,7 +47,7 @@
 				"historicalPatrimony" : {
 					  "label" : "navigation.HISTORICAL_PATRIMONY",	
 			          "path": "/historicalPatrimony",
-			          "templateHtml": "direct.html",
+			          "templateUrl": "views/direct.html",
 			          "controller": "FeedsCtrl",					
 			          "icon" : "images/ic_bookmark_48px.svg",
 			          "link" : "http://www.maureillas.fr/decouvrir-identite-patrimoine-village-pyrenees/patrimoine-historique/"			          			          					
@@ -61,7 +55,7 @@
 				"naturalHeritage" : {
 					  "label" : "navigation.NATURAL_HERITAGE",	
 			          "path": "/naturalHeritage",
-			          "templateHtml": "direct.html",
+			          "templateUrl": "views/direct.html",
 			          "controller": "FeedsCtrl",					
 			          "icon" : "images/ic_bookmark_48px.svg",
 			          "link" : "http://www.maureillas.fr/decouvrir-identite-patrimoine-village-pyrenees/patrimoine-naturel/"			          			          					
@@ -69,7 +63,7 @@
 				"accomodation" : {
 					  "label" : "navigation.ACCOMMODATION",	
 			          "path": "/accomodation",
-			          "templateHtml": "direct.html",
+			          "templateUrl": "views/direct.html",
 			          "controller": "FeedsCtrl",					
 			          "icon" : "images/ic_bookmark_48px.svg",
 			          "link" : "http://www.maureillas.fr/vivre-a-maureillas/hebergement/"			          		          					
@@ -77,7 +71,7 @@
 				"restaurants" : {
 					  "label" : "navigation.RESTAURANTS",	
 			          "path": "/restaurants",
-			          "templateHtml": "direct.html",
+			          "templateUrl": "views/direct.html",
 			          "controller": "FeedsCtrl",					
 			          "icon" : "images/ic_bookmark_48px.svg",
 			          "link" : "http://www.maureillas.fr/vivre-a-maureillas/restaurants-bars/"			          		          					
@@ -85,23 +79,23 @@
 				"administrativeProcedures" : {
 					  "label" : "navigation.ADMINISTRATIVE_PROCEDURES",	
 			          "path": "/administrativeProcedures",
-			          "templateHtml": "direct.html",
+			          "templateUrl": "views/direct.html",
 			          "controller": "FeedsCtrl",					
 			          "icon" : "images/ic_bookmark_48px.svg",
 			          "link" : "http://www.maureillas.fr/la-mairie/guichet-des-services/"			          		          					
 				}
 			}
 		},
-		"subscription" : {
+		"parameters" : {
 			"definition" : {
-				"path" : "subscription"
+				"path" : "parameters"
 			},
 			"pages" : {
-				"subscription" : {
-					  "label" : "navigation.SUBSCRIPTION",	
-			          "path": "/subscription",
-			          "templateHtml": "subscription.html",
-			          "controller": "SubscriptionCtrl",
+				"parameters" : {
+					  "label" : "navigation.PARAMETERS",	
+			          "path": "/parameters",
+			          "templateUrl": "views/parameters.html",
+			          "controller": "ParametersCtrl",
 			          "icon" : "images/ic_bookmark_48px.svg"					
 				}
 			}			

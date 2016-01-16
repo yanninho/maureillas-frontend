@@ -1,11 +1,10 @@
 <!doctype html>
-<html class="no-js">
+<html>
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
     <meta name="description" content="">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>Ville de Maureillas - Las Illas</title>
+    <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -13,72 +12,63 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-
-    <!-- Recommandation Bootstrap -->
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
   </head>
-
-   <!-- MOBILE VERSION -->
-  <body> 
-        <div ng-controller="PushCtrl"></div>
-    <div ng-controller="MainCtrl">
-    <!--[if lt IE 9]>
-      <p class="browsehappy">Vous utilisez un navigateur <strong>obsolète</strong>. Merci de <a href="http://browsehappy.com/">mettre à jour votre navigateur</a>.</p>
+  <body ng-app="maureillasApp">
+    <div ng-controller="PushCtrl"></div>
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
-    <!-- Add your site or application content here -->
-    <!--[if gt IE 8]>
-    <loading-widget>Chargement en cours...</loading-widget>
-    <![endif]-->
-    <div class="alert" ng-class="alert.message.type" ng-show="alert.message.textes">
-        <div ng-repeat="texte in alert.message.textes">
-            <pre ng-show="alert.message.json">{{texte | json}}</pre>
-            <p ng-show="!alert.message.json">{{texte}}</p>
+    <div class="main" ng-controller="MainCtrl">     
+        <div class="alert" ng-class="alert.message.type" ng-show="alert.message.textes">
+            <div ng-repeat="texte in alert.message.textes">
+                <pre ng-show="alert.message.json">{{texte | json}}</pre>
+                <p ng-show="!alert.message.json">{{texte}}</p>
+            </div>
+        </div>   
+        <md-toolbar layout="row" class="ng-cloak">
+            <div class="md-toolbar-tools">
+                <md-button class="md-icon-button" aria-label="menu" ng-click="toggleMenu()">
+                    <md-icon md-svg-icon="images/ic_menu_48px.svg"></md-icon>
+                </md-button>
+                <h1>
+                    <span>{{ 'MAIN.ville' | translate }}</span>
+                </h1>
+                <span flex=""></span>
+                <img src="images/MDPI48x48px-01.png" />
+            </div>
+        </md-toolbar>
+        <md-sidenav class="md-sidenav-right md-whiteframe-z2 menu" md-component-id="right">
+            <!-- menu -->
+            <md-content>
+                <h3 ng-repeat="item in menus" class="item-menu">
+                    <md-icon md-svg-icon="{{item.icon}}"></md-icon>
+                    <a ng-href="" ng-click="goTo($index)">{{ item.name | translate}}</a>
+                </h3>
+                <h3 class="item-menu">
+                    <a ng-href="" ng-click="quitApp()">{{ 'MAIN.quitApp' | translate }}</a>
+                </h3>  
+            </md-content>    
+        </md-sidenav>   
+        <div id="content" class="view-container">
+            <div class="view view-animate" ng-view=""></div>
         </div>
-    </div>   
-    <md-toolbar layout="row">
-        <div class="md-toolbar-tools">
-            <md-button class="md-icon-button" aria-label="menu" ng-click="toggleMenu()">
-                <md-icon md-svg-icon="images/ic_menu_48px.svg"></md-icon>
-            </md-button>
-            <h1>
-                <span class="ng-cloak">{{'main.VILLE' | translate}}</span>
-            </h1>
-            <span flex=""></span>
-            <img src="images/MDPI48x48px-01.png" />
-        </div>
-    </md-toolbar>
-    <md-sidenav class="md-sidenav-right md-whiteframe-z2 menu" md-component-id="right">
-        <!-- menu -->
-        <md-content>
-            <h3 ng-repeat="item in menus" class="item-menu">
-                <md-icon md-svg-icon="{{item.icon}}"></md-icon>
-                <a ng-href="" ng-click="goTo($index)">{{ item.name | translate}}</a>
-            </h3>  
-        </md-content>    
-    </md-sidenav>   
-    <div id="content" class="view-container">
-        <div class="view view-animate" ng-view=""></div>
     </div>
+
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-translate/angular-translate.js"></script>
     <script src="bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/ngCordova/dist/ng-cordova.js"></script>
     <script src="bower_components/angular-aria/angular-aria.js"></script>
     <script src="bower_components/angular-material/angular-material.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
@@ -87,91 +77,31 @@
     <!-- endbower -->
     <script src="bower_components/moment/locale/fr.js"></script>
     <!-- endbuild -->
-
-        <script src="intelxdk.js"></script>
-        <!-- phantom library, needed for Intel XDK "legacy" container api calls -->
-        <script src="cordova.js"></script>
-        <!-- phantom library, needed for Cordova api calls -->
-        <script src="xhr.js"></script>
-        <!-- phantom library, needed for Intel XDK "legacy" container CORS -->
-
-       
-        <!-- for your event code, see README and file comments for details -->
-        <script src="init-app.js"></script>
-        <!-- for your init code, see README and file comments for details -->
-        <script src="init-dev.js"></script>
-        <!-- normalizes device and document ready events, see file for details -->
-        
-        <!-- Cordova push plugin -->
-        <script type="text/javascript" charset="utf-8" src="PushNotification.js"></script>
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-            <script src="app.js"></script>
-            
-            <!-- patchs -->
-            <script src="modules/patchs/angular-ios9-uiwebview.patch.js"></script> 
-
-            <!-- module main -->
-                <script src="modules/main/main.module.js"></script>
-                <!-- services -->            
-                                    
-                <!-- controllers -->           
-                <script src="modules/main/controllers/home.controller.js"></script>                           
-                <script src="modules/main/controllers/main.controller.js"></script>                     
-                <script src="modules/main/controllers/networkError.controller.js"></script>                     
-            <!-- fin module feeds -->
-                
-            <!-- module common -->
-                <script src="modules/common/common.module.js"></script>
-                <!-- filters -->            
-                <script src="modules/common/filters/rssdate.js"></script>           
-                <!-- services -->            
-                <script src="modules/common/services/rest.service.js"></script>           
-                <script src="modules/common/services/device.service.js"></script>           
-                <script src="modules/common/services/network.service.js"></script>           
-                <script src="modules/common/services/technicalException.service.js"></script>           
-                <script src="modules/common/services/exceptionHandlerOverride.service.js"></script>           
-                <script src="modules/common/services/config.service.js"></script>  
-                <script src="modules/common/services/messages.service.js"></script>         
-                <script src="modules/common/services/menu.service.js"></script>         
-                <script src="modules/common/services/underscore.service.js"></script>         
-                <!-- directives -->           
-                <!-- models -->       
-            <!-- fin module common -->
-           
-            <!-- module feeds -->
-                <script src="modules/feeds/feeds.module.js"></script>
-                <!-- services -->            
-                <script src="modules/feeds/services/feeds.service.js"></script>                     
-                <!-- controllers -->           
-                <script src="modules/feeds/controllers/feeds.controller.js"></script>                     
-            <!-- fin module feeds -->
-           
-            <!-- module subscription -->
-                <script src="modules/subscription/subscription.module.js"></script>
-                <!-- services -->            
-                                  
-                <!-- controllers -->           
-                <script src="modules/subscription/controllers/subscription.controller.js"></script>                     
-            <!-- fin module feeds -->
-           
-            <!-- module push -->
-                <script src="modules/push/push.module.js"></script>
-                <!-- services -->            
-                <script src="modules/push/services/push.service.js"></script>                     
-                <!-- controllers -->           
-                <script src="modules/push/controllers/push.controller.js"></script>                     
-                                   
-            <!-- fin module push -->
-           
-            <!-- module server -->
-                <script src="modules/server/server.module.js"></script>
-                <!-- services -->            
-                <script src="modules/server/users.service.js"></script>                                         
-                <script src="modules/server/register.service.js"></script>                                         
-                <script src="modules/server/platforms.service.js"></script>                                         
-            <!-- fin module server -->
-
-        <!-- endbuild -->
-    </div> 
+    
+    <script src="cordova.js"></script>
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/feeds.js"></script>
+    <script src="scripts/controllers/home.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/parameters.js"></script>
+    <script src="scripts/controllers/push.js"></script>
+    <script src="scripts/filters/rssdate.js"></script>
+    <script src="scripts/patchs/angular-ios9-uiwebview.patch.js"></script>
+    <script src="scripts/services/android.js"></script>
+    <script src="scripts/services/config.service.js"></script>
+    <script src="scripts/services/exceptionhandler.js"></script>
+    <script src="scripts/services/feedlist.js"></script>
+    <script src="scripts/services/feeds.js"></script>
+    <script src="scripts/services/ios.js"></script>
+    <script src="scripts/services/menu.js"></script>
+    <script src="scripts/services/messages.js"></script>
+    <script src="scripts/services/platforms.js"></script>
+    <script src="scripts/services/push.js"></script>
+    <script src="scripts/services/rest.js"></script>
+    <script src="scripts/services/technicalexception.js"></script>
+    <script src="scripts/services/underscore.js"></script>
+    <script src="scripts/services/users.js"></script>
+    <!-- endbuild -->
 </body>
 </html>

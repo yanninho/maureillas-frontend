@@ -5,7 +5,11 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-project-lite/sample.zip",
       "projectGuid": "ad42940f-34e3-42c9-a83a-a66772a557cd",
+<<<<<<< HEAD
       "lastModifiedDate": 1452459421847,
+=======
+      "lastModifiedDate": 1452536111511,
+>>>>>>> best_version
       "creationDate": 1446072367677
     },
     "XDK-app-designer": "false",
@@ -246,10 +250,10 @@
         "excludedLibraries_": "",
         "cordovaCLIVersion_": "5.1.1",
         "crosswalkVersion_": "14",
-        "appVersion_": "0.1.0",
+        "appVersion_": "1.0.0",
         "appDescription_": "Application de la ville de Maureillas",
         "appAuthor_": "Surikwat",
-        "appVersionCode_": "1"
+        "appVersionCode_": "3"
       },
       "iOS": {
         "platform_": "ios",
@@ -258,7 +262,7 @@
         "preferences_": {
           "ios-target": "7",
           "ios-configuration": "production",
-          "Fullscreen": true,
+          "Fullscreen": false,
           "exit-on-suspend": true
         },
         "isActive_": true,
@@ -378,7 +382,7 @@
         "cordovaCLIVersion_": "5.1.1",
         "appAuthor_": "Surikwat",
         "crosswalkVersion_": "14",
-        "appVersion_": "0.1.0",
+        "appVersion_": "1.0.0",
         "appDescription_": "Application de la ville de Maureillas"
       },
       "Windows8": {

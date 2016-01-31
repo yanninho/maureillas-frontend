@@ -8,7 +8,7 @@
  * Controller of the maureillasApp
  */
 angular.module('maureillasApp')
-  .controller('FeedsCtrl', function ($scope, $location, FeedList, CONFIG, messages) {
+  .controller('FeedsCtrl', function ($scope, $location, FeedList, CONFIG, messages, linkExternal) {
     $scope.feedList = FeedList.get;
     var searchUrlObject = $location.path().substring(1,$location.path().length);
     if (!angular.isUndefined(searchUrlObject)) {
@@ -25,5 +25,11 @@ angular.module('maureillasApp')
         messages.setError('Erreur de communication réseau. Vérifiez votre connexion.');
       }
       promiseFeedList.then(resultGetFeeds, resultGetFeedsError);
-    }
+    };
+
+    $scope.seeArticle = function(link) {
+        linkExternal.open(link);    
+    };
+
+
   });

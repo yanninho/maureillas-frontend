@@ -29,6 +29,8 @@
 <intelxdk:plugin intelxdk:name="Device" intelxdk:value="cordova-plugin-device" intelxdk:version="1.0.1" intelxdk:checksum="adfc61ba"/>
 <intelxdk:plugin intelxdk:name="Splashscreen" intelxdk:value="cordova-plugin-splashscreen" intelxdk:version="2.1.0" intelxdk:checksum="170efb68"/>
 <intelxdk:plugin intelxdk:name="PushPlugin" intelxdk:value="com.phonegap.plugins.PushPlugin" intelxdk:version="2.4.0" intelxdk:checksum="be03c2d0" intelxdk:type="file"/>
+<intelxdk:plugin intelxdk:name="Notification" intelxdk:value="org.apache.cordova.dialogs" intelxdk:version="0.3.0" intelxdk:checksum="a7736571" intelxdk:type="file"/>
+<intelxdk:plugin intelxdk:name="InAppBrowser" intelxdk:value="cordova-plugin-inappbrowser" intelxdk:version="1.2.1-dev" intelxdk:checksum="b71e3b85" intelxdk:type="file"/>
 <preference name="ios-target" value="7"/>
 <preference name="ios-configuration" value="production"/>
 <preference name="Fullscreen" value="false"/>

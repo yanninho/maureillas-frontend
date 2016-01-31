@@ -5,11 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-project-lite/sample.zip",
       "projectGuid": "ad42940f-34e3-42c9-a83a-a66772a557cd",
-<<<<<<< HEAD
-      "lastModifiedDate": 1452459421847,
-=======
-      "lastModifiedDate": 1452536111511,
->>>>>>> best_version
+      "lastModifiedDate": 1454238265590,
       "creationDate": 1446072367677
     },
     "XDK-app-designer": "false",
@@ -73,7 +69,7 @@
         "name": "Splashscreen",
         "description": "Cordova Splashscreen Plugin",
         "checksum": "170efb68",
-        "cordovaVersion": ">=3.0.0"
+        "cordovaVersion": ">=3.1.0"
       },
       {
         "id": "com.phonegap.plugins.PushPlugin",
@@ -107,6 +103,45 @@
         "data": {},
         "dependedBy": [],
         "custom": "true"
+      },
+      {
+        "id": "org.apache.cordova.dialogs",
+        "name": "Notification",
+        "version": "0.3.0",
+        "originType": "cordova.io",
+        "origin": "org.apache.cordova.dialogs",
+        "gitref": "",
+        "paramvals": {},
+        "sourceLocation": "plugins/org.apache.cordova.dialogs",
+        "selectedState": "Included",
+        "checksum": "a7736571",
+        "dependsOn": [],
+        "topLevel": true,
+        "cordovaVersion": ">=3.0.0",
+        "permissions": {},
+        "description": "Cordova Notification Plugin",
+        "data": {},
+        "dependedBy": []
+      },
+      {
+        "id": "cordova-plugin-inappbrowser",
+        "name": "InAppBrowser",
+        "version": "1.2.1-dev",
+        "originType": "repo",
+        "origin": "https://github.com/apache/cordova-plugin-inappbrowser.git",
+        "gitref": "",
+        "subdir": ".",
+        "paramvals": {},
+        "sourceLocation": "plugins/cordova-plugin-inappbrowser",
+        "selectedState": "Included",
+        "checksum": "b71e3b85",
+        "dependsOn": [],
+        "topLevel": true,
+        "cordovaVersion": ">=3.1.0",
+        "permissions": {},
+        "description": "Cordova InAppBrowser Plugin",
+        "data": {},
+        "dependedBy": []
       }
     ],
     "buildConfigurations": {

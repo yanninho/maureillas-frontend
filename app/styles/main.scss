@@ -86,6 +86,22 @@ img {
 			padding: 10px;
 			min-height: 150px;
 		}
+	    .feed-link-container {
+	        margin-bottom: 15px;
+	        margin-left: auto;
+	        right: 0;
+	        width: 130px;
+	      .feed-link {
+	        display: block;
+	        margin-right: 15px;
+	        background-color: #106801;
+	        color: white;
+	        text-decoration: none;
+	        padding: 5px;
+	        text-align: center;
+	        text-decoration: none;      
+	      }
+	    }		
 	}
 }
 

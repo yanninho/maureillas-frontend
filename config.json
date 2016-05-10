@@ -106,7 +106,7 @@
 			"url" : "http://www.maureillas.fr/evenements/feed/"
 		},
 		"actus" : {
-			"url" : "http://www.maureillas.fr/category/mobile/feed/"
+			"url" : "http://www.maureillas.fr/json-actu/"
 		},
 		"practicalNews" : {
 			"request" : {

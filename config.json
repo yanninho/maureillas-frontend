@@ -106,7 +106,10 @@
 			"url" : "http://www.maureillas.fr/evenements/feed/"
 		},
 		"actus" : {
-			"url" : "http://www.maureillas.fr/json-actu/"
+			"request" : {
+				"url" : "http://www.maureillas.fr/json-actu/",
+				"method" : "GET"
+			}
 		},
 		"practicalNews" : {
 			"request" : {

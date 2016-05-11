@@ -103,7 +103,10 @@
 	},
 	"FEEDS": {
 		"agenda" : {
-			"url" : "http://www.maureillas.fr/evenements/feed/"
+			"request" : {
+				"url" : "http://www.maureillas.fr/json-agenda/",
+				"method" : "GET"
+			}
 		},
 		"actus" : {
 			"request" : {

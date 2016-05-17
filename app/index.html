@@ -46,7 +46,7 @@
                     <md-icon md-svg-icon="{{item.icon}}"></md-icon>
                     <a ng-href="" ng-click="goTo($index)">{{ item.name | translate}}</a>
                 </h3>
-                <h3 class="item-menu">
+                <h3 class="item-menu" ng-show="exitAvailable()">
                     <a ng-href="" ng-click="quitApp()">{{ 'MAIN.quitApp' | translate }}</a>
                 </h3>  
             </md-content>    

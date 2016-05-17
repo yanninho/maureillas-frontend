@@ -15,7 +15,7 @@ angular.module('maureillasApp')
         var servicePlatform = platforms.getService();
         
         servicePlatform.setWhenMessageReceived(function(notification) {
-              $cordovaDialogs.confirm('Voulez-vous ouvrir la rubrique actualités ?', 'Nouvel article disponible', ['Oui','Non'])
+              $cordovaDialogs.confirm('Voulez-vous ouvrir la rubrique "Evènements récents" ?', 'Nouvel article disponible', ['Oui','Non'])
                 .then(function(buttonIndex) {
                   // no button = 0, 'OK' = 1, 'Cancel' = 2
                   if (buttonIndex === 1) {

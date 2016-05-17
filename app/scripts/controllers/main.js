@@ -9,6 +9,14 @@
  */
 angular.module('maureillasApp')
   .controller('MainCtrl', function ($scope, messages, $mdSidenav, CONFIG, menu) {
+
+  var exitAvailable = true;
+
+  document.addEventListener("deviceready", function() {
+      if (!navigator && !navigator.app && !navigator.exitApp)  {
+        exitAvailable = false;
+      }
+  });  
   
   $scope.alert = messages.getData();
 
@@ -64,6 +72,10 @@ angular.module('maureillasApp')
           navigator.app.exitApp();
         });
     };
+
+    $scope.exitAvailable = function() {
+      return exitAvailable;
+    }
 
     var go = function(menuItem) {      
       menu.go(menuItem);    

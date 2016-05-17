@@ -20,7 +20,7 @@ angular.module('maureillasApp')
         }       
     },
     'find' : function(name) {
-      var page = CONFIG.VIEWS.feeds.pages.actualites;
+      var page = CONFIG.VIEWS.feeds.pages.actus;
       // on renvois toujours vers la page actualites
       // _.each(CONFIG.VIEWS, function(view) {
       //   if (_.contains(_.keys(view.pages), name)) {

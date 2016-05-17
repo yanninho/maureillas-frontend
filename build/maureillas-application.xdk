@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-project-lite/sample.zip",
       "projectGuid": "ad42940f-34e3-42c9-a83a-a66772a557cd",
-      "lastModifiedDate": 1462906196911,
+      "lastModifiedDate": 1462988872834,
       "creationDate": 1446072367677
     },
     "XDK-app-designer": "false",
@@ -266,7 +266,7 @@
         "appVersion_": "1.0.0",
         "appDescription_": "Application de la ville de Maureillas",
         "appAuthor_": "Surikwat",
-        "appVersionCode_": "4",
+        "appVersionCode_": "400",
         "crosswalkVersion_": "16"
       },
       "iOS": {

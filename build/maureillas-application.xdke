@@ -8,8 +8,7 @@
   },
   "build-tab": {
     "selectedTargets": [
-      "CORDOVA_ANDROID",
-      "CORDOVA_IOS"
+      "CORDOVA_ANDROID"
     ]
   }
 }
